@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class MovementPlayer2 : MonoBehaviour
 {
     public Rigidbody2D rig;
@@ -102,7 +103,7 @@ public class MovementPlayer2 : MonoBehaviour
         }
         else
         {
-           
+            SceneManager.LoadScene("GameOver");
         }
         LifeImage.fillAmount = Life / 3.0f;
     }

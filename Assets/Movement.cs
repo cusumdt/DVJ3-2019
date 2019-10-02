@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     public Rigidbody2D rig;
@@ -87,8 +88,8 @@ public class Movement : MonoBehaviour
                 }
             }
             if (stamina > 0 && stamina >= DashCost)
-            { 
-        
+            {
+
                 if (Input.GetKeyDown("left shift") || Input.GetKey("joystick 1 button 1"))
                 {
                     StartCoroutine("Dash");
@@ -106,7 +107,11 @@ public class Movement : MonoBehaviour
                 stamina += RegenStamina * Time.deltaTime;
             }
             StaminaObj.size = stamina / MaxStamina;
-            
+
+        }
+        else
+        {
+            SceneManager.LoadScene("GameOver");
         }
         LifeImage.fillAmount = Life / 3.0f;
     }

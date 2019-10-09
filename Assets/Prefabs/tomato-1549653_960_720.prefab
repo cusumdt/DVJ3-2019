@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8515743847549286324}
   - component: {fileID: 8976152171075210133}
   - component: {fileID: 8976152171075210132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tomato-1549653_960_720
   m_TagString: EnemyObject
   m_Icon: {fileID: 0}
@@ -126,9 +126,9 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.0058846474}
+  m_Offset: {x: 0.02587688, y: -0.09527743}
   serializedVersion: 2
-  m_Radius: 0.30576885
+  m_Radius: 0.1763848

@@ -157,12 +157,7 @@ public class Movement : MonoBehaviour
         {
             InFloor = false;
         }
-    }
-
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-        // If the Collider2D component is enabled on the collided object
-        if (!immune)
+                if (!immune)
         { 
             if (coll.transform.tag == "EnemyObject")
             {
@@ -170,6 +165,12 @@ public class Movement : MonoBehaviour
                 StartCoroutine("ImmunePlayer");
             }
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        // If the Collider2D component is enabled on the collided object
+
     }
 
 }

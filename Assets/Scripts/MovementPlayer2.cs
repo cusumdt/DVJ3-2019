@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class Movement : MonoBehaviour
+public class MovementPlayer2 : MonoBehaviour
 {
     public Rigidbody2D rig;
     Vector2 pos;
@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     public Transform[] RespawnPoint;
     [SerializeField]
     private bool immune = false;
+       private bool OnIce = false;
     SpriteRenderer sprite;
     public float stamina;
     public const int DashCost = 25;
@@ -25,6 +26,8 @@ public class Movement : MonoBehaviour
     public const int MaxStamina = 100;
     public Scrollbar StaminaObj;
     public Image LifeImage;
+        public GameObject IceSkill;
+    private bool iceInvoque = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,8 +43,14 @@ public class Movement : MonoBehaviour
     {
         if (Life > 0)
         {
+            if (OnIce)
+            {
+                   StartCoroutine("IceEffect");
+            }
+            else
+            {
             pos = new Vector2(transform.position.x, transform.position.y);
-            if (Input.GetKeyDown("space") || Input.GetKeyDown("joystick 1 button 0"))
+            if (Input.GetKeyDown("[0]") || Input.GetKeyDown("joystick 2 button 0"))
             {
                 if (jump == true && InFloor)
                 {
@@ -49,14 +58,14 @@ public class Movement : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey("d") || Input.GetAxis("HorizontalJoystick1") >= 1)
+            if (Input.GetKey("right") || Input.GetAxis("HorizontalJoystick2") >= 1)
             {
 
                 rig.AddForce(new Vector2(2, 0) * speed, ForceMode2D.Force);
 
             }
 
-            if (Input.GetKey("a") || Input.GetAxis("HorizontalJoystick1") <= -1)
+            if (Input.GetKey("left") || Input.GetAxis("HorizontalJoystick2") <= -1)
             {
 
                 rig.AddForce(new Vector2(-2, 0) * speed, ForceMode2D.Force);
@@ -70,30 +79,32 @@ public class Movement : MonoBehaviour
             {
                 rig.velocity = new Vector2(-4, rig.velocity.y);
             }
-            if (Input.GetKey("left shift") && Input.GetKey("a") || Input.GetKey("joystick 1 button 1") && Input.GetAxis("HorizontalJoystick1") <= -1)
+            if (Input.GetKey("[.]") && Input.GetKey("left") || Input.GetKey("joystick 2 button 1") && Input.GetAxis("HorizontalJoystick2") <= -1)
             {
                 if (dash == true)
-                {
                     rig.AddForce(new Vector2(-20, 0) * speed, ForceMode2D.Force);
-
-                }
-
             }
-            if (Input.GetKey("left shift") && Input.GetKey("d") || Input.GetKey("joystick 1 button 1") && Input.GetAxis("HorizontalJoystick1") >= 1)
+            if (Input.GetKey("[.]") && Input.GetKey("right") || Input.GetKey("joystick 2 button 1") && Input.GetAxis("HorizontalJoystick2") >= 1)
             {
                 if (dash == true)
-                {
                     rig.AddForce(new Vector2(20, 0) * speed, ForceMode2D.Force);
-
+            }
+             if (Input.GetKey("5"))
+            {
+                
+                if (iceInvoque == false)
+                {
+                   Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
                 }
+                 StartCoroutine("IceSkillCD");
+            }
             }
             if (stamina > 0 && stamina >= DashCost)
             {
-
-                if (Input.GetKeyDown("left shift") || Input.GetKey("joystick 1 button 1"))
+             
+                if (Input.GetKeyDown("[.]") || Input.GetKey("joystick 2 button 1"))
                 {
                     StartCoroutine("Dash");
-                    //rig.AddForce(new Vector2(100, 0) * speed, ForceMode2D.Force);
                     m_Animator.SetTrigger("Dash");
                     stamina -= DashCost;
                 }
@@ -106,8 +117,8 @@ public class Movement : MonoBehaviour
             {
                 stamina += RegenStamina * Time.deltaTime;
             }
-            StaminaObj.size = stamina / MaxStamina;
-
+            StaminaObj.size = stamina / 100;
+         
         }
         else
         {
@@ -127,27 +138,37 @@ public class Movement : MonoBehaviour
     IEnumerator ImmunePlayer()
     {
         immune = true;
-        sprite.color = new Vector4(0, 0, 255, 255);
+        sprite.color = new Vector4(255, 255, 0, 255);
         yield return new WaitForSeconds(2.0f);
         sprite.color = new Vector4(255, 255, 255, 255);
         immune = false;
     }
-
+     IEnumerator IceEffect()
+    {     
+        sprite.color = new Vector4(0, 0, 255, 255);
+          yield return new WaitForSeconds(2.0f);
+          sprite.color = new Vector4(255, 255, 255, 255);
+          OnIce = false;
+    }
+     IEnumerator IceSkillCD()
+    {     
+        iceInvoque = true;
+          yield return new WaitForSeconds(5.0f);
+        iceInvoque = false;
+    }
     IEnumerator Dash()
     {
         dash = true;
         yield return new WaitForSeconds(0.2f);
-        gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
         dash = false;
     }
-
     void IfDamage()
     {
         Life--;
         int randomPoint = Random.Range(0, 3);
-        transform.position = new Vector3 (RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y,0.0f);
+        transform.position = new Vector3(RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y, 0.0f);
     }
-      void OnTriggerEnter2D(Collider2D coll)
+    void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.transform.tag == "Floor")
         {
@@ -157,20 +178,23 @@ public class Movement : MonoBehaviour
         {
             InFloor = false;
         }
-                if (!immune)
-        { 
+         if (!immune)
+        {
             if (coll.transform.tag == "EnemyObject")
             {
                 IfDamage();
                 StartCoroutine("ImmunePlayer");
             }
+             if (coll.transform.tag == "Ice")
+            {
+                OnIce = true;
+            }
         }
     }
-
     void OnCollisionEnter2D(Collision2D coll)
     {
         // If the Collider2D component is enabled on the collided object
-
+       
     }
 
 }

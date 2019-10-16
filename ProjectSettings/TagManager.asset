@@ -8,6 +8,8 @@ TagManager:
   - Coin
   - EnemyObject
   - CoinCollector
+  - Ice
+  - LavaCollector
   layers:
   - Default
   - TransparentFX

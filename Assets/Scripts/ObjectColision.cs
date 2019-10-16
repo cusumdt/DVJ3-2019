@@ -15,9 +15,17 @@ public class ObjectColision : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.transform.tag == "CoinCollector" && this.transform.tag == "EnemyObject")
+        if (coll.transform.tag == "LavaCollector")
         {
-          this.gameObject.SetActive(false);
+            this.transform.position = new Vector3(10.0f, 120.0f, 1.0f);
+            TimeManager.Clock = 30.0f;
+            TimeManager.lavaOn = false;
+        }
+        if (coll.transform.tag == "CoinCollector" && this.transform.tag == "EnemyObject" || coll.transform.tag == "LavaCollector")
+        {
+
+            this.gameObject.SetActive(false);
+         
         }
     }
 }

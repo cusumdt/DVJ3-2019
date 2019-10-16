@@ -34,16 +34,17 @@ public class Drop : MonoBehaviour
         
         if(ActiveObjects)
         {
-           StartCoroutine("ActiveObj");
+           StartCoroutine(ActiveObj(Random.Range(1,5)));
            
         }
     }
 
-    IEnumerator ActiveObj()
+    IEnumerator ActiveObj(float time)
     {
         OnObj();
         ActiveObjects = false;
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(time);
+        Debug.Log(time);
         ActiveObjects = true;
     }
     void OnObj()

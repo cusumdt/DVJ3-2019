@@ -25,9 +25,9 @@ public class Movement : MonoBehaviour
     public const int RegenStamina = 10;
     public const int MaxStamina = 100;
     public Scrollbar StaminaObj;
-    public Image LifeImage;
     public GameObject IceSkill;
     private bool iceInvoque = false;
+    public GameObject[] lifeImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -132,7 +132,6 @@ public class Movement : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
-        LifeImage.fillAmount = Life / 3.0f;
     }
 
     IEnumerator Impulse()
@@ -177,6 +176,7 @@ public class Movement : MonoBehaviour
         Life--;
         int randomPoint = Random.Range(0, 3);
         transform.position = new Vector3 (RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y,0.0f);
+        lifeImage[Life].SetActive(false);
     }
       void OnTriggerEnter2D(Collider2D coll)
     {

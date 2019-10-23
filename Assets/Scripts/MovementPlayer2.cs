@@ -110,9 +110,18 @@ public class MovementPlayer2 : MonoBehaviour
                 
                 if (iceInvoque == false)
                 {
-                   Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
+                         StartCoroutine("IceSkillCD");
+                      if(transform.rotation.y == 0)
+                      {
+                           Instantiate(IceSkill, new Vector3(transform.position.x -1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f,180.0f,0.0f,1.0f));
+                          
+                      }
+                      else
+                      {
+                           Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
+                      }
+
                 }
-                 StartCoroutine("IceSkillCD");
             }
             }
             if (stamina > 0 && stamina >= DashCost)

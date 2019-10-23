@@ -29,6 +29,8 @@ public class MovementPlayer2 : MonoBehaviour
         public GameObject IceSkill;
     private bool iceInvoque = false;
     public GameObject[] lifeImage;
+    private bool defeat;
+    public GameObject prefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class MovementPlayer2 : MonoBehaviour
         pos = new Vector2(transform.position.x, transform.position.y);
         m_Animator = gameObject.GetComponent<Animator>();
         sprite = gameObject.GetComponent<SpriteRenderer>();
+        defeat = false;
     }
 
     // Update is called once per frame
@@ -65,7 +68,7 @@ public class MovementPlayer2 : MonoBehaviour
                 if(transform.rotation.y != 180)
                 {
                     transform.rotation = new Quaternion(0.0f,180.0f,0.0f,1.0f );
-                    Debug.Log("A");
+            
                 }    
                 rig.AddForce(new Vector2(2, 0) * speed, ForceMode2D.Force);
 
@@ -138,7 +141,12 @@ public class MovementPlayer2 : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("GameOver");
+            if(!defeat)
+            {
+                GameManager.instance.SetPlayers(prefab);
+                defeat = true;
+            }
+
         }
 
     }

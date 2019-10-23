@@ -28,6 +28,8 @@ public class Movement : MonoBehaviour
     public GameObject IceSkill;
     private bool iceInvoque = false;
     public GameObject[] lifeImage;
+    public GameObject prefab;
+    private bool defeat;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class Movement : MonoBehaviour
         pos = new Vector2(transform.position.x, transform.position.y);
         m_Animator = gameObject.GetComponent<Animator>();
         sprite = gameObject.GetComponent<SpriteRenderer>();
+        defeat = false;
     }
 
     // Update is called once per frame
@@ -60,15 +63,28 @@ public class Movement : MonoBehaviour
 
             if (Input.GetKey("d") || Input.GetAxis("HorizontalJoystick1") >= 1)
             {
-
+                m_Animator.SetBool("Caminata", true);
+                if(transform.rotation.y != 0)
+                {
+                    transform.rotation = new Quaternion(0.0f,0.0f,0.0f,1.0f );
+            
+                }   
                 rig.AddForce(new Vector2(2, 0) * speed, ForceMode2D.Force);
 
             }
-
-            if (Input.GetKey("a") || Input.GetAxis("HorizontalJoystick1") <= -1)
+            else if (Input.GetKey("a") || Input.GetAxis("HorizontalJoystick1") <= -1)
             {
-
+                m_Animator.SetBool("Caminata", true);
+                if(transform.rotation.y != 180)
+                {
+                    transform.rotation = new Quaternion(0.0f,180.0f,0.0f,1.0f );
+            
+                }  
                 rig.AddForce(new Vector2(-2, 0) * speed, ForceMode2D.Force);
+            }
+            else
+            {
+                m_Animator.SetBool("Caminata", false);
             }
             velocity = rig.velocity;
             if (rig.velocity.x >= 4)
@@ -130,7 +146,13 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("GameOver");
+            if(!defeat)
+            {
+                GameManager.instance.SetPlayers(prefab);
+                defeat = true;
+            }
+            
+           // SceneManager.LoadScene("GameOver");
         }
     }
 

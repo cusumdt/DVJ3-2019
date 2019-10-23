@@ -25,7 +25,7 @@ public class MovementPlayer2 : MonoBehaviour
     public const int RegenStamina = 10;
     public const int MaxStamina = 100;
     public Scrollbar StaminaObj;
-  
+    public Transform player;
         public GameObject IceSkill;
     private bool iceInvoque = false;
     public GameObject[] lifeImage;
@@ -61,15 +61,27 @@ public class MovementPlayer2 : MonoBehaviour
 
             if (Input.GetKey("right") || Input.GetAxis("HorizontalJoystick2") >= 1)
             {
-
+                m_Animator.SetBool("Caminata", true);
+                if(transform.rotation.y != 180)
+                {
+                    transform.rotation = new Quaternion(0.0f,180.0f,0.0f,1.0f );
+                    Debug.Log("A");
+                }    
                 rig.AddForce(new Vector2(2, 0) * speed, ForceMode2D.Force);
 
             }
-
-            if (Input.GetKey("left") || Input.GetAxis("HorizontalJoystick2") <= -1)
+            else if (Input.GetKey("left") || Input.GetAxis("HorizontalJoystick2") <= -1)
             {
-
+                m_Animator.SetBool("Caminata", true);
+                if(transform.rotation.y != 0)
+                {
+                    transform.rotation= new Quaternion(0.0f,0.0f,0.0f,1.0f );
+                }  
                 rig.AddForce(new Vector2(-2, 0) * speed, ForceMode2D.Force);
+            }
+            else
+            {
+                m_Animator.SetBool("Caminata", false);
             }
             velocity = rig.velocity;
             if (rig.velocity.x >= 4)
@@ -106,8 +118,11 @@ public class MovementPlayer2 : MonoBehaviour
                 if (Input.GetKeyDown("[.]") || Input.GetKey("joystick 2 button 1"))
                 {
                     StartCoroutine("Dash");
-                    m_Animator.SetTrigger("Dash");
-                    stamina -= DashCost;
+                    if(Input.GetKey("left") || Input.GetAxis("HorizontalJoystick2") <= -1 || Input.GetKey("right") ||Input.GetAxis("HorizontalJoystick2") >= 1)
+                    {
+                        m_Animator.SetTrigger("Dash");
+                        stamina -= DashCost;
+                    }
                 }
             }
             if (stamina > MaxStamina)

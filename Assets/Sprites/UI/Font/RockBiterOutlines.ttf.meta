@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 5a2e349dac18eb44990dfdea3ebc762a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: RockBiterOutlines
+  fontNames:
+  - RockBiterOutlines
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4ef014ea1c309074087fbb6d8c587ff4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,7 +10,7 @@ public class UISceneButton : MonoBehaviour
     
     [SerializeField]
     private string scene;
-
+    Animator m_Animator;
     void Awake()
     {
         if(button == null)
@@ -18,10 +18,13 @@ public class UISceneButton : MonoBehaviour
             button = GetComponent<Button>();
         }    
         button.onClick.AddListener(OnClick);
+        m_Animator = gameObject.GetComponent<Animator>();
     }
     private void OnClick()
     {
-        SceneManager.LoadScene(scene);
-        Time.timeScale = 1.0f;
+       m_Animator.SetBool("On",true);
     }
+    
+
 }
+

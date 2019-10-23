@@ -27,6 +27,8 @@ public class MovementPlayer2 : MonoBehaviour
     public Scrollbar StaminaObj;
     public Transform player;
         public GameObject IceSkill;
+        public GameObject IceEffectState;
+        private bool effect;
     private bool iceInvoque = false;
     public GameObject[] lifeImage;
     private bool defeat;
@@ -40,6 +42,7 @@ public class MovementPlayer2 : MonoBehaviour
         m_Animator = gameObject.GetComponent<Animator>();
         sprite = gameObject.GetComponent<SpriteRenderer>();
         defeat = false;
+        effect = false;
     }
 
     // Update is called once per frame
@@ -178,9 +181,13 @@ public class MovementPlayer2 : MonoBehaviour
     }
      IEnumerator IceEffect()
     {     
-        sprite.color = new Vector4(0, 0, 255, 255);
+        if(!effect)
+        {
+            effect = true;
+          Instantiate(IceEffectState, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        }
           yield return new WaitForSeconds(2.0f);
-          sprite.color = new Vector4(255, 255, 255, 255);
+          effect = false;
           OnIce = false;
     }
      IEnumerator IceSkillCD()

@@ -26,6 +26,8 @@ public class Movement : MonoBehaviour
     public const int MaxStamina = 100;
     public Scrollbar StaminaObj;
     public GameObject IceSkill;
+      public GameObject IceEffectState;
+        private bool effect;
     private bool iceInvoque = false;
     public GameObject[] lifeImage;
     public GameObject prefab;
@@ -192,9 +194,13 @@ public class Movement : MonoBehaviour
     }
     IEnumerator IceEffect()
     {     
-        sprite.color = new Vector4(0, 0, 255, 255);
+          if(!effect)
+        {
+            effect = true;
+          Instantiate(IceEffectState, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        }
           yield return new WaitForSeconds(2.0f);
-          sprite.color = new Vector4(255, 255, 255, 255);
+          effect = false;
           OnIce = false;
     }
      IEnumerator IceSkillCD()

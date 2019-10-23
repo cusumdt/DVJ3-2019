@@ -117,7 +117,16 @@ public class Movement : MonoBehaviour
                 
                 if (iceInvoque == false)
                 {
-                   Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
+                      if(transform.rotation.y == 0)
+                      {
+                           Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
+                      }
+                      else
+                      {
+                           Instantiate(IceSkill, new Vector3(transform.position.x -1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f,180.0f,0.0f,1.0f));
+                      }
+
+                  
                 }
                  StartCoroutine("IceSkillCD");
             }

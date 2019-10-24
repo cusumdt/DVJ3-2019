@@ -229,7 +229,7 @@ public class Movement : MonoBehaviour
         }
         if (!immune)
         { 
-            if (coll.transform.tag == "EnemyObject")
+            if (coll.transform.tag == "EnemyObject" || coll.transform.tag == "Lava")
             {
                 IfDamage();
                 StartCoroutine("ImmunePlayer");

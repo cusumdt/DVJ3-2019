@@ -123,6 +123,7 @@ public class Movement : MonoBehaviour
                       if(transform.rotation.y == 0)
                       {
                            Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
+                           
                       }
                       else
                       {
@@ -197,7 +198,7 @@ public class Movement : MonoBehaviour
           if(!effect)
         {
             effect = true;
-          Instantiate(IceEffectState, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+          Instantiate(IceEffectState, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
         }
           yield return new WaitForSeconds(2.0f);
           effect = false;
@@ -218,7 +219,7 @@ public class Movement : MonoBehaviour
     }
       void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.transform.tag == "Floor")
+        if (coll.transform.tag == "Floor" || coll.transform.tag == "Player")
         {
           InFloor = true;
         }

@@ -10,6 +10,7 @@ TagManager:
   - CoinCollector
   - Ice
   - LavaCollector
+  - Lava
   layers:
   - Default
   - TransparentFX

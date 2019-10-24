@@ -26,9 +26,9 @@ public class MovementPlayer2 : MonoBehaviour
     public const int MaxStamina = 100;
     public Scrollbar StaminaObj;
     public Transform player;
-        public GameObject IceSkill;
-        public GameObject IceEffectState;
-        private bool effect;
+    public GameObject IceSkill;
+    public GameObject IceEffectState;
+    private bool effect;
     private bool iceInvoque = false;
     public GameObject[] lifeImage;
     private bool defeat;
@@ -184,7 +184,7 @@ public class MovementPlayer2 : MonoBehaviour
         if(!effect)
         {
             effect = true;
-          Instantiate(IceEffectState, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+          Instantiate(IceEffectState, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
         }
           yield return new WaitForSeconds(2.0f);
           effect = false;
@@ -211,7 +211,7 @@ public class MovementPlayer2 : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.transform.tag == "Floor")
+        if (coll.transform.tag == "Floor" || coll.transform.tag == "Player")
         {
           InFloor = true;
         }

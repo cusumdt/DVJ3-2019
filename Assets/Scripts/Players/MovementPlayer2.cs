@@ -101,12 +101,12 @@ public class MovementPlayer2 : MonoBehaviour
             if (Input.GetKey("[.]") && Input.GetKey("left") || Input.GetKey("joystick 2 button 1") && Input.GetAxis("HorizontalJoystick2") <= -1)
             {
                 if (dash == true)
-                    rig.AddForce(new Vector2(-20, 0) * speed, ForceMode2D.Force);
+                    rig.AddForce(new Vector2(-40, 0) * speed, ForceMode2D.Force);
             }
             if (Input.GetKey("[.]") && Input.GetKey("right") || Input.GetKey("joystick 2 button 1") && Input.GetAxis("HorizontalJoystick2") >= 1)
             {
                 if (dash == true)
-                    rig.AddForce(new Vector2(20, 0) * speed, ForceMode2D.Force);
+                    rig.AddForce(new Vector2(40, 0) * speed, ForceMode2D.Force);
             }
              if (Input.GetKey("5"))
             {

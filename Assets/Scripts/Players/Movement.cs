@@ -101,7 +101,7 @@ public class Movement : MonoBehaviour
             {
                 if (dash == true)
                 {
-                    rig.AddForce(new Vector2(-20, 0) * speed, ForceMode2D.Force);
+                    rig.AddForce(new Vector2(-40, 0) * speed, ForceMode2D.Force);
 
                 }
 
@@ -110,7 +110,7 @@ public class Movement : MonoBehaviour
             {
                 if (dash == true)
                 {
-                    rig.AddForce(new Vector2(20, 0) * speed, ForceMode2D.Force);
+                    rig.AddForce(new Vector2(40, 0) * speed, ForceMode2D.Force);
 
                 }
             }

@@ -13,13 +13,15 @@ public class TimeManager : MonoBehaviour
     [SerializeField]
     private float TimeMax;
     public Image ClockImage;
-    public GameObject Lava;
+
+    public GameObject Flecha;
     // Start is called before the first frame update
     void Start()
     {
         
         Clock = TimeMax;
         lavaOn = false;
+
     }
 
     // Update is called once per frame
@@ -34,11 +36,12 @@ public class TimeManager : MonoBehaviour
         {
             if (!lavaOn)
             {
-                Lava.SetActive(true);
-                Lava.transform.position = new Vector3(10.0f, 120.0f, 1.0f);
+                Flecha.SetActive(true);
                 lavaOn = true;
             }
         }
         veamosClock = Clock;
     }
+
+
 }

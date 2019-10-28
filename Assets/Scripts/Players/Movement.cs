@@ -32,6 +32,7 @@ public class Movement : MonoBehaviour
     public GameObject[] lifeImage;
     public GameObject prefab;
     private bool defeat;
+    public bool OnSkill;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,7 @@ public class Movement : MonoBehaviour
         m_Animator = gameObject.GetComponent<Animator>();
         sprite = gameObject.GetComponent<SpriteRenderer>();
         defeat = false;
+        OnSkill = false;
     }
 
     // Update is called once per frame
@@ -51,6 +53,9 @@ public class Movement : MonoBehaviour
             if (OnIce)
             {
                 StartCoroutine("IceEffect");
+            }
+            else if (OnSkill)
+            {
             }
             else
             {
@@ -119,18 +124,9 @@ public class Movement : MonoBehaviour
                 
                 if (iceInvoque == false)
                 {
-                       StartCoroutine("IceSkillCD");
-                      if(transform.rotation.y == 0)
-                      {
-                           Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
-                           
-                      }
-                      else
-                      {
-                           Instantiate(IceSkill, new Vector3(transform.position.x -1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f,180.0f,0.0f,1.0f));
-                      }
-
-                  
+                        StartCoroutine("IceSkillCD");
+                        m_Animator.SetTrigger("IceSkill");
+                        OnSkill = true;
                 }
               
             }
@@ -209,6 +205,24 @@ public class Movement : MonoBehaviour
         iceInvoque = true;
           yield return new WaitForSeconds(5.0f);
         iceInvoque = false;
+    }
+    void IceOn()
+    {
+        
+        if (transform.rotation.y == 0)
+        {
+            Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
+
+        }
+        else
+        {
+            Instantiate(IceSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
+        }
+
+    }
+     void OnSkillSet()
+    {
+        OnSkill = false ;
     }
     void IfDamage()
     {

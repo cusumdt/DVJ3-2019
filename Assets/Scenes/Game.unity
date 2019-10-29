@@ -4231,6 +4231,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5074066211765735991, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074066211765735991, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074066211765735991, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5074066211765735990, guid: 7fc530448fbfb154c8d2451f1e74421f,
         type: 3}
       propertyPath: RespawnPoint.Array.data[0]
@@ -4278,5 +4293,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1938245434200581776, guid: 8a7360f1491e5d84cb71edd2dc6b3f92,
         type: 3}
+    - target: {fileID: 5074066211765735990, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: MeleSkill
+      value: 
+      objectReference: {fileID: 4757197721753227190, guid: 8db0b9a19fafa9749a0fbb824d214924,
+        type: 3}
+    - target: {fileID: 5074066211765735990, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: ActiveSkill
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fc530448fbfb154c8d2451f1e74421f, type: 3}

@@ -26,13 +26,22 @@ public class Movement : MonoBehaviour
     public const int MaxStamina = 100;
     public Scrollbar StaminaObj;
     public GameObject IceSkill;
+    public GameObject MeleSkill;
       public GameObject IceEffectState;
         private bool effect;
     private bool iceInvoque = false;
+    private bool meleInvoque = false;
     public GameObject[] lifeImage;
     public GameObject prefab;
     private bool defeat;
     public bool OnSkill;
+    public enum Skill
+    {
+        none,
+        ice,
+        mele
+    }
+    public Skill ActiveSkill;
     // Start is called before the first frame update
     void Start()
     {
@@ -121,14 +130,27 @@ public class Movement : MonoBehaviour
             }
              if (Input.GetKey("f"))
             {
-                
-                if (iceInvoque == false)
-                {
-                        StartCoroutine("IceSkillCD");
-                        m_Animator.SetTrigger("IceSkill");
-                        OnSkill = true;
-                }
-              
+                    switch (ActiveSkill)
+                    {
+                        case Skill.ice:
+                            if (iceInvoque == false)
+                            {
+                                StartCoroutine("IceSkillCD");
+                                m_Animator.SetTrigger("IceSkill");
+                                OnSkill = true;
+                            }
+                            break;
+                        case Skill.mele:
+                            if (meleInvoque == false)
+                            {
+                                StartCoroutine("MeleSkillCD");
+                                m_Animator.SetTrigger("MeleSkill");
+                            }
+                            break;
+                        default:
+
+                            break;
+                    }
             }
             if (stamina > 0 && stamina >= DashCost)
             {
@@ -206,6 +228,13 @@ public class Movement : MonoBehaviour
           yield return new WaitForSeconds(5.0f);
         iceInvoque = false;
     }
+    IEnumerator MeleSkillCD()
+    {
+        meleInvoque = true;
+        yield return new WaitForSeconds(0.0f);
+        meleInvoque = false;
+    }
+
     void IceOn()
     {
         
@@ -219,6 +248,19 @@ public class Movement : MonoBehaviour
             Instantiate(IceSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
         }
 
+    }   
+
+    void MeleOn()
+    {
+        if (transform.rotation.y == 0)
+        {
+            Instantiate(MeleSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
+
+        }
+        else
+        {
+            Instantiate(MeleSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
+        }
     }
      void OnSkillSet()
     {

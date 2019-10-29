@@ -33,6 +33,9 @@ public class MovementPlayer2 : MonoBehaviour
     public GameObject[] lifeImage;
     private bool defeat;
     public GameObject prefab;
+    public bool OnImpulse;
+    float time;
+    BoxCollider2D boxCollider;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,8 @@ public class MovementPlayer2 : MonoBehaviour
         sprite = gameObject.GetComponent<SpriteRenderer>();
         defeat = false;
         effect = false;
+        time = 0;
+        boxCollider = gameObject.AddComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -52,7 +57,23 @@ public class MovementPlayer2 : MonoBehaviour
         {
             if (OnIce)
             {
-                   StartCoroutine("IceEffect");
+                StartCoroutine("IceEffect");
+            }
+            else if (OnImpulse)
+            {
+                if (!boxCollider.isTrigger)
+                {
+                    boxCollider.isTrigger = true;
+                }
+                var direction = new Vector2(1.0f, 0.6f);
+                rig.AddForce(direction * 3, ForceMode2D.Impulse);
+                time += 1 * Time.deltaTime;
+                if (time>=1.0f)
+                {
+                    boxCollider.isTrigger = false;
+                    OnImpulse = false;
+                    time = 0;
+                }
             }
             else
             {
@@ -229,6 +250,10 @@ public class MovementPlayer2 : MonoBehaviour
              if (coll.transform.tag == "Ice")
             {
                 OnIce = true;
+            }
+            if (coll.transform.tag == "Mele")
+            {
+                OnImpulse = true;
             }
         }
     }

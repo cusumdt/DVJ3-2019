@@ -11,6 +11,7 @@ TagManager:
   - Ice
   - LavaCollector
   - Lava
+  - Mele
   layers:
   - Default
   - TransparentFX

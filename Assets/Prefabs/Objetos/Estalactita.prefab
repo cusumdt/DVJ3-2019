@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8515743847549286324}
   - component: {fileID: 8976152171075210133}
   - component: {fileID: 8976152171075210132}
-  m_Layer: 8
-  m_Name: tomato-1549653_960_720
+  m_Layer: 0
+  m_Name: Estalactita
   m_TagString: EnemyObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf8d3a55cc6a1e45b3d7e88f7611a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Effect: {fileID: 1452764782235801544, guid: 76c10334dd6db354c979606160ad9d99, type: 3}
 --- !u!50 &8976152171075210133
 Rigidbody2D:
   serializedVersion: 4

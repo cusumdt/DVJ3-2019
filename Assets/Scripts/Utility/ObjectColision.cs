@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class ObjectColision : MonoBehaviour
 {
+    public GameObject Effect = null;
+
     void OnCollisionEnter2D(Collision2D coll)
     {
         // If the Collider2D component is enabled on the collided object
-        if (coll.transform.tag == "Player" && this.transform.tag == "EnemyObject" 
-            || coll.transform.tag == "Player" && this.transform.tag == "IcePowerUp" || 
+        if (coll.transform.tag == "Player" && this.transform.tag == "IcePowerUp" || 
             coll.transform.tag == "Floor" && this.transform.tag == "IcePowerUp"||
             coll.transform.tag == "Player" && this.transform.tag == "EmpujePowerUp"||
              coll.transform.tag == "EmpujePowerUp" && this.transform.tag == "IcePowerUp")
         {
-          this.gameObject.SetActive(false);
+            
+            this.gameObject.SetActive(false);
         }
   
     }
@@ -31,5 +33,11 @@ public class ObjectColision : MonoBehaviour
             this.gameObject.SetActive(false);
          
         }
+        if(coll.transform.tag == "Player" && this.transform.tag == "EnemyObject")
+        {
+           Instantiate(Effect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+           this.gameObject.SetActive(false);
+        }
+
     }
 }

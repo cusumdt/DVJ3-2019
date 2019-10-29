@@ -12,6 +12,8 @@ TagManager:
   - LavaCollector
   - Lava
   - Mele
+  - IcePowerUp
+  - EmpujePowerUp
   layers:
   - Default
   - TransparentFX

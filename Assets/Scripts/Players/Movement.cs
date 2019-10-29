@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
+
+    
     public Rigidbody2D rig;
     Vector2 pos;
     public float speed;
@@ -41,6 +43,7 @@ public class Movement : MonoBehaviour
         ice,
         mele
     }
+    static Quaternion myRotation;
     public Skill ActiveSkill;
     // Start is called before the first frame update
     void Start()
@@ -52,6 +55,7 @@ public class Movement : MonoBehaviour
         sprite = gameObject.GetComponent<SpriteRenderer>();
         defeat = false;
         OnSkill = false;
+       
     }
 
     // Update is called once per frame
@@ -59,6 +63,7 @@ public class Movement : MonoBehaviour
     {
         if (Life > 0)
         {
+            myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
             if (OnIce)
             {
                 StartCoroutine("IceEffect");
@@ -303,5 +308,8 @@ public class Movement : MonoBehaviour
         // If the Collider2D component is enabled on the collided object
 
     }
-
+    static public Quaternion GetQuaternion()
+    {
+        return myRotation;
+    }
 }

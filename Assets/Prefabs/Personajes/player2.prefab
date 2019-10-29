@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f03355fd9228c2c469f2b350b3d9bb8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -181,10 +181,14 @@ MonoBehaviour:
   player: {fileID: 3702663527405832668}
   IceSkill: {fileID: 2020779268368178095, guid: 11873dc81bfd0e140b687fdbf2f85084,
     type: 3}
+  IceEffectState: {fileID: 1938245434200581776, guid: 8a7360f1491e5d84cb71edd2dc6b3f92,
+    type: 3}
   lifeImage:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  prefab: {fileID: 0}
+  OnImpulse: 0
 --- !u!61 &3702663527405832669
 BoxCollider2D:
   m_ObjectHideFlags: 0

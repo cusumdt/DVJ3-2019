@@ -135,10 +135,17 @@ MonoBehaviour:
   StaminaObj: {fileID: 0}
   IceSkill: {fileID: 2020779268368178095, guid: 11873dc81bfd0e140b687fdbf2f85084,
     type: 3}
+  MeleSkill: {fileID: 4757197721753227190, guid: 8db0b9a19fafa9749a0fbb824d214924,
+    type: 3}
+  IceEffectState: {fileID: 1938245434200581776, guid: 8a7360f1491e5d84cb71edd2dc6b3f92,
+    type: 3}
   lifeImage:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  prefab: {fileID: 0}
+  OnSkill: 0
+  ActiveSkill: 2
 --- !u!95 &5074066211765735988
 Animator:
   serializedVersion: 3

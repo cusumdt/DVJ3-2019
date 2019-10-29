@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MovementPlayer2 : MonoBehaviour
 {
+
+
     public Rigidbody2D rig;
     Vector2 pos;
     public float speed;
@@ -36,6 +38,7 @@ public class MovementPlayer2 : MonoBehaviour
     public bool OnImpulse;
     float time;
     BoxCollider2D boxCollider;
+    Quaternion rotationEnemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +50,8 @@ public class MovementPlayer2 : MonoBehaviour
         defeat = false;
         effect = false;
         time = 0;
-        boxCollider = gameObject.AddComponent<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
+       
     }
 
     // Update is called once per frame
@@ -61,19 +65,15 @@ public class MovementPlayer2 : MonoBehaviour
             }
             else if (OnImpulse)
             {
-                if (!boxCollider.isTrigger)
+                if (rotationEnemy.y == 0.0f)
                 {
-                    boxCollider.isTrigger = true;
+                    ImpulseDamage(new Vector2(1.0f, 0.6f));
                 }
-                var direction = new Vector2(1.0f, 0.6f);
-                rig.AddForce(direction * 3, ForceMode2D.Impulse);
-                time += 1 * Time.deltaTime;
-                if (time>=1.0f)
+                else
                 {
-                    boxCollider.isTrigger = false;
-                    OnImpulse = false;
-                    time = 0;
+                    ImpulseDamage(new Vector2(-1.0f, 0.6f));
                 }
+                
             }
             else
             {
@@ -253,6 +253,7 @@ public class MovementPlayer2 : MonoBehaviour
             }
             if (coll.transform.tag == "Mele")
             {
+                rotationEnemy = Movement.GetQuaternion();
                 OnImpulse = true;
             }
         }
@@ -262,5 +263,21 @@ public class MovementPlayer2 : MonoBehaviour
         // If the Collider2D component is enabled on the collided object
        
     }
+    void ImpulseDamage(Vector2 direction)
+    {
+        if (!boxCollider.isTrigger)
+        {
+            boxCollider.isTrigger = true;
+        }
+        rig.AddForce(direction * 3, ForceMode2D.Impulse);
+        time += 1 * Time.deltaTime;
+        if (time >= 1.0f)
+        {
+            boxCollider.isTrigger = false;
+            OnImpulse = false;
+            time = 0;
+        }
+    }
+
 
 }

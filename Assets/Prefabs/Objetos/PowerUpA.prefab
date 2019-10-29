@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4391098857592613423}
   - component: {fileID: 4391098857592613422}
   m_Layer: 0
-  m_Name: coin_PNG36868
-  m_TagString: Coin
+  m_Name: PowerUpA
+  m_TagString: IcePowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

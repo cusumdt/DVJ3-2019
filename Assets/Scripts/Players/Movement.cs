@@ -143,6 +143,7 @@ public class Movement : MonoBehaviour
                                 StartCoroutine("IceSkillCD");
                                 m_Animator.SetTrigger("IceSkill");
                                 OnSkill = true;
+                                ActiveSkill = Skill.none;
                             }
                             break;
                         case Skill.mele:
@@ -150,6 +151,7 @@ public class Movement : MonoBehaviour
                             {
                                 StartCoroutine("MeleSkillCD");
                                 m_Animator.SetTrigger("MeleSkill");
+                                ActiveSkill = Skill.none;
                             }
                             break;
                         default:
@@ -230,7 +232,7 @@ public class Movement : MonoBehaviour
      IEnumerator IceSkillCD()
     {     
         iceInvoque = true;
-          yield return new WaitForSeconds(5.0f);
+          yield return new WaitForSeconds(2.0f);
         iceInvoque = false;
     }
     IEnumerator MeleSkillCD()
@@ -305,7 +307,14 @@ public class Movement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        // If the Collider2D component is enabled on the collided object
+        if (coll.transform.tag == "IcePowerUp")
+        {
+            ActiveSkill = Skill.ice;
+        }
+        if (coll.transform.tag == "EmpujePowerUp")
+        {
+            ActiveSkill = Skill.mele;
+        }
 
     }
     static public Quaternion GetQuaternion()

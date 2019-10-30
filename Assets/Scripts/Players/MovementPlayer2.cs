@@ -269,7 +269,7 @@ public class MovementPlayer2 : MonoBehaviour
         {
             boxCollider.isTrigger = true;
         }
-        rig.AddForce(direction * 3, ForceMode2D.Impulse);
+        rig.AddForce(direction * 1, ForceMode2D.Impulse);
         time += 1 * Time.deltaTime;
         if (time >= 1.0f)
         {

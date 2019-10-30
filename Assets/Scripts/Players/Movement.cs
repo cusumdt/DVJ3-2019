@@ -53,9 +53,14 @@ public class Movement : MonoBehaviour
         mele
     }
     static Quaternion myRotation;
+    Quaternion rotation;
     public Skill ActiveSkill;
     BoxCollider2D boxCollider;
     private Quaternion rotationEnemy;
+
+    static private bool pause;
+
+        private bool OnDash;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +79,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!pause)
+        {
         if (Life > 0)
         {
             myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
@@ -95,6 +102,17 @@ public class Movement : MonoBehaviour
                     ImpulseDamage(new Vector2(-1.0f, 0.6f));
                 }
                 
+            }
+            else if(OnDash)
+            {
+                 if (rotation.y == 0.0f)
+                {
+                    ImpulseDash(Vector2.right);
+                }
+                else
+                {
+                    ImpulseDash(Vector2.left);
+                }
             }
             else
             {
@@ -141,24 +159,8 @@ public class Movement : MonoBehaviour
             {
                 rig.velocity = new Vector2(-4, rig.velocity.y);
             }
-            if (Input.GetKey("left shift") && Input.GetKey("a") || Input.GetKey("joystick 1 button 1") && Input.GetAxis("HorizontalJoystick1") <= -1)
-            {
-                if (dash == true)
-                {
-                    rig.AddForce(new Vector2(-40, 0) * speed, ForceMode2D.Force);
-
-                }
-
-            }
-            if (Input.GetKey("left shift") && Input.GetKey("d") || Input.GetKey("joystick 1 button 1") && Input.GetAxis("HorizontalJoystick1") >= 1)
-            {
-                if (dash == true)
-                {
-                    rig.AddForce(new Vector2(40, 0) * speed, ForceMode2D.Force);
-
-                }
-            }
-             if (Input.GetKey("f"))
+          
+             if (Input.GetKey("f")|| Input.GetKey("joystick 1 button 2"))
             {
                     switch (ActiveSkill)
                     {
@@ -189,12 +191,13 @@ public class Movement : MonoBehaviour
             if (stamina > 0 && stamina >= DashCost)
             {
 
-                if (Input.GetKeyDown("left shift") || Input.GetKey("joystick 1 button 1"))
+                if (Input.GetKeyDown("left shift") || Input.GetKeyDown("joystick 1 button 1"))
                 {
-                    StartCoroutine("Dash");
-                    //rig.AddForce(new Vector2(100, 0) * speed, ForceMode2D.Force);
+                     StartCoroutine("Dash");
+                     rotation = new Quaternion(transform.rotation.x,transform.rotation.y,transform.rotation.z,1.0f);
                     m_Animator.SetTrigger("Dash");
                     stamina -= DashCost;
+                    OnDash = true;
                 }
             }
             if (stamina > MaxStamina)
@@ -218,6 +221,7 @@ public class Movement : MonoBehaviour
             }
             
            // SceneManager.LoadScene("GameOver");
+        }
         }
     }
 
@@ -368,5 +372,23 @@ public class Movement : MonoBehaviour
             OnImpulse = false;
             time = 0;
         }
+    }
+        void ImpulseDash(Vector2 direction)
+    {
+        rig.velocity = direction * 30;
+        time += 1 * Time.deltaTime;
+        if (time >= 0.5f)
+        {
+            OnDash = false;
+            time = 0;
+        }
+    }
+    static public void SetPause(bool _pause)
+    {
+        pause = _pause;
+    }
+     static public bool GetPause()
+    {
+        return pause;
     }
 }

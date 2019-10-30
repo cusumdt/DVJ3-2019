@@ -54,9 +54,11 @@ public class MovementPlayer2 : MonoBehaviour
         ice,
         mele
     }
-    static Quaternion myRotation;
+    Quaternion myRotation;
     public Skill ActiveSkill;
     private Quaternion rotationEnemy;
+    static private bool pause;
+    private bool OnDash;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +77,8 @@ public class MovementPlayer2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!pause)
+        {
         if (Life > 0)
         {
             if (OnIce)
@@ -83,6 +87,7 @@ public class MovementPlayer2 : MonoBehaviour
             }
             else if (OnImpulse)
             {
+               
                 if (rotationEnemy.y == 0.0f)
                 {
                     ImpulseDamage(new Vector2(1.0f, 0.6f));
@@ -95,6 +100,17 @@ public class MovementPlayer2 : MonoBehaviour
             }
             else if (OnSkill)
             {
+            }
+            else if(OnDash)
+            {
+                 if (myRotation.y == 0.0f)
+                {
+                    ImpulseDash(Vector2.left);
+                }
+                else
+                {
+                    ImpulseDash(Vector2.right);
+                }
             }
             else
             {
@@ -140,17 +156,7 @@ public class MovementPlayer2 : MonoBehaviour
             {
                 rig.velocity = new Vector2(-4, rig.velocity.y);
             }
-            if (Input.GetKey("[.]") && Input.GetKey("left") || Input.GetKey("joystick 2 button 1") && Input.GetAxis("HorizontalJoystick2") <= -1)
-            {
-                if (dash == true)
-                    rig.AddForce(new Vector2(-40, 0) * speed, ForceMode2D.Force);
-            }
-            if (Input.GetKey("[.]") && Input.GetKey("right") || Input.GetKey("joystick 2 button 1") && Input.GetAxis("HorizontalJoystick2") >= 1)
-            {
-                if (dash == true)
-                    rig.AddForce(new Vector2(40, 0) * speed, ForceMode2D.Force);
-            }
-             if (Input.GetKey("5"))
+             if (Input.GetKey("5") || Input.GetKey("joystick 2 button 2") )
             {
                 
                 switch (ActiveSkill)
@@ -183,14 +189,13 @@ public class MovementPlayer2 : MonoBehaviour
             if (stamina > 0 && stamina >= DashCost)
             {
              
-                if (Input.GetKeyDown("[.]") || Input.GetKey("joystick 2 button 1"))
+                if (Input.GetKeyDown("[.]") || Input.GetKeyDown("joystick 2 button 1"))
                 {
                     StartCoroutine("Dash");
-                    if(Input.GetKey("left") || Input.GetAxis("HorizontalJoystick2") <= -1 || Input.GetKey("right") ||Input.GetAxis("HorizontalJoystick2") >= 1)
-                    {
-                        m_Animator.SetTrigger("Dash");
-                        stamina -= DashCost;
-                    }
+                     myRotation = new Quaternion(transform.rotation.x,transform.rotation.y,transform.rotation.z,1.0f);
+                    m_Animator.SetTrigger("Dash");
+                    stamina -= DashCost;
+                    OnDash = true;
                 }
             }
             if (stamina > MaxStamina)
@@ -213,7 +218,7 @@ public class MovementPlayer2 : MonoBehaviour
             }
 
         }
-
+        }
     }
 
     IEnumerator Impulse()
@@ -359,6 +364,23 @@ public class MovementPlayer2 : MonoBehaviour
             time = 0;
         }
     }
-
+    void ImpulseDash(Vector2 direction)
+    {
+        rig.velocity = direction * 30;
+        time += 1 * Time.deltaTime;
+        if (time >= 0.5f)
+        {
+            OnDash = false;
+            time = 0;
+        }
+    }
+     static public void SetPause(bool _pause)
+    {
+        pause = _pause;
+    }
+     static public bool GetPause()
+    {
+        return pause;
+    }
 
 }

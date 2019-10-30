@@ -41,6 +41,10 @@ public class Movement : MonoBehaviour
     public GameObject[] lifeImage;
     public GameObject prefab;
     private bool defeat;
+    public bool OnImpulse;
+    float time;
+
+
     public bool OnSkill;
     public enum Skill
     {
@@ -50,6 +54,8 @@ public class Movement : MonoBehaviour
     }
     static Quaternion myRotation;
     public Skill ActiveSkill;
+    BoxCollider2D boxCollider;
+    private Quaternion rotationEnemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +67,7 @@ public class Movement : MonoBehaviour
         defeat = false;
         OnSkill = false;
         ActiveSkill = Skill.none;
+        boxCollider = GetComponent<BoxCollider2D>();
        
     }
 
@@ -76,6 +83,18 @@ public class Movement : MonoBehaviour
             }
             else if (OnSkill)
             {
+            }
+               else if (OnImpulse)
+            {
+                if (rotationEnemy.y == 0.0f)
+                {
+                    ImpulseDamage(new Vector2(1.0f, 0.6f));
+                }
+                else
+                {
+                    ImpulseDamage(new Vector2(-1.0f, 0.6f));
+                }
+                
             }
             else
             {
@@ -269,12 +288,12 @@ public class Movement : MonoBehaviour
     {
         if (transform.rotation.y == 0)
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(MeleSkill, new Vector3(transform.position.x + 1.5F, transform.position.y, transform.position.z), Quaternion.identity);
 
         }
         else
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
+            Instantiate(MeleSkill, new Vector3(transform.position.x - 1.5F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
         }
     }
      void OnSkillSet()
@@ -288,7 +307,7 @@ public class Movement : MonoBehaviour
         transform.position = new Vector3 (RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y,0.0f);
         lifeImage[Life].SetActive(false);
     }
-      void OnTriggerEnter2D(Collider2D coll)
+    void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.transform.tag == "Floor" || coll.transform.tag == "Player")
         {
@@ -298,19 +317,23 @@ public class Movement : MonoBehaviour
         {
             InFloor = false;
         }
-        if (!immune)
-        { 
+         if (!immune)
+        {
             if (coll.transform.tag == "EnemyObject" || coll.transform.tag == "Lava")
             {
                 IfDamage();
                 StartCoroutine("ImmunePlayer");
             }
-            if (coll.transform.tag == "Ice")
+             if (coll.transform.tag == "Ice")
             {
                 OnIce = true;
             }
+            if (coll.transform.tag == "Mele")
+            {
+                rotationEnemy = Movement.GetQuaternion();
+                OnImpulse = true;
+            }
         }
-
     }
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -330,5 +353,20 @@ public class Movement : MonoBehaviour
     static public Quaternion GetQuaternion()
     {
         return myRotation;
+    }
+        void ImpulseDamage(Vector2 direction)
+    {
+        if (!boxCollider.isTrigger)
+        {
+            boxCollider.isTrigger = true;
+        }
+        rig.AddForce(direction * 1, ForceMode2D.Impulse);
+        time += 1 * Time.deltaTime;
+        if (time >= 1.0f)
+        {
+            boxCollider.isTrigger = false;
+            OnImpulse = false;
+            time = 0;
+        }
     }
 }

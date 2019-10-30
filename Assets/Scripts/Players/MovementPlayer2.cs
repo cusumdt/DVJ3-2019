@@ -7,6 +7,12 @@ public class MovementPlayer2 : MonoBehaviour
 {
 
 
+     public Sprite PowerUpHielo;
+    public Sprite nothing;
+    public Sprite PowerUpEmpuje;
+    public Image PowerUpUI;
+
+
     public Rigidbody2D rig;
     Vector2 pos;
     public float speed;
@@ -32,13 +38,25 @@ public class MovementPlayer2 : MonoBehaviour
     public GameObject IceEffectState;
     private bool effect;
     private bool iceInvoque = false;
+    private bool meleInvoque = false;
     public GameObject[] lifeImage;
     private bool defeat;
     public GameObject prefab;
     public bool OnImpulse;
     float time;
+    public GameObject MeleSkill;
+    public bool OnSkill;
     BoxCollider2D boxCollider;
-    Quaternion rotationEnemy;
+
+    public enum Skill
+    {
+        none,
+        ice,
+        mele
+    }
+    static Quaternion myRotation;
+    public Skill ActiveSkill;
+    private Quaternion rotationEnemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +92,9 @@ public class MovementPlayer2 : MonoBehaviour
                     ImpulseDamage(new Vector2(-1.0f, 0.6f));
                 }
                 
+            }
+            else if (OnSkill)
+            {
             }
             else
             {
@@ -132,20 +153,31 @@ public class MovementPlayer2 : MonoBehaviour
              if (Input.GetKey("5"))
             {
                 
-                if (iceInvoque == false)
-                {
-                         StartCoroutine("IceSkillCD");
-                      if(transform.rotation.y == 0)
-                      {
-                           Instantiate(IceSkill, new Vector3(transform.position.x -1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f,180.0f,0.0f,1.0f));
-                          
-                      }
-                      else
-                      {
-                           Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
-                      }
+                switch (ActiveSkill)
+                    {
+                        case Skill.ice:
+                            if (iceInvoque == false)
+                            {
+                                StartCoroutine("IceSkillCD");
+                                m_Animator.SetTrigger("IceSkill");
+                                OnSkill = true;
+                                ActiveSkill = Skill.none;
+                                PowerUpUI.sprite = nothing;
+                            }
+                            break;
+                        case Skill.mele:
+                            if (meleInvoque == false)
+                            {
+                                StartCoroutine("MeleSkillCD");
+                                m_Animator.SetTrigger("MeleSkill");
+                                ActiveSkill = Skill.none;
+                                 PowerUpUI.sprite = nothing;
+                            }
+                            break;
+                        default:
 
-                }
+                            break;
+                    }
             }
             }
             if (stamina > 0 && stamina >= DashCost)
@@ -211,12 +243,48 @@ public class MovementPlayer2 : MonoBehaviour
           effect = false;
           OnIce = false;
     }
-     IEnumerator IceSkillCD()
+   IEnumerator IceSkillCD()
     {     
         iceInvoque = true;
-          yield return new WaitForSeconds(5.0f);
+          yield return new WaitForSeconds(2.0f);
         iceInvoque = false;
     }
+    void IceOn()
+    {
+        
+        if (transform.rotation.y == 0)
+        {
+            Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
+
+        }
+        else
+        {
+            Instantiate(IceSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
+        }
+
+    }   
+
+    void MeleOn()
+    {
+        if (transform.rotation.y == 0)
+        {
+            Instantiate(MeleSkill, new Vector3(transform.position.x + 1.5F, transform.position.y, transform.position.z), Quaternion.identity);
+
+        }
+        else
+        {
+            Instantiate(MeleSkill, new Vector3(transform.position.x - 1.5F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
+        }
+    }
+    IEnumerator MeleSkillCD()
+    {
+        meleInvoque = true;
+        yield return new WaitForSeconds(0.0f);
+        meleInvoque = false;
+    }
+
+    
+
     IEnumerator Dash()
     {
         dash = true;
@@ -258,11 +326,22 @@ public class MovementPlayer2 : MonoBehaviour
             }
         }
     }
+
     void OnCollisionEnter2D(Collision2D coll)
     {
-        // If the Collider2D component is enabled on the collided object
-       
+        if (coll.transform.tag == "IcePowerUp")
+        {
+            PowerUpUI.sprite = PowerUpHielo;
+            ActiveSkill = Skill.ice;
+        }
+        if (coll.transform.tag == "EmpujePowerUp")
+        {
+            PowerUpUI.sprite = PowerUpEmpuje;
+            ActiveSkill = Skill.mele;
+        }
+
     }
+    
     void ImpulseDamage(Vector2 direction)
     {
         if (!boxCollider.isTrigger)

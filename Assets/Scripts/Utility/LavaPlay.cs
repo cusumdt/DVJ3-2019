@@ -9,7 +9,7 @@ public class LavaPlay : MonoBehaviour
     public void LavaOn()
     {
         Obj.SetActive(true);
-        Obj.transform.position = new Vector3(10.0f, 120.0f, 1.0f);
+        Obj.transform.position = new Vector3(15.0f, 200.0f, 1.0f);
         this.gameObject.SetActive(false);
     }
     public void PointerOn()

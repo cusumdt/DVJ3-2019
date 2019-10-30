@@ -7,6 +7,11 @@ public class Movement : MonoBehaviour
 {
 
     
+    public Sprite PowerUpHielo;
+    public Sprite nothing;
+    public Sprite PowerUpEmpuje;
+    public Image PowerUpUI;
+
     public Rigidbody2D rig;
     Vector2 pos;
     public float speed;
@@ -55,6 +60,7 @@ public class Movement : MonoBehaviour
         sprite = gameObject.GetComponent<SpriteRenderer>();
         defeat = false;
         OnSkill = false;
+        ActiveSkill = Skill.none;
        
     }
 
@@ -144,6 +150,7 @@ public class Movement : MonoBehaviour
                                 m_Animator.SetTrigger("IceSkill");
                                 OnSkill = true;
                                 ActiveSkill = Skill.none;
+                                PowerUpUI.sprite = nothing;
                             }
                             break;
                         case Skill.mele:
@@ -152,6 +159,7 @@ public class Movement : MonoBehaviour
                                 StartCoroutine("MeleSkillCD");
                                 m_Animator.SetTrigger("MeleSkill");
                                 ActiveSkill = Skill.none;
+                                 PowerUpUI.sprite = nothing;
                             }
                             break;
                         default:
@@ -309,10 +317,12 @@ public class Movement : MonoBehaviour
     {
         if (coll.transform.tag == "IcePowerUp")
         {
+            PowerUpUI.sprite = PowerUpHielo;
             ActiveSkill = Skill.ice;
         }
         if (coll.transform.tag == "EmpujePowerUp")
         {
+            PowerUpUI.sprite = PowerUpEmpuje;
             ActiveSkill = Skill.mele;
         }
 

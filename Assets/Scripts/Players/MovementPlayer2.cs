@@ -259,11 +259,11 @@ public class MovementPlayer2 : MonoBehaviour
         
         if (transform.rotation.y == 0)
         {
-            Instantiate(IceSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
+            Instantiate(IceSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
         }
         else
         {
-            Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
         }
 
     }   
@@ -272,11 +272,11 @@ public class MovementPlayer2 : MonoBehaviour
     {
         if (transform.rotation.y == 0)
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x - 1.5F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
+            Instantiate(MeleSkill, new Vector3(transform.position.x - 1.5F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
         }
         else
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x + 1.5F, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(MeleSkill, new Vector3(transform.position.x + 1.5F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
         }
     }
         void OnSkillSet()
@@ -355,7 +355,7 @@ public class MovementPlayer2 : MonoBehaviour
         {
             boxCollider.isTrigger = true;
         }
-        rig.AddForce(direction * 1, ForceMode2D.Impulse);
+        rig.AddForce(direction * 2, ForceMode2D.Impulse);
         time += 1 * Time.deltaTime;
         if (time >= 1.0f)
         {

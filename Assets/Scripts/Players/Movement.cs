@@ -216,11 +216,11 @@ public class Movement : MonoBehaviour
         {
             if(!defeat)
             {
+                MultipleTargetCamera.SetTargets(this.transform, 1);
                 GameManager.instance.SetPlayers(prefab);
                 defeat = true;
             }
-            
-           // SceneManager.LoadScene("GameOver");
+          
         }
         }
     }

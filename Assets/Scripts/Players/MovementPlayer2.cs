@@ -208,13 +208,14 @@ public class MovementPlayer2 : MonoBehaviour
             {
                 stamina += RegenStamina * Time.deltaTime;
             }
-            StaminaObj.size = stamina / 100;
+            StaminaObj.size = stamina / MaxStamina;
          
         }
         else
         {
             if(!defeat)
             {
+                MultipleTargetCamera.SetTargets(transform, 1);
                 GameManager.instance.SetPlayers(prefab);
                 defeat = true;
             }

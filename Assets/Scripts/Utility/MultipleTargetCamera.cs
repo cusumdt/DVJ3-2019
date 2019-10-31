@@ -16,20 +16,25 @@ public class MultipleTargetCamera : MonoBehaviour
     private Vector3 velocity;
     private Camera cam;
 
+    static public int cantTargets;
+    static public Transform target;
     void Start()
     {
         cam = GetComponent<Camera>();
+        cantTargets = 2;
     }
 
 
 
     void LateUpdate()
     {
+        
         if (targets.Count == 0)
             return;
 
         Move();
         Zoom();
+ 
     }
     void Zoom()
     {
@@ -45,10 +50,25 @@ public class MultipleTargetCamera : MonoBehaviour
     }
     float GetGreatestDistance()
     {
-        var bounds = new Bounds(targets[0].position, Vector3.zero);
+        Bounds bounds;
+        if (cantTargets != 1)
+        {
+            bounds = new Bounds(targets[0].position, Vector3.zero);
+        }
+        else
+        {
+            bounds = new Bounds(target.position, Vector3.zero);
+        }
         for (int i = 0; i < targets.Count; i++)
         {
-            bounds.Encapsulate(targets[i].position);
+            if (cantTargets != 1)
+            {
+                bounds.Encapsulate(targets[i].position);
+            }
+            else
+            {
+                bounds.Encapsulate(target.position);
+            }
         }
         return bounds.size.x;
     }
@@ -58,11 +78,33 @@ public class MultipleTargetCamera : MonoBehaviour
         {
             return targets[0].position;
         }
-        var bounds = new Bounds(targets[0].position, Vector3.zero);
+        Bounds bounds;
+        if (cantTargets != 1)
+        {
+            bounds = new Bounds(targets[0].position, Vector3.zero);
+        }
+        else {
+           bounds = new Bounds(target.position, Vector3.zero);
+        }
+        
         for (int i = 0; i < targets.Count; i++)
         {
-            bounds.Encapsulate(targets[i].position);
+            if (cantTargets != 1)
+            {
+                bounds.Encapsulate(targets[i].position);
+            }
+            else
+            {
+                bounds.Encapsulate(target.position);
+            }
+
+          
         }
         return bounds.center;
+    }
+    static public void SetTargets(Transform _target, int _cantTargets)
+    {
+        target = _target;
+        cantTargets = _cantTargets;
     }
 }

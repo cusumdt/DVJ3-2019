@@ -46,7 +46,7 @@ public class MovementPlayer2 : MonoBehaviour
     float time;
     public GameObject MeleSkill;
     public bool OnSkill;
-    BoxCollider2D boxCollider;
+    CircleCollider2D boxCollider;
 
     public enum Skill
     {
@@ -75,7 +75,7 @@ public class MovementPlayer2 : MonoBehaviour
         defeat = false;
         effect = false;
         time = 0;
-        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<CircleCollider2D>();
        
     }
 

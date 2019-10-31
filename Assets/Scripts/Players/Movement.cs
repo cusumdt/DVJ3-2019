@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour
     static Quaternion myRotation;
     Quaternion rotation;
     public Skill ActiveSkill;
-    BoxCollider2D boxCollider;
+    CircleCollider2D boxCollider;
     private Quaternion rotationEnemy;
 
     static private bool pause;
@@ -73,7 +73,7 @@ public class Movement : MonoBehaviour
         defeat = false;
         OnSkill = false;
         ActiveSkill = Skill.none;
-        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<CircleCollider2D>();
        
     }
 
@@ -261,7 +261,6 @@ public class Movement : MonoBehaviour
     {
         dash = true;
         yield return new WaitForSeconds(0.2f);
-        gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
         dash = false;
     }
     IEnumerator IceEffect()

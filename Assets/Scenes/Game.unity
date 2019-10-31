@@ -9718,7 +9718,7 @@ PrefabInstance:
     - target: {fileID: 4030684766200301447, guid: 8c9a5cfe611d86f4896b46392dde0243,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.15
+      value: -1.15
       objectReference: {fileID: 0}
     - target: {fileID: 7024644137994495363, guid: 8c9a5cfe611d86f4896b46392dde0243,
         type: 3}
@@ -10407,6 +10407,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4757197721753227190, guid: 8db0b9a19fafa9749a0fbb824d214924,
         type: 3}
+    - target: {fileID: 3702663527405832657, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: Flecha
+      value: 
+      objectReference: {fileID: 7106138741900816339, guid: 131d24fb7d37b144e91b9605f40e66f5,
+        type: 3}
+    - target: {fileID: 3702663527405832657, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: Damage
+      value: 
+      objectReference: {fileID: 6008400595598998681, guid: 60674a1662432ef4f85c9d78bb7ff20f,
+        type: 3}
+    - target: {fileID: 3702663527405832657, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: Respawn
+      value: 
+      objectReference: {fileID: 1365796913260633898, guid: 284273788fbb1d54a82a5a21285ec4aa,
+        type: 3}
     - target: {fileID: 3702663527405832663, guid: 86f677a265ea6fe4baba22aee4c75c71,
         type: 3}
       propertyPath: m_Offset.y
@@ -10555,6 +10573,24 @@ PrefabInstance:
       propertyPath: PowerUpUI
       value: 
       objectReference: {fileID: 1002466973}
+    - target: {fileID: 5074066211765735990, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: Damage
+      value: 
+      objectReference: {fileID: 6008400595598998681, guid: 60674a1662432ef4f85c9d78bb7ff20f,
+        type: 3}
+    - target: {fileID: 5074066211765735990, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: Respawn
+      value: 
+      objectReference: {fileID: 1365796913260633898, guid: 284273788fbb1d54a82a5a21285ec4aa,
+        type: 3}
+    - target: {fileID: 5074066211765735990, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: Flecha
+      value: 
+      objectReference: {fileID: 7106138741900816339, guid: 2f690ce533396f34ba78d34bc9772ba2,
+        type: 3}
     - target: {fileID: 5074066211765735977, guid: 7fc530448fbfb154c8d2451f1e74421f,
         type: 3}
       propertyPath: m_Offset.y

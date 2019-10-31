@@ -60,6 +60,10 @@ public class MovementPlayer2 : MonoBehaviour
     private Quaternion rotationEnemy;
     static private bool pause;
     private bool OnDash;
+    public GameObject Damage;
+    public GameObject Respawn;
+    public GameObject Flecha;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -235,10 +239,19 @@ public class MovementPlayer2 : MonoBehaviour
     IEnumerator ImmunePlayer()
     {
         immune = true;
-        sprite.color = new Vector4(255, 255, 0, 255);
-        yield return new WaitForSeconds(2.0f);
-        sprite.color = new Vector4(255, 255, 255, 255);
-        immune = false;
+        sprite.color = new Vector4(255, 255, 255, 0);
+        OnSkill = true;
+        if (Life > 0)
+        {
+            Instantiate(Flecha, new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.identity);
+            yield return new WaitForSeconds(2.0f);
+            OnSkill = false;
+            Instantiate(Respawn, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            sprite.color = new Vector4(255, 255, 0, 255);
+            yield return new WaitForSeconds(2.0f);
+            sprite.color = new Vector4(255, 255, 255, 255);
+            immune = false;
+        }
     }
      IEnumerator IceEffect()
     {     
@@ -276,11 +289,11 @@ public class MovementPlayer2 : MonoBehaviour
         Debug.Log("dalepibe");
         if (transform.rotation.y == 0)
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x - 1.0f, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
+            Instantiate(MeleSkill, new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
         }
         else
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x + 1.0f, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
+            Instantiate(MeleSkill, new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
         }
     }
         void OnSkillSet()
@@ -305,8 +318,13 @@ public class MovementPlayer2 : MonoBehaviour
     void IfDamage()
     {
         Life--;
-        int randomPoint = Random.Range(0, 3);
-        transform.position = new Vector3(RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y, 0.0f);
+
+        Instantiate(Damage, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        if (Life > 0)
+        {
+            int randomPoint = Random.Range(0, 3);
+            transform.position = new Vector3(RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y, 0.0f);
+        }
         lifeImage[Life].SetActive(false);
     }
     void OnTriggerEnter2D(Collider2D coll)

@@ -43,8 +43,9 @@ public class Movement : MonoBehaviour
     private bool defeat;
     public bool OnImpulse;
     float time;
-
-
+    public GameObject Damage;
+    public GameObject Respawn;
+    public GameObject Flecha;
     public bool OnSkill;
     public enum Skill
     {
@@ -235,11 +236,21 @@ public class Movement : MonoBehaviour
     }
     IEnumerator ImmunePlayer()
     {
+        
         immune = true;
+        sprite.color = new Vector4(255, 255, 255, 0);
+        OnSkill = true;
+        if (Life > 0)
+        {
+        Instantiate(Flecha, new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.identity);
+        yield return new WaitForSeconds(2.0f);
+        OnSkill = false;
+        Instantiate(Respawn, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         sprite.color = new Vector4(255, 255, 0, 255);
         yield return new WaitForSeconds(2.0f);
         sprite.color = new Vector4(255, 255, 255, 255);
         immune = false;
+        }
     }
 
     IEnumerator Dash()
@@ -292,12 +303,12 @@ public class Movement : MonoBehaviour
     {
         if (transform.rotation.y == 0)
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
+            Instantiate(MeleSkill, new Vector3(transform.position.x + 0.5F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
 
         }
         else
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
+            Instantiate(MeleSkill, new Vector3(transform.position.x - 0.5F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
         }
     }
      void OnSkillSet()
@@ -307,8 +318,13 @@ public class Movement : MonoBehaviour
     void IfDamage()
     {
         Life--;
-        int randomPoint = Random.Range(0, 3);
-        transform.position = new Vector3 (RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y,0.0f);
+
+        Instantiate(Damage, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        if (Life > 0)
+        { 
+            int randomPoint = Random.Range(0, 3);
+            transform.position = new Vector3(RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y, 0.0f);
+        }
         lifeImage[Life].SetActive(false);
     }
     void OnTriggerEnter2D(Collider2D coll)

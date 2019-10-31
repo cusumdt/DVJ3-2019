@@ -92,7 +92,7 @@ public class Movement : MonoBehaviour
             else if (OnSkill)
             {
             }
-               else if (OnImpulse)
+            else if (OnImpulse)
             {
                 if (rotationEnemy.y == 0.0f)
                 {
@@ -238,11 +238,15 @@ public class Movement : MonoBehaviour
     {
         
         immune = true;
+        OnImpulse = false;
+        rig.velocity = Vector3.zero;
         sprite.color = new Vector4(255, 255, 255, 0);
         OnSkill = true;
+        boxCollider.isTrigger = false;
         if (Life > 0)
         {
-        Instantiate(Flecha, new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.identity);
+          
+            Instantiate(Flecha, new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.identity);
         yield return new WaitForSeconds(2.0f);
         OnSkill = false;
         Instantiate(Respawn, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
@@ -326,6 +330,7 @@ public class Movement : MonoBehaviour
             transform.position = new Vector3(RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y, 0.0f);
         }
 
+
         TraumaInducer.Shake();
         
         lifeImage[Life].SetActive(false);
@@ -386,6 +391,11 @@ public class Movement : MonoBehaviour
         }
         rig.AddForce(direction * 2, ForceMode2D.Impulse);
         time += 1 * Time.deltaTime;
+        if (OnImpulse == false)
+        {
+            boxCollider.isTrigger = false;
+        }
+
         if (time >= 1.0f)
         {
             boxCollider.isTrigger = false;

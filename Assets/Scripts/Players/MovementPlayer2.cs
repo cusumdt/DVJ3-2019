@@ -91,6 +91,9 @@ public class MovementPlayer2 : MonoBehaviour
             {
                 StartCoroutine("IceEffect");
             }
+            else if (OnSkill)
+            {
+            }
             else if (OnImpulse)
             {
                
@@ -104,9 +107,7 @@ public class MovementPlayer2 : MonoBehaviour
                 }
                 
             }
-            else if (OnSkill)
-            {
-            }
+           
             else if(OnDash)
             {
                  if (myRotation.y == 0.0f)
@@ -241,6 +242,9 @@ public class MovementPlayer2 : MonoBehaviour
         immune = true;
         sprite.color = new Vector4(255, 255, 255, 0);
         OnSkill = true;
+        OnImpulse = false;
+        rig.velocity = Vector3.zero;
+        boxCollider.isTrigger = false;
         if (Life > 0)
         {
             Instantiate(Flecha, new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.identity);
@@ -325,10 +329,10 @@ public class MovementPlayer2 : MonoBehaviour
             int randomPoint = Random.Range(0, 3);
             transform.position = new Vector3(RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y, 0.0f);
         }
-       
+
 
         TraumaInducer.Shake();
-      
+
         lifeImage[Life].SetActive(false);
     }
     void OnTriggerEnter2D(Collider2D coll)
@@ -384,6 +388,10 @@ public class MovementPlayer2 : MonoBehaviour
         }
         rig.AddForce(direction * 2, ForceMode2D.Impulse);
         time += 1 * Time.deltaTime;
+        if (OnImpulse == false)
+        {
+            boxCollider.isTrigger = false;
+        }
         if (time >= 1.0f)
         {
             boxCollider.isTrigger = false;

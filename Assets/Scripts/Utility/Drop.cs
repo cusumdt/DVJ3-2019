@@ -78,6 +78,8 @@ public class Drop : MonoBehaviour
         {
             if(i < cantBadObject)
             {
+                float Scale = Random.Range(0.8f, 1.6f);
+                BadDrop[i].transform.localScale = new Vector3(Scale, Scale, 1.0f); 
                 DropItem[i] = Instantiate(BadDrop[i], new Vector3(Random.Range(-10.0f,10.0f), Random.Range(13.0f,18.0f), 0), Quaternion.identity);
                 DropItem[i].SetActive(false);
             }

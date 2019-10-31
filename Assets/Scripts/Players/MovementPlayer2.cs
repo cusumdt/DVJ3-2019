@@ -333,6 +333,7 @@ public class MovementPlayer2 : MonoBehaviour
             if (coll.transform.tag == "Mele")
             {
                 rotationEnemy = Movement.GetQuaternion();
+                TraumaInducer.Shake();
                 OnImpulse = true;
             }
         }

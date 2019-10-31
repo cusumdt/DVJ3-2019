@@ -292,12 +292,12 @@ public class Movement : MonoBehaviour
     {
         if (transform.rotation.y == 0)
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x + 1.5F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
+            Instantiate(MeleSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
 
         }
         else
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x - 1.5F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
+            Instantiate(MeleSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
         }
     }
      void OnSkillSet()
@@ -334,6 +334,7 @@ public class Movement : MonoBehaviour
             }
             if (coll.transform.tag == "Mele")
             {
+                TraumaInducer.Shake();
                 rotationEnemy = MovementPlayer2.GetQuaternion();
                 OnImpulse = true;
             }

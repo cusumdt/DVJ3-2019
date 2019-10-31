@@ -1354,6 +1354,8 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420035}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1506,6 +1508,36 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b6b88d425f7234aae309cb9a973743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 1
+  MaximumStress: 0.2
+  Range: 45
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ee1c62c905bb24ea7c9cf3d9d40b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TraumaExponent: 1
+  MaximumAngularShake: {x: 5, y: 5, z: 5}
+  MaximumTranslationShake: {x: 0.75, y: 0.75, z: 0.75}
 --- !u!1 &566206322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,6 +1958,7 @@ MonoBehaviour:
   pjs:
   - {fileID: 5074066211765735979, guid: 7fc530448fbfb154c8d2451f1e74421f, type: 3}
   - {fileID: 3702663527405832662, guid: 86f677a265ea6fe4baba22aee4c75c71, type: 3}
+  velCarga: 100
 --- !u!4 &740024233
 Transform:
   m_ObjectHideFlags: 0
@@ -2511,16 +2544,6 @@ MonoBehaviour:
   - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
   - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
   - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
   BadDrop:
   - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
   - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
@@ -2542,18 +2565,8 @@ MonoBehaviour:
   - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
   - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
   - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  cantGoodObject: 20
-  cantBadObject: 30
+  cantGoodObject: 10
+  cantBadObject: 20
   DropItem: []
   ActiveObjects: 0
   rand: 0

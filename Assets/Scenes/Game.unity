@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 1600, y: 900}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -10410,6 +10410,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3702663527405832663, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.055244744
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702663527405832663, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.5499798
+      objectReference: {fileID: 0}
     - target: {fileID: 3702663527405832657, guid: 86f677a265ea6fe4baba22aee4c75c71,
         type: 3}
       propertyPath: RespawnPoint.Array.data[0]
@@ -10498,16 +10508,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1365796913260633898, guid: 284273788fbb1d54a82a5a21285ec4aa,
         type: 3}
-    - target: {fileID: 3702663527405832663, guid: 86f677a265ea6fe4baba22aee4c75c71,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.055244744
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702663527405832663, guid: 86f677a265ea6fe4baba22aee4c75c71,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.5499798
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86f677a265ea6fe4baba22aee4c75c71, type: 3}
 --- !u!1001 &5074066213564113991

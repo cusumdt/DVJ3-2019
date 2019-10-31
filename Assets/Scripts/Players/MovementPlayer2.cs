@@ -325,6 +325,10 @@ public class MovementPlayer2 : MonoBehaviour
             int randomPoint = Random.Range(0, 3);
             transform.position = new Vector3(RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y, 0.0f);
         }
+       
+
+        TraumaInducer.Shake();
+      
         lifeImage[Life].SetActive(false);
     }
     void OnTriggerEnter2D(Collider2D coll)

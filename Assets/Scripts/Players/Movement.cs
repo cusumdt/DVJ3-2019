@@ -95,11 +95,11 @@ public class Movement : MonoBehaviour
             {
                 if (rotationEnemy.y == 0.0f)
                 {
-                    ImpulseDamage(new Vector2(1.0f, 0.6f));
+                    ImpulseDamage(new Vector2(-1.0f, 0.6f));
                 }
                 else
                 {
-                    ImpulseDamage(new Vector2(-1.0f, 0.6f));
+                    ImpulseDamage(new Vector2(1.0f, 0.6f));
                 }
                 
             }
@@ -334,7 +334,7 @@ public class Movement : MonoBehaviour
             }
             if (coll.transform.tag == "Mele")
             {
-                rotationEnemy = Movement.GetQuaternion();
+                rotationEnemy = MovementPlayer2.GetQuaternion();
                 OnImpulse = true;
             }
         }

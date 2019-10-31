@@ -53,7 +53,7 @@ public class Drop : MonoBehaviour
         rand = Random.Range(1,11);
         for (int i = 0; i < rand ; i++)
         {
-            int randomItem = Random.Range(0,50);
+            int randomItem = Random.Range(0,(cantBadObject +cantGoodObject) );
             if(!DropItem[randomItem].activeSelf)
             {
                 DropItem[randomItem].SetActive(true);

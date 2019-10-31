@@ -55,6 +55,7 @@ public class MovementPlayer2 : MonoBehaviour
         mele
     }
     Quaternion myRotation;
+    static Quaternion rotation;
     public Skill ActiveSkill;
     private Quaternion rotationEnemy;
     static private bool pause;
@@ -81,6 +82,7 @@ public class MovementPlayer2 : MonoBehaviour
         {
         if (Life > 0)
         {
+            rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
             if (OnIce)
             {
                 StartCoroutine("IceEffect");
@@ -259,24 +261,25 @@ public class MovementPlayer2 : MonoBehaviour
         
         if (transform.rotation.y == 0)
         {
-            Instantiate(IceSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
+            Instantiate(IceSkill, new Vector3(transform.position.x - 1.0f, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
         }
         else
         {
-            Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
+            Instantiate(IceSkill, new Vector3(transform.position.x + 1.0f, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
         }
 
     }   
 
     void MeleOn()
     {
+        Debug.Log("dalepibe");
         if (transform.rotation.y == 0)
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x - 1.5F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
+            Instantiate(MeleSkill, new Vector3(transform.position.x - 1.0f, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
         }
         else
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x + 1.5F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
+            Instantiate(MeleSkill, new Vector3(transform.position.x + 1.0f, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
         }
     }
         void OnSkillSet()
@@ -382,5 +385,8 @@ public class MovementPlayer2 : MonoBehaviour
     {
         return pause;
     }
-
+    static public Quaternion GetQuaternion()
+    {
+        return rotation;
+    }
 }

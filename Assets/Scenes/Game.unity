@@ -10250,7 +10250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   veamosClock: 0
-  TimeMax: 2
+  TimeMax: 30
   ClockImage: {fileID: 44509098}
   Flecha: {fileID: 1455868156}
 --- !u!1 &2090905762

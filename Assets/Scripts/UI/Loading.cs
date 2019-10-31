@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class Loading : MonoBehaviour
 {
 
-     public Image BarraDeCarga;
      [HideInInspector]
     public float carga;
     [SerializeField]
     private float velCarga;
     private bool CargaOn;
+    public Text text;
+    public GameObject image;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,20 +22,23 @@ public class Loading : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(CargaOn)
-        {
-          carga = carga + (Time.deltaTime* velCarga);
-            BarraDeCarga.fillAmount = carga / 100;
-            
             if (carga >= 100)
-            {   
-                carga = 0;
-                SceneManager.LoadScene("Game");
+            {
+
+                carga = 100;
+                 if (Input.GetKeyDown("joystick button 0")  || Input.GetKeyDown("space"))
+                 {
+                    carga = 0;
+                    SceneManager.LoadScene("Game");
+                }
+                text.text = "To start";
+                image.SetActive(true);
             }
-        }
+            else
+            {
+                carga = carga + (Time.deltaTime * velCarga);
+                text.text = ((int)carga).ToString() + "%"; 
+            }
     }
-    void SetCargaOn()
-    {
-        CargaOn = true;
-    }
+   
 }

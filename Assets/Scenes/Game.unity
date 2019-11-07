@@ -10520,6 +10520,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3702663527405832658, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 62218e438780c5545ad37d0132e5042e, type: 2}
     - target: {fileID: 3702663527405832663, guid: 86f677a265ea6fe4baba22aee4c75c71,
         type: 3}
       propertyPath: m_Offset.y
@@ -10688,6 +10693,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5074066211765735978, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 62218e438780c5545ad37d0132e5042e, type: 2}
     - target: {fileID: 5074066211765735990, guid: 7fc530448fbfb154c8d2451f1e74421f,
         type: 3}
       propertyPath: RespawnPoint.Array.data[0]

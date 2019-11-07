@@ -18,6 +18,8 @@ public class Drop : MonoBehaviour
     private bool ActiveObjects;
     [SerializeField]
     int rand;
+    int randTime;
+    private float time;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,22 +33,22 @@ public class Drop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(ActiveObjects)
+
+        if (ActiveObjects)
         {
-           StartCoroutine(ActiveObj(Random.Range(1,5)));
-           
+            randTime = Random.Range(10, 20);
+            ActiveObjects = false;
+        }
+        time += 1 * Time.deltaTime;
+        if (time >= 5f)
+        {
+            OnObj();
+            time = 0f;
+            ActiveObjects = true;
         }
     }
 
-    IEnumerator ActiveObj(float time)
-    {
-        OnObj();
-        ActiveObjects = false;
-        yield return new WaitForSeconds(time);
-        Debug.Log(time);
-        ActiveObjects = true;
-    }
+
     void OnObj()
     {
         

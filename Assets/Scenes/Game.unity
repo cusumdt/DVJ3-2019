@@ -2583,10 +2583,6 @@ MonoBehaviour:
   - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
   - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
   - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
   BadDrop:
   - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
   - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
@@ -2603,13 +2599,8 @@ MonoBehaviour:
   - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
   - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
   - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
-  cantGoodObject: 10
-  cantBadObject: 20
+  cantGoodObject: 6
+  cantBadObject: 15
   DropItem: []
   ActiveObjects: 0
   rand: 0

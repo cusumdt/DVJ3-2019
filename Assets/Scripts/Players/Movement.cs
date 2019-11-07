@@ -399,6 +399,7 @@ public class Movement : MonoBehaviour
         {
             boxCollider.isTrigger = false;
             OnImpulse = false;
+            OnSkill = true;
             time = 0;
         }
     }

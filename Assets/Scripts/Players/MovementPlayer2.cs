@@ -192,19 +192,20 @@ public class MovementPlayer2 : MonoBehaviour
                             break;
                     }
             }
-            }
-            if (stamina > 0 && stamina >= DashCost)
-            {
-             
-                if (Input.GetKeyDown("[.]") || Input.GetKeyDown("joystick 2 button 1"))
-                {
-                    StartCoroutine("Dash");
-                     myRotation = new Quaternion(transform.rotation.x,transform.rotation.y,transform.rotation.z,1.0f);
-                    m_Animator.SetTrigger("Dash");
-                    stamina -= DashCost;
-                    OnDash = true;
+                    if (stamina > 0 && stamina >= DashCost)
+                    {
+
+                        if (Input.GetKeyDown("[.]") || Input.GetKeyDown("joystick 2 button 1"))
+                        {
+                            StartCoroutine("Dash");
+                            myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
+                            m_Animator.SetTrigger("Dash");
+                            stamina -= DashCost;
+                            OnDash = true;
+                        }
+                    }
                 }
-            }
+           
             if (stamina > MaxStamina)
             {
                 stamina = MaxStamina;
@@ -396,6 +397,7 @@ public class MovementPlayer2 : MonoBehaviour
         {
             boxCollider.isTrigger = false;
             OnImpulse = false;
+            OnSkill = true;
             time = 0;
         }
     }

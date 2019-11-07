@@ -7,9 +7,8 @@ public class UISceneButton : MonoBehaviour
 {
     [SerializeField]
     private Button button;
-    
     [SerializeField]
-    private string scene;
+    private Button quit;
     Animator m_Animator;
     void Awake()
     {
@@ -18,11 +17,18 @@ public class UISceneButton : MonoBehaviour
             button = GetComponent<Button>();
         }    
         button.onClick.AddListener(OnClick);
-        m_Animator = gameObject.GetComponent<Animator>();
+        m_Animator = button.gameObject.GetComponent<Animator>();
     }
     private void OnClick()
     {
-       m_Animator.SetBool("On",true);
+        if (button.transform.name == "Play")
+        {
+            m_Animator.SetBool("On", true);
+        }
+        else
+        {
+            Application.Quit();
+        }
     }
     
 

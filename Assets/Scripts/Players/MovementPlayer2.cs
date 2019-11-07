@@ -163,7 +163,7 @@ public class MovementPlayer2 : MonoBehaviour
             {
                 rig.velocity = new Vector2(-4, rig.velocity.y);
             }
-             if (Input.GetKey("5") || Input.GetKey("joystick 2 button 2") )
+             if (Input.GetKey("[5]") || Input.GetKey("joystick 2 button 2") )
             {
                 
                 switch (ActiveSkill)

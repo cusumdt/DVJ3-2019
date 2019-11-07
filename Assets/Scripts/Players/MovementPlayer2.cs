@@ -112,11 +112,11 @@ public class MovementPlayer2 : MonoBehaviour
             {
                  if (myRotation.y == 0.0f)
                 {
-                    ImpulseDash(Vector2.left);
+                    ImpulseDash(Vector2.left* 0.7f);
                 }
                 else
                 {
-                    ImpulseDash(Vector2.right);
+                    ImpulseDash(Vector2.right * 0.7f);
                 }
             }
             else

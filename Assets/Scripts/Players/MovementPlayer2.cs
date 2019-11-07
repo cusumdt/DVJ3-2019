@@ -256,6 +256,7 @@ public class MovementPlayer2 : MonoBehaviour
             yield return new WaitForSeconds(2.0f);
             sprite.color = new Vector4(255, 255, 255, 255);
             immune = false;
+            
         }
     }
      IEnumerator IceEffect()
@@ -351,6 +352,7 @@ public class MovementPlayer2 : MonoBehaviour
             if (coll.transform.tag == "EnemyObject" || coll.transform.tag == "Lava")
             {
                 IfDamage();
+                OnDash = false;
                 StartCoroutine("ImmunePlayer");
             }
              if (coll.transform.tag == "Ice")

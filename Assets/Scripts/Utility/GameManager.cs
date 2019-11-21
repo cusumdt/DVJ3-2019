@@ -32,6 +32,7 @@ public class GameManager : Singleton<GameManager>
             {
                 carga = 0;
                 Time.timeScale = 1.0f;
+                Player.SetPause(false);
                 SceneManager.LoadScene("GameOver");
             }
             else

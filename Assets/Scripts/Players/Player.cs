@@ -173,7 +173,7 @@ public class Player : MonoBehaviour
                         m_Animator.SetBool("Caminata", true);
                         if (transform.rotation.y != 0)
                         {
-                            transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 1.0f);
+                            transform.rotation = Quaternion.Euler(0, 0, 0);
 
                         }
                         rig.AddForce(new Vector2(2, 0) * speed, ForceMode2D.Force);
@@ -184,7 +184,7 @@ public class Player : MonoBehaviour
                         m_Animator.SetBool("Caminata", true);
                         if (transform.rotation.y != 180)
                         {
-                            transform.rotation = new Quaternion(0.0f, 180.0f, 0.0f, 1.0f);
+                            transform.rotation = Quaternion.Euler(0, 180, 0);
 
                         }
                         rig.AddForce(new Vector2(-2, 0) * speed, ForceMode2D.Force);

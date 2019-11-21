@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
     static Quaternion myRotation;
     Quaternion rotation;
     public Skill ActiveSkill;
-    CircleCollider2D boxCollider;
+    CircleCollider2D circleCollider;
     private Quaternion rotationEnemy;
     static private bool pause;
     private bool OnDash;
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
     bool emojiOn;
     float timeEmoji;
     Vector3 ActualRespawnPoint;
-    // Start is called before the first frame update
+ 
     void Start()
     {
         Life = 3;
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
         defeat = false;
         OnSkill = false;
         ActiveSkill = Skill.none;
-        boxCollider = GetComponent<CircleCollider2D>();
+        circleCollider = GetComponent<CircleCollider2D>();
         control = new Control();
         control.SetPlayer(player);
         emojiOn = false;
@@ -283,7 +283,7 @@ public class Player : MonoBehaviour
         rig.velocity = Vector3.zero;
         sprite.color = new Vector4(255, 255, 255, 0);
         OnSkill = true;
-        boxCollider.isTrigger = false;
+        circleCollider.isTrigger = false;
         if (Life > 0)
         {
 
@@ -446,20 +446,20 @@ public class Player : MonoBehaviour
     }
     void ImpulseDamage(Vector2 direction)
     {
-        if (!boxCollider.isTrigger)
+        if (!circleCollider.isTrigger)
         {
-            boxCollider.isTrigger = true;
+            circleCollider.isTrigger = true;
         }
         rig.AddForce(direction * 2, ForceMode2D.Impulse);
         time += 1 * Time.deltaTime;
         if (OnImpulse == false)
         {
-            boxCollider.isTrigger = false;
+            circleCollider.isTrigger = false;
         }
 
         if (time >= 1.0f)
         {
-            boxCollider.isTrigger = false;
+            circleCollider.isTrigger = false;
             OnImpulse = false;
             OnSkill = true;
             time = 0;

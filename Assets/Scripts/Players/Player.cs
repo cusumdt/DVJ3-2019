@@ -426,17 +426,19 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.transform.tag == "IcePowerUp")
+        if (!OnSkill)
         {
-            PowerUpUI.sprite = PowerUpHielo;
-            ActiveSkill = Skill.ice;
+            if (coll.transform.tag == "IcePowerUp")
+            {
+                PowerUpUI.sprite = PowerUpHielo;
+                ActiveSkill = Skill.ice;
+            }
+            if (coll.transform.tag == "EmpujePowerUp")
+            {
+                PowerUpUI.sprite = PowerUpEmpuje;
+                ActiveSkill = Skill.mele;
+            }
         }
-        if (coll.transform.tag == "EmpujePowerUp")
-        {
-            PowerUpUI.sprite = PowerUpEmpuje;
-            ActiveSkill = Skill.mele;
-        }
-
     }
     static public Quaternion GetQuaternion()
     {

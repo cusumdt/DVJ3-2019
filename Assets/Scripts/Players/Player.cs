@@ -68,6 +68,7 @@ public class Player : MonoBehaviour
 
     bool emojiOn;
     float timeEmoji;
+    Vector3 ActualRespawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,7 +86,7 @@ public class Player : MonoBehaviour
         emojiOn = false;
         timeEmoji = 0;
     }
-
+  
     void Update()
     {
         if (!pause)
@@ -289,6 +290,7 @@ public class Player : MonoBehaviour
             Instantiate(Flecha, new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.identity);
             yield return new WaitForSeconds(2.0f);
             OnSkill = false;
+            transform.position = ActualRespawnPoint;
             Instantiate(Respawn, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             sprite.color = new Vector4(255, 255, 0, 255);
             yield return new WaitForSeconds(2.0f);
@@ -367,7 +369,8 @@ public class Player : MonoBehaviour
         if (Life > 0)
         {
             int randomPoint = Random.Range(0, 3);
-            transform.position = new Vector3(RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y, 0.0f);
+            ActualRespawnPoint = new Vector3(RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y, 0.0f);
+            transform.position = ActualRespawnPoint;
         }
 
 

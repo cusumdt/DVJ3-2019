@@ -19,15 +19,13 @@ public class PauseManager : MonoBehaviour
          {
              if(Time.timeScale != 0f)
              {
-                 Movement.SetPause(true);
-                 MovementPlayer2.SetPause(true);
+                 Player.SetPause(true);
                  Panel.SetActive(true);
                 Time.timeScale = 0f;
              }
              else
              {
-                 Movement.SetPause(false);
-                 MovementPlayer2.SetPause(false);
+                 Player.SetPause(false);
                  Panel.SetActive(false);
                  Time.timeScale = 1f;
              }
@@ -35,15 +33,13 @@ public class PauseManager : MonoBehaviour
     }
     public void ReturnGame()
     {
-        Movement.SetPause(false);
-        MovementPlayer2.SetPause(false);
+        Player.SetPause(false);
         Panel.SetActive(false);
         Time.timeScale = 1f;
     }
     public void Menu()
     {
-        Movement.SetPause(false);
-        MovementPlayer2.SetPause(false);
+        Player.SetPause(false);
         Panel.SetActive(false);
         Time.timeScale =1f;
         SceneManager.LoadScene("Menu");

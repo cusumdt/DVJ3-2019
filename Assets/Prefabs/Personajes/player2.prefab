@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3702663527405832656}
   - component: {fileID: 3702663527405832663}
   - component: {fileID: 3702663527405832657}
+  - component: {fileID: 9169611246464440016}
   - component: {fileID: 3702663527405832669}
   m_Layer: 0
   m_Name: player2
@@ -163,6 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c740e86c4193f4ea5ba8aa5ae38b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PowerUpHielo: {fileID: 0}
+  nothing: {fileID: 0}
+  PowerUpEmpuje: {fileID: 0}
+  PowerUpUI: {fileID: 0}
   rig: {fileID: 3702663527405832658}
   speed: 40
   velocity: {x: 0, y: 0}
@@ -189,6 +194,52 @@ MonoBehaviour:
   - {fileID: 0}
   prefab: {fileID: 0}
   OnImpulse: 0
+  MeleSkill: {fileID: 0}
+  OnSkill: 0
+  ActiveSkill: 0
+  Damage: {fileID: 0}
+  Respawn: {fileID: 0}
+  Flecha: {fileID: 0}
+--- !u!114 &9169611246464440016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3702663527405832662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0ec89a455fec1409610afea63429d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerUpHielo: {fileID: 0}
+  nothing: {fileID: 0}
+  PowerUpEmpuje: {fileID: 0}
+  PowerUpUI: {fileID: 0}
+  rig: {fileID: 0}
+  speed: 0
+  velocity: {x: 0, y: 0}
+  jump: 1
+  jumpForce: 0
+  dash: 0
+  InFloor: 0
+  Life: 0
+  RespawnPoint: []
+  immune: 0
+  stamina: 0
+  StaminaObj: {fileID: 0}
+  IceSkill: {fileID: 0}
+  MeleSkill: {fileID: 0}
+  IceEffectState: {fileID: 0}
+  lifeImage: []
+  prefab: {fileID: 0}
+  OnImpulse: 0
+  Damage: {fileID: 0}
+  Respawn: {fileID: 0}
+  Flecha: {fileID: 0}
+  OnSkill: 0
+  ActiveSkill: 0
+  player: 0
 --- !u!61 &3702663527405832669
 BoxCollider2D:
   m_ObjectHideFlags: 0

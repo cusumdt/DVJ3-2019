@@ -335,12 +335,12 @@ public class Player : MonoBehaviour
 
         if (transform.rotation.y == 0)
         {
-            Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
+            Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
 
         }
         else
         {
-            Instantiate(IceSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
+            Instantiate(IceSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
         }
 
     }
@@ -412,7 +412,7 @@ public class Player : MonoBehaviour
     {
         if (!immune)
         {
-            if (coll.transform.tag == "EnemyObject" || coll.transform.tag == "Lava")
+            if ((coll.transform.tag == "EnemyObject" || coll.transform.tag == "Lava") )
             {
                 IfDamage();
                 OnDash = false;

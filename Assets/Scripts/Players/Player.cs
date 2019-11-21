@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         emojiOn = false;
         timeEmoji = 0;
     }
-  
+
     void Update()
     {
         if (!pause)
@@ -347,14 +347,17 @@ public class Player : MonoBehaviour
 
     void MeleOn()
     {
-        if (transform.rotation.y == 0)
+        if (!OnIce)
         {
-            Instantiate(MeleSkill, new Vector3(transform.position.x + 0.5F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
+            if (transform.rotation.y == 0)
+            {
+                Instantiate(MeleSkill, new Vector3(transform.position.x + 0.5F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
 
-        }
-        else
-        {
-            Instantiate(MeleSkill, new Vector3(transform.position.x - 0.5F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
+            }
+            else
+            {
+                Instantiate(MeleSkill, new Vector3(transform.position.x - 0.5F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
+            }
         }
     }
     void OnSkillSet()
@@ -412,7 +415,7 @@ public class Player : MonoBehaviour
     {
         if (!immune)
         {
-            if ((coll.transform.tag == "EnemyObject" || coll.transform.tag == "Lava") )
+            if ((coll.transform.tag == "EnemyObject" || coll.transform.tag == "Lava"))
             {
                 IfDamage();
                 OnDash = false;

@@ -10499,6 +10499,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5003848424867057128, guid: 8d5bdea51f56f8e4fad46532b1caa7c5,
         type: 3}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: Name
+      value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 1876540344}
     m_RemovedComponents:
     - {fileID: 3702663527405832663, guid: 86f677a265ea6fe4baba22aee4c75c71, type: 3}
     - {fileID: 3702663527405832657, guid: 86f677a265ea6fe4baba22aee4c75c71, type: 3}
@@ -10515,6 +10525,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 5074066211765735978, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 62218e438780c5545ad37d0132e5042e, type: 2}
     - target: {fileID: 5074066211765735991, guid: 7fc530448fbfb154c8d2451f1e74421f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10570,11 +10585,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5074066211765735978, guid: 7fc530448fbfb154c8d2451f1e74421f,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 62218e438780c5545ad37d0132e5042e, type: 2}
     - target: {fileID: 5074066211765735990, guid: 7fc530448fbfb154c8d2451f1e74421f,
         type: 3}
       propertyPath: RespawnPoint.Array.data[0]
@@ -10826,6 +10836,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5003848424867057128, guid: 8d5bdea51f56f8e4fad46532b1caa7c5,
         type: 3}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 2117068121}
     m_RemovedComponents:
     - {fileID: 5074066211765735977, guid: 7fc530448fbfb154c8d2451f1e74421f, type: 3}
     - {fileID: 5074066211765735990, guid: 7fc530448fbfb154c8d2451f1e74421f, type: 3}

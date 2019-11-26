@@ -28,6 +28,13 @@ public class Player : MonoBehaviour
     Control control;
     #endregion
     #region Floats
+    const float LookToTheLeft = -1f;
+    const float ForceDash = 0.7f;
+    const float RotationLeft = 180f;
+    const float RotationRight = 0f;
+    const float Movement = 2;
+    const float MaxVelocity = 4;
+    const float MinVelocity = -4;
     [SerializeField]
     float speed;
     [SerializeField]
@@ -56,6 +63,7 @@ public class Player : MonoBehaviour
     const int DashCost = 25;
     const int RegenStamina = 10;
     const int MaxStamina = 100;
+    const int MaxLife = 3;
     [SerializeField]
     int Life;
     #endregion
@@ -117,7 +125,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        Life = 3;
+        Life = MaxLife;
         stamina = MaxStamina;
         pos = new Vector2(transform.position.x, transform.position.y);
         defeat = false;
@@ -154,7 +162,7 @@ public class Player : MonoBehaviour
                     case PlayerState.OnSkill:
                         break;
                     case PlayerState.OnImpulse:
-                        if (rotationEnemy.y == -1f)
+                        if (rotationEnemy.y == LookToTheLeft)
                         {
 
                             ImpulseDamage(new Vector2(-1.0f, 0.6f));
@@ -169,11 +177,11 @@ public class Player : MonoBehaviour
                         myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
                         if (myRotation.y == 0.0f)
                         {
-                            ImpulseDash(Vector2.right * 0.7f);
+                            ImpulseDash(Vector2.right * ForceDash);
                         }
                         else
                         {
-                            ImpulseDash(Vector2.left * 0.7f);
+                            ImpulseDash(Vector2.left * ForceDash);
                         }
                         break;
                     case PlayerState.Normal:
@@ -216,37 +224,24 @@ public class Player : MonoBehaviour
 
                         if (control.Right())
                         {
-                            m_Animator.SetBool("Caminata", true);
-                            if (transform.rotation.y != 0)
-                            {
-                                transform.rotation = Quaternion.Euler(0, 0, 0);
-
-                            }
-                            rig.AddForce(new Vector2(2, 0) * speed, ForceMode2D.Force);
-
+                            Walk(Movement, RotationRight);
                         }
                         else if (control.Left())
                         {
-                            m_Animator.SetBool("Caminata", true);
-                            if (transform.rotation.y != 180)
-                            {
-                                transform.rotation = Quaternion.Euler(0, 180, 0);
-
-                            }
-                            rig.AddForce(new Vector2(-2, 0) * speed, ForceMode2D.Force);
+                            Walk(-Movement, RotationLeft);
                         }
                         else
                         {
                             m_Animator.SetBool("Caminata", false);
                         }
                         velocity = rig.velocity;
-                        if (rig.velocity.x >= 4)
+                        if (rig.velocity.x >= MaxVelocity)
                         {
-                            rig.velocity = new Vector2(4, rig.velocity.y);
+                            rig.velocity = new Vector2(MaxVelocity, rig.velocity.y);
                         }
-                        if (rig.velocity.x <= -4)
+                        if (rig.velocity.x <= MinVelocity)
                         {
-                            rig.velocity = new Vector2(-4, rig.velocity.y);
+                            rig.velocity = new Vector2(MinVelocity, rig.velocity.y);
                         }
 
                         if (control.Skill())
@@ -317,7 +312,8 @@ public class Player : MonoBehaviour
     }
     IEnumerator Impulse()
     {
-        rig.AddForce(new Vector2(0, 2) * jumpForce, ForceMode2D.Impulse);
+        Vector2 force = new Vector2(0, 2);
+        rig.AddForce(force * jumpForce, ForceMode2D.Impulse);
         jump = false;
         InFloor = false;
         yield return new WaitForSeconds(0.2f);
@@ -448,6 +444,17 @@ public class Player : MonoBehaviour
         TraumaInducer.Shake();
 
         lifeImage[Life].SetActive(false);
+    }
+    void Walk(float velocity, float rotation)
+    {
+        m_Animator.SetBool("Caminata", true);
+        if (transform.rotation.y != rotation)
+        {
+            transform.rotation = Quaternion.Euler(0, rotation, 0);
+
+        }
+        Vector2 direction = new Vector2(velocity, 0);
+        rig.AddForce(direction * speed, ForceMode2D.Force);
     }
 
     void OnTriggerEnter2D(Collider2D coll)

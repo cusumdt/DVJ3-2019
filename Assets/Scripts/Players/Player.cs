@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -367,7 +366,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D coll)
     {
-        collision = coll.transform; 
+        collision = coll.transform;
         if (!immune)
         {
             if ((collision.CompareTag("EnemyObject") || collision.CompareTag("Lava")))

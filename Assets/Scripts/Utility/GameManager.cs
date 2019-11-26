@@ -14,14 +14,12 @@ public class GameManager : Singleton<GameManager>
     public List<GameObject> pjs;
     #endregion
 
-    public string scene;
-
     #region Floats
     public float velCarga;
     float carga;
     #endregion
 
-
+    public string scene;
     public override void Awake()
     {
 
@@ -35,6 +33,7 @@ public class GameManager : Singleton<GameManager>
         PauseManager.Scene += ActualScene;
         Loading.Scene += ActualScene;
     }
+
     void Update()
    {
      if(players.Count == 1 && scene == "Game")
@@ -74,7 +73,6 @@ public class GameManager : Singleton<GameManager>
             }
         }
         return new GameObject();
-        
     }
     public GameObject GetLose()
     {

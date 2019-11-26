@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2020779268368178082}
   - component: {fileID: 2020779268368178093}
   - component: {fileID: 2020779268368178092}
-  - component: {fileID: 4734150435902994100}
   - component: {fileID: 4803082466419726228}
+  - component: {fileID: -2598810461863681217}
   m_Layer: 0
   m_Name: hielo_2
   m_TagString: Ice
@@ -104,18 +104,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4734150435902994100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020779268368178095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d917a27620758b544871ddb7b04f6d9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &4803082466419726228
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -151,6 +139,19 @@ PolygonCollider2D:
       - {x: 3.5111184, y: -0.8743644}
       - {x: 3.8298025, y: -0.3516159}
       - {x: 3.49608, y: 0.021563888}
+--- !u!114 &-2598810461863681217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020779268368178095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d500583148e0c9949a7229916284e8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LimitTime: 0.2
 --- !u!1001 &7007573447804315677
 PrefabInstance:
   m_ObjectHideFlags: 0

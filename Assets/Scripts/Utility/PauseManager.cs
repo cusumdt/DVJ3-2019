@@ -7,15 +7,13 @@ public class PauseManager : MonoBehaviour
     public delegate void Pause (float enrageVal, bool state);
     public static event Pause OnPause;
 
+    public delegate void SetScene(float enrageVal, string _scene);
+    public static event SetScene Scene;
+
 
     public GameObject Panel;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  
 
-    // Update is called once per frame
     void Update()
     {
          if (Input.GetKeyDown("escape") || Input.GetKeyDown("joystick 1 button 7") || Input.GetKeyDown("joystick 2 button 7") )
@@ -45,18 +43,28 @@ public class PauseManager : MonoBehaviour
         SetPause(false);
         Panel.SetActive(false);
         Time.timeScale =1f;
+        ActualScene("Menu");
         SceneManager.LoadScene("Menu");
     }
     public void SoundOff()
     {
 
     }
+
     void SetPause(bool state)
     {
         if (OnPause != null)
         {
             float amount = 1;
             OnPause(amount, state);
+        }
+    }
+    void ActualScene(string _scene)
+    {
+        if (Scene != null)
+        {
+            float amount = 1;
+            Scene(amount, _scene);
         }
     }
 }

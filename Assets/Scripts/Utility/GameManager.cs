@@ -9,18 +9,26 @@ public class GameManager : Singleton<GameManager>
 
     public List<GameObject> players;
     public List<GameObject> pjs;
+    public string scene;
     float carga;
     public float velCarga;
 
     public override void Awake()
     {
+
         base.Awake();
         carga = 0;
+        scene = "Game";
     }
 
-   void Update()
+    void Start()
+    {
+        PauseManager.Scene += ActualScene;
+        Loading.Scene += ActualScene;
+    }
+    void Update()
    {
-     if(players.Count == 1 && SceneManager.GetActiveScene().name == "Game")
+     if(players.Count == 1 && scene == "Game")
      {
             Time.timeScale = 0.5f;
             if (carga >= 100)
@@ -28,6 +36,7 @@ public class GameManager : Singleton<GameManager>
                 carga = 0;
                 Time.timeScale = 1.0f;
                 RestartPause();
+                scene = "GameOver";
                 SceneManager.LoadScene("GameOver");
             }
             else
@@ -73,5 +82,11 @@ public class GameManager : Singleton<GameManager>
             float amount = 1;
             OnPause(amount);
         }
+    }
+    void ActualScene(float v,string _scene)
+    {
+
+        scene = _scene;
+        
     }
 }

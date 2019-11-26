@@ -5,8 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Loading : MonoBehaviour
 {
+    public delegate void SetScene(float enrageVal, string _scene);
+    public static event SetScene Scene;
 
-     [HideInInspector]
+    [HideInInspector]
     public float carga;
     [SerializeField]
     private float velCarga;
@@ -29,6 +31,7 @@ public class Loading : MonoBehaviour
                  if (Input.GetKeyDown("joystick button 0")  || Input.GetKeyDown("space"))
                  {
                     carga = 0;
+                    ActualScene("Game");
                     SceneManager.LoadScene("Game");
                 }
                 text.text = "To start";
@@ -40,5 +43,12 @@ public class Loading : MonoBehaviour
                 text.text = ((int)carga).ToString() + "%"; 
             }
     }
-   
+    void ActualScene(string _scene)
+    {
+        if (Scene != null)
+        {
+            float amount = 1;
+            Scene(amount, _scene);
+        }
+    }
 }

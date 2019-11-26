@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
+    public Rigidbody2D rig;
     #region Enums
     public enum Skill
     {
@@ -21,13 +22,11 @@ public class Player : MonoBehaviour
         Normal
     }
     #endregion
-
     #region Control
     [SerializeField]
     Control.PlayerType player;
     Control control;
     #endregion
-    public Rigidbody2D rig;
     #region Floats
     [SerializeField]
     float speed;
@@ -127,6 +126,7 @@ public class Player : MonoBehaviour
         control.SetPlayer(player);
         emojiOn = false;
         timeEmoji = 0;
+        playerState = PlayerState.Normal;
         #region GetComponent
         m_Animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
@@ -136,7 +136,7 @@ public class Player : MonoBehaviour
         GameManager.OnPause += PauseInFalse;
         PauseManager.OnPause += SetPause;
         #endregion
-        playerState = PlayerState.Normal;
+    
 
     }
 

@@ -4,22 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
-    public static GameManager instance = null;
+    public delegate void PlayerState(float enrageVal);
+    public static event PlayerState OnPause;
+
     public List<GameObject> players;
     public List<GameObject> pjs;
     float carga;
     public float velCarga;
-    void Awake()
+
+    public override void Awake()
     {
-          if (instance == null)
-            {
-                instance = this;
-            }
-            else if (instance != this)
-            {
-                Destroy(gameObject);    
-            }
-            DontDestroyOnLoad(this);
+        base.Awake();
         carga = 0;
     }
 
@@ -32,7 +27,7 @@ public class GameManager : Singleton<GameManager>
             {
                 carga = 0;
                 Time.timeScale = 1.0f;
-                Player.SetPause(false);
+                RestartPause();
                 SceneManager.LoadScene("GameOver");
             }
             else
@@ -70,5 +65,13 @@ public class GameManager : Singleton<GameManager>
     public void RemovePlayers()
     {
         players.Clear();
+    }
+    void RestartPause()
+    {
+        if (OnPause != null)
+        {
+            float amount = 1;
+            OnPause(amount);
+        }
     }
 }

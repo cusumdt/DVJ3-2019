@@ -5,11 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
+
+
     public Sprite PowerUpHielo;
     public Sprite nothing;
     public Sprite PowerUpEmpuje;
     public Image PowerUpUI;
-
     public Rigidbody2D rig;
     Vector2 pos;
     public float speed;
@@ -69,7 +70,8 @@ public class Player : MonoBehaviour
     bool emojiOn;
     float timeEmoji;
     Vector3 ActualRespawnPoint;
- 
+    public GameObject Enemy;
+
     void Start()
     {
         Life = 3;
@@ -85,6 +87,7 @@ public class Player : MonoBehaviour
         control.SetPlayer(player);
         emojiOn = false;
         timeEmoji = 0;
+        GameManager.OnPause += PauseInFalse;
     }
 
     void Update()
@@ -103,15 +106,16 @@ public class Player : MonoBehaviour
                 }
                 else if (OnImpulse)
                 {
-                    if (rotationEnemy.y == 0.0f)
+                    if (rotationEnemy.y ==-1f)
                     {
+                       
                         ImpulseDamage(new Vector2(-1.0f, 0.6f));
                     }
                     else
                     {
                         ImpulseDamage(new Vector2(1.0f, 0.6f));
                     }
-
+                    Debug.Log(rotationEnemy.y);
                 }
                 else if (OnDash)
                 {
@@ -260,7 +264,7 @@ public class Player : MonoBehaviour
                 if (!defeat)
                 {
                     MultipleTargetCamera.SetTargets(this.transform, 1);
-                    GameManager.instance.SetPlayers(prefab);
+                    GameManager.Get().SetPlayers(prefab);
                     defeat = true;
                 }
 
@@ -332,31 +336,41 @@ public class Player : MonoBehaviour
 
     void IceOn()
     {
-
-        if (transform.rotation.y == 0)
-        {
-            Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
-
-        }
-        else
-        {
-            Instantiate(IceSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
-        }
-
+        InstantiateSkill(IceSkill, false);
     }
 
     void MeleOn()
     {
+        InstantiateSkill(MeleSkill,true);
+    }
+
+    void InstantiateSkill(GameObject Skill, bool Children)
+    {
         if (!OnIce)
         {
-            if (transform.rotation.y == 0)
+            if (Children)
             {
-                Instantiate(MeleSkill, new Vector3(transform.position.x + 0.5F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
+                if (transform.rotation.y == 0)
+                {
+                    Instantiate(Skill, new Vector3(transform.position.x + 0.5F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
 
+                }
+                else
+                {
+                    Instantiate(MeleSkill, new Vector3(transform.position.x - 0.5F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
+                }
             }
             else
             {
-                Instantiate(MeleSkill, new Vector3(transform.position.x - 0.5F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
+                if (transform.rotation.y == 0)
+                {
+                    Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
+
+                }
+                else
+                {
+                    Instantiate(IceSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
+                }
             }
         }
     }
@@ -406,7 +420,7 @@ public class Player : MonoBehaviour
             if (coll.transform.tag == "Mele")
             {
                 TraumaInducer.Shake();
-                rotationEnemy = Player.GetQuaternion();
+                rotationEnemy = Enemy.transform.rotation;
                 OnImpulse = true;
             }
         }
@@ -479,8 +493,16 @@ public class Player : MonoBehaviour
     {
         pause = _pause;
     }
+    public void PauseInFalse(float v)
+    {
+        pause = false;
+    }
     static public bool GetPause()
     {
         return pause;
+    }
+    public void OnDestroy()
+    {
+        GameManager.OnPause -= PauseInFalse;
     }
 }

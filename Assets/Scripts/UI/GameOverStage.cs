@@ -21,8 +21,8 @@ public class GameOverStage : MonoBehaviour
     {
         if(!init)
         {
-            GameObject asd = GameManager.instance.GetLose();
-            GameObject ase = GameManager.instance.GetWinner();
+            GameObject asd = GameManager.Get().GetLose();
+            GameObject ase = GameManager.Get().GetWinner();
             thisLose = asd.GetComponent<SpriteRenderer>();
             thisWinner = ase.GetComponent<SpriteRenderer>();
             seccond.sprite = thisLose.sprite;

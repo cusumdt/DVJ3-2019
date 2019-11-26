@@ -21,7 +21,7 @@ public class MenuButton : MonoBehaviour
     }
     private void OnClick()
     {
-        GameManager.instance.RemovePlayers();
+        GameManager.Get().RemovePlayers();
         SceneManager.LoadScene(scene);
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class LavaDetector : MonoBehaviour
+public class LavaIndicator : MonoBehaviour
 {
     public Transform lavaPoint;
     // Start is called before the first frame update

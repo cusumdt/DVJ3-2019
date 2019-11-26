@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class UISceneButton : MonoBehaviour
+public class UIMainMenu : MonoBehaviour
 {
     [SerializeField]
     private Button button;

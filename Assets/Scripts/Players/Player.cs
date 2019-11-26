@@ -52,12 +52,12 @@ public class Player : MonoBehaviour
         ice,
         mele
     }
-    static Quaternion myRotation;
+    Quaternion myRotation;
     Quaternion rotation;
     public Skill ActiveSkill;
     CircleCollider2D circleCollider;
     private Quaternion rotationEnemy;
-    static private bool pause;
+    private bool pause;
     private bool OnDash;
     Control control;
     public Control.PlayerType player;
@@ -88,6 +88,7 @@ public class Player : MonoBehaviour
         emojiOn = false;
         timeEmoji = 0;
         GameManager.OnPause += PauseInFalse;
+        PauseManager.OnPause += SetPause;
     }
 
     void Update()
@@ -454,10 +455,6 @@ public class Player : MonoBehaviour
             }
         }
     }
-    static public Quaternion GetQuaternion()
-    {
-        return myRotation;
-    }
     void ImpulseDamage(Vector2 direction)
     {
         if (!circleCollider.isTrigger)
@@ -489,18 +486,17 @@ public class Player : MonoBehaviour
             time = 0;
         }
     }
-    static public void SetPause(bool _pause)
-    {
-        pause = _pause;
-    }
+
     public void PauseInFalse(float v)
     {
         pause = false;
     }
-    static public bool GetPause()
+
+    public void SetPause(float v, bool state)
     {
-        return pause;
+        pause = state;
     }
+
     public void OnDestroy()
     {
         GameManager.OnPause -= PauseInFalse;

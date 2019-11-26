@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
+    public delegate void Pause (float enrageVal, bool state);
+    public static event Pause OnPause;
+
 
     public GameObject Panel;
     // Start is called before the first frame update
@@ -19,13 +22,13 @@ public class PauseManager : MonoBehaviour
          {
              if(Time.timeScale != 0f)
              {
-                 Player.SetPause(true);
+                SetPause(true);
                  Panel.SetActive(true);
                 Time.timeScale = 0f;
              }
              else
              {
-                 Player.SetPause(false);
+                 SetPause(false);
                  Panel.SetActive(false);
                  Time.timeScale = 1f;
              }
@@ -33,13 +36,13 @@ public class PauseManager : MonoBehaviour
     }
     public void ReturnGame()
     {
-        Player.SetPause(false);
+        SetPause(false);
         Panel.SetActive(false);
         Time.timeScale = 1f;
     }
     public void Menu()
     {
-        Player.SetPause(false);
+        SetPause(false);
         Panel.SetActive(false);
         Time.timeScale =1f;
         SceneManager.LoadScene("Menu");
@@ -48,5 +51,12 @@ public class PauseManager : MonoBehaviour
     {
 
     }
-    
+    void SetPause(bool state)
+    {
+        if (OnPause != null)
+        {
+            float amount = 1;
+            OnPause(amount, state);
+        }
+    }
 }

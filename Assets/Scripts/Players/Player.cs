@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+
 public class Player : MonoBehaviour
 {
     public Rigidbody2D rig;
@@ -35,6 +37,7 @@ public class Player : MonoBehaviour
     const float Movement = 2;
     const float MaxVelocity = 4;
     const float MinVelocity = -4;
+    const float ForceImpulseDash = 30f;
     [SerializeField]
     float speed;
     [SerializeField]
@@ -112,6 +115,7 @@ public class Player : MonoBehaviour
     Image PowerUpUI;
     PlayerState playerState;
     Vector3 ActualRespawnPoint;
+    Transform collision;
     #endregion
     #region Sprites
     [SerializeField]
@@ -121,7 +125,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     Sprite nothing;
     #endregion
- 
 
     void Start()
     {
@@ -144,8 +147,6 @@ public class Player : MonoBehaviour
         GameManager.OnPause += PauseInFalse;
         PauseManager.OnPause += SetPause;
         #endregion
-    
-
     }
 
     void Update()
@@ -157,144 +158,16 @@ public class Player : MonoBehaviour
                 switch (playerState)
                 {
                     case PlayerState.OnIce:
-                        StartCoroutine("IceEffect");
-                        break;
-                    case PlayerState.OnSkill:
+                        StartCoroutine(IceEffect());
                         break;
                     case PlayerState.OnImpulse:
-                        if (rotationEnemy.y == LookToTheLeft)
-                        {
-
-                            ImpulseDamage(new Vector2(-1.0f, 0.6f));
-                        }
-                        else
-                        {
-                            ImpulseDamage(new Vector2(1.0f, 0.6f));
-                        }
-                        Debug.Log(rotationEnemy.y);
+                        ImpulseState();
                         break;
                     case PlayerState.OnDash:
-                        myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
-                        if (myRotation.y == 0.0f)
-                        {
-                            ImpulseDash(Vector2.right * ForceDash);
-                        }
-                        else
-                        {
-                            ImpulseDash(Vector2.left * ForceDash);
-                        }
+                        DashState();
                         break;
                     case PlayerState.Normal:
-                        if (!emojiOn)
-                        {
-                            if (control.Emoji1())
-                            {
-                                EmojiInvoque(Emoji1);
-                            }
-                            else if (control.Emoji2())
-                            {
-                                EmojiInvoque(Emoji2);
-                            }
-                            else if (control.Emoji3())
-                            {
-                                EmojiInvoque(Emoji3);
-                            }
-                            else if (control.Emoji4())
-                            {
-                                EmojiInvoque(Emoji4);
-                            }
-                        }
-                        else
-                        {
-                            timeEmoji += 1 * Time.deltaTime;
-                            if (timeEmoji >= 2.0f)
-                            {
-                                timeEmoji = 0;
-                                emojiOn = false;
-                            }
-                        }
-                        pos = new Vector2(transform.position.x, transform.position.y);
-                        if (control.Jump())
-                        {
-                            if (jump == true && InFloor)
-                            {
-                                StartCoroutine("Impulse");
-                            }
-                        }
-
-                        if (control.Right())
-                        {
-                            Walk(Movement, RotationRight);
-                        }
-                        else if (control.Left())
-                        {
-                            Walk(-Movement, RotationLeft);
-                        }
-                        else
-                        {
-                            m_Animator.SetBool("Caminata", false);
-                        }
-                        velocity = rig.velocity;
-                        if (rig.velocity.x >= MaxVelocity)
-                        {
-                            rig.velocity = new Vector2(MaxVelocity, rig.velocity.y);
-                        }
-                        if (rig.velocity.x <= MinVelocity)
-                        {
-                            rig.velocity = new Vector2(MinVelocity, rig.velocity.y);
-                        }
-
-                        if (control.Skill())
-                        {
-                            switch (ActiveSkill)
-                            {
-                                case Skill.ice:
-                                    if (iceInvoque == false)
-                                    {
-                                        StartCoroutine("IceSkillCD");
-                                        m_Animator.SetTrigger("IceSkill");
-                                        playerState = PlayerState.OnSkill;
-                                        ActiveSkill = Skill.none;
-                                        PowerUpUI.sprite = nothing;
-                                    }
-                                    break;
-                                case Skill.mele:
-                                    if (meleInvoque == false)
-                                    {
-                                        StartCoroutine("MeleSkillCD");
-                                        m_Animator.SetTrigger("MeleSkill");
-                                        ActiveSkill = Skill.none;
-                                        PowerUpUI.sprite = nothing;
-                                    }
-                                    break;
-                                default:
-
-                                    break;
-                            }
-                        }
-                        if (stamina > 0 && stamina >= DashCost)
-                        {
-
-                            if (control.Dash())
-                            {
-                                StartCoroutine("Dash");
-                                myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
-                                m_Animator.SetTrigger("Dash");
-                                stamina -= DashCost;
-                                playerState = PlayerState.OnDash;
-                            }
-                        }
-                        if (stamina > MaxStamina)
-                        {
-                            stamina = MaxStamina;
-                        }
-                        if (stamina < MaxStamina)
-                        {
-                            stamina += RegenStamina * Time.deltaTime;
-                        }
-                        StaminaObj.size = stamina / MaxStamina;
-                        break;
-                    default:
+                        NormalState();
                         break;
                 }
             }
@@ -306,10 +179,10 @@ public class Player : MonoBehaviour
                     GameManager.Get().SetPlayers(prefab);
                     defeat = true;
                 }
-
             }
         }
     }
+    #region Corrutines
     IEnumerator Impulse()
     {
         Vector2 force = new Vector2(0, 2);
@@ -375,7 +248,9 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.0f);
         meleInvoque = false;
     }
+    #endregion
 
+    #region Functions
     void IceOn()
     {
         InstantiateSkill(IceSkill, false);
@@ -445,6 +320,7 @@ public class Player : MonoBehaviour
 
         lifeImage[Life].SetActive(false);
     }
+
     void Walk(float velocity, float rotation)
     {
         m_Animator.SetBool("Caminata", true);
@@ -459,7 +335,8 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.transform.tag == "Floor" || coll.transform.tag == "Player")
+        collision = coll.transform;
+        if (collision.CompareTag("Floor") || collision.CompareTag("Player"))
         {
             InFloor = true;
         }
@@ -469,17 +346,17 @@ public class Player : MonoBehaviour
         }
         if (!immune)
         {
-            if (coll.transform.tag == "EnemyObject" || coll.transform.tag == "Lava")
+            if (collision.CompareTag("EnemyObject") || collision.CompareTag("Lava"))
             {
                 IfDamage();
                 playerState = PlayerState.Normal;
-                StartCoroutine("ImmunePlayer");
+                StartCoroutine(ImmunePlayer());
             }
-            if (coll.transform.tag == "Ice")
+            if (collision.CompareTag("Ice"))
             {
                 playerState = PlayerState.OnIce;
             }
-            if (coll.transform.tag == "Mele")
+            if (collision.CompareTag("Mele"))
             {
                 TraumaInducer.Shake();
                 rotationEnemy = Enemy.transform.rotation;
@@ -488,29 +365,31 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D coll)
+    void OnTriggerStay2D(Collider2D coll)
     {
+        collision = coll.transform; 
         if (!immune)
         {
-            if ((coll.transform.tag == "EnemyObject" || coll.transform.tag == "Lava"))
+            if ((collision.CompareTag("EnemyObject") || collision.CompareTag("Lava")))
             {
                 IfDamage();
                 playerState = PlayerState.Normal;
-                StartCoroutine("ImmunePlayer");
+                StartCoroutine(ImmunePlayer());
             }
         }
     }
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+        collision = coll.transform;
         if (playerState != PlayerState.OnSkill)
         {
-            if (coll.transform.tag == "IcePowerUp")
+            if (collision.CompareTag("IcePowerUp"))
             {
                 PowerUpUI.sprite = PowerUpHielo;
                 ActiveSkill = Skill.ice;
             }
-            if (coll.transform.tag == "EmpujePowerUp")
+            if (collision.CompareTag("EmpujePowerUp"))
             {
                 PowerUpUI.sprite = PowerUpEmpuje;
                 ActiveSkill = Skill.mele;
@@ -542,7 +421,7 @@ public class Player : MonoBehaviour
 
     void ImpulseDash(Vector2 direction)
     {
-        rig.velocity = direction * 30;
+        rig.velocity = direction * ForceImpulseDash;
         time += 1 * Time.deltaTime;
         if (time >= 0.5f)
         {
@@ -565,4 +444,145 @@ public class Player : MonoBehaviour
     {
         GameManager.OnPause -= PauseInFalse;
     }
+    #endregion
+
+    #region SwitchStatesFunctios
+    void NormalState()
+    {
+        if (!emojiOn)
+        {
+            if (control.Emoji1())
+            {
+                EmojiInvoque(Emoji1);
+            }
+            else if (control.Emoji2())
+            {
+                EmojiInvoque(Emoji2);
+            }
+            else if (control.Emoji3())
+            {
+                EmojiInvoque(Emoji3);
+            }
+            else if (control.Emoji4())
+            {
+                EmojiInvoque(Emoji4);
+            }
+        }
+        else
+        {
+            timeEmoji += 1 * Time.deltaTime;
+            if (timeEmoji >= 2.0f)
+            {
+                timeEmoji = 0;
+                emojiOn = false;
+            }
+        }
+        pos = new Vector2(transform.position.x, transform.position.y);
+        if (control.Jump())
+        {
+            if (jump == true && InFloor)
+            {
+                StartCoroutine(Impulse());
+            }
+        }
+        if (control.Right())
+        {
+            Walk(Movement, RotationRight);
+        }
+        else if (control.Left())
+        {
+            Walk(-Movement, RotationLeft);
+        }
+        else
+        {
+            m_Animator.SetBool("Caminata", false);
+        }
+        velocity = rig.velocity;
+        if (rig.velocity.x >= MaxVelocity)
+        {
+            rig.velocity = new Vector2(MaxVelocity, rig.velocity.y);
+        }
+        if (rig.velocity.x <= MinVelocity)
+        {
+            rig.velocity = new Vector2(MinVelocity, rig.velocity.y);
+        }
+        if (control.Skill())
+        {
+            switch (ActiveSkill)
+            {
+                case Skill.ice:
+                    if (iceInvoque == false)
+                    {
+                        StartCoroutine(IceSkillCD());
+                        m_Animator.SetTrigger("IceSkill");
+                        playerState = PlayerState.OnSkill;
+                        ActiveSkill = Skill.none;
+                        PowerUpUI.sprite = nothing;
+                    }
+                    break;
+                case Skill.mele:
+                    if (meleInvoque == false)
+                    {
+                        StartCoroutine(MeleSkillCD());
+                        m_Animator.SetTrigger("MeleSkill");
+                        ActiveSkill = Skill.none;
+                        PowerUpUI.sprite = nothing;
+                    }
+                    break;
+                default:
+
+                    break;
+            }
+        }
+        if (stamina > 0 && stamina >= DashCost)
+        {
+
+            if (control.Dash())
+            {
+                StartCoroutine(Dash());
+                myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
+                m_Animator.SetTrigger("Dash");
+                stamina -= DashCost;
+                playerState = PlayerState.OnDash;
+            }
+        }
+        if (stamina > MaxStamina)
+        {
+            stamina = MaxStamina;
+        }
+        if (stamina < MaxStamina)
+        {
+            stamina += RegenStamina * Time.deltaTime;
+        }
+        StaminaObj.size = stamina / MaxStamina;
+    }
+
+    void DashState()
+    {
+        myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
+        if (myRotation.y == 0.0f)
+        {
+            ImpulseDash(Vector2.right * ForceDash);
+        }
+        else
+        {
+            ImpulseDash(Vector2.left * ForceDash);
+        }
+    }
+
+    void ImpulseState()
+    {
+        if (rotationEnemy.y == LookToTheLeft)
+        {
+
+            ImpulseDamage(new Vector2(-1.0f, 0.6f));
+        }
+        else
+        {
+            ImpulseDamage(new Vector2(1.0f, 0.6f));
+        }
+    }
+    #endregion
 }
+
+

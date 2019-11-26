@@ -4,14 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
+    #region Events
     public delegate void PlayerState(float enrageVal);
     public static event PlayerState OnPause;
+    #endregion
 
+    #region List
     public List<GameObject> players;
     public List<GameObject> pjs;
+    #endregion
+
     public string scene;
-    float carga;
+
+    #region Floats
     public float velCarga;
+    float carga;
+    #endregion
+
 
     public override void Awake()
     {

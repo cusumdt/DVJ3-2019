@@ -20,11 +20,14 @@ public class UIMainMenu : MonoBehaviour {
         if (button.transform.name == "Play") {
             m_Animator.SetBool ("On", true);
         } else {
-            Application.Quit ();
+            QuitGame ();
         }
     }
     public void LoadCredits () {
         AkSoundEngine.PostEvent ("ui_menu_select", gameObject);
         SceneManager.LoadScene ("Credits");
+    }
+    public void QuitGame () {
+        Application.Quit ();
     }
 }

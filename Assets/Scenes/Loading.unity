@@ -545,8 +545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8d4d9c10c5e6841996a5c32b2857c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carga: 0
-  velCarga: 50
+  Load: 0
+  velLoad: 50
   text: {fileID: 1789800607}
   image: {fileID: 606455552}
 --- !u!1 &1561328553

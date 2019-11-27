@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" SchemaVersion="94" RootDocumentID="{B6F03F5A-1321-4D06-A60E-F7EC9223E071}">
+	<Events>
+		<WorkUnit Name="Player" ID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" OwnerID="{B6F03F5A-1321-4D06-A60E-F7EC9223E071}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="pl_powerup" ID="{A4386832-8967-453D-83F1-82463690F728}">
+					<ChildrenList>
+						<Action Name="" ID="{3A2047F3-A149-4D49-9B7B-0A009B625D58}" ShortID="891941305">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="powerup" ID="{4F8E33D1-3981-4CCB-9C23-7F5B2CDFDF07}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pl_bat" ID="{0194EDBC-A15A-4B4D-BA4C-D973C0E96D57}">
+					<ChildrenList>
+						<Action Name="" ID="{2634EA3D-42C2-4B53-811D-139350BBC290}" ShortID="703400060">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="bat" ID="{C7434C24-2775-4760-9C64-E24ACA452845}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pl_attack" ID="{0022BEE6-5051-4E53-ABCC-AD439452350D}">
+					<ChildrenList>
+						<Action Name="" ID="{03FB5928-7496-4309-86AA-F6CE82C6AEC2}" ShortID="768000903">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="attack" ID="{2C873072-A9A0-4068-8F7C-D670228173F2}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pl_dash" ID="{CCD7217E-BB54-45D5-9946-0095B86CFDA3}">
+					<ChildrenList>
+						<Action Name="" ID="{1DFEB259-BA8F-4C82-892E-20D481F55BBD}" ShortID="623796409">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="dash" ID="{3930355D-ACCE-4B43-AD77-13387C39B2E0}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pl_deathbybat" ID="{2432B2A8-67CA-414F-88DB-A8A460E37DCC}">
+					<ChildrenList>
+						<Action Name="" ID="{8076AD5F-0D8D-4747-B3AF-ABC32C094D9A}" ShortID="383015557">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="deathByBat" ID="{1CB5C936-59AF-4F6C-B64A-AA5E554EDE62}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pl_frozen" ID="{5192718A-CFEC-46D4-AC1F-551C1162E4D1}">
+					<ChildrenList>
+						<Action Name="" ID="{ED797DA4-3F65-456D-BF42-8651149547B7}" ShortID="900285953">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="frozen" ID="{031694E7-CBDD-472C-9DB3-A16A3DFECB62}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pl_walk" ID="{DA3F2C2A-167C-4C0E-B7DF-8B2F676BEA96}">
+					<ChildrenList>
+						<Action Name="" ID="{EE468AAA-0088-4D3A-BE82-A3277AD0D763}" ShortID="678858022">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="walk" ID="{6678B3C9-8B1A-48F5-B09F-C5E4B6A58839}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pl_jump" ID="{54005E1B-94D0-4DDB-B804-F27258A5F799}">
+					<ChildrenList>
+						<Action Name="" ID="{CE5ED90E-85A5-4143-8689-98B6E7DAEFB4}" ShortID="865007767">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="jump" ID="{53C0D3C6-CFBF-4435-9EFB-E37CBCB4326C}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pl_die" ID="{2DEC629E-2C7E-459A-A692-4B5B5454EEB2}">
+					<ChildrenList>
+						<Action Name="" ID="{0A6EE3FE-8491-4577-BA80-86795F432036}" ShortID="193900683">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="die" ID="{AEEF7845-FF9B-4292-9C08-2665364D2837}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pl_lost" ID="{0A780A4E-B976-4697-9006-A28F5225B3D5}">
+					<ChildrenList>
+						<Action Name="" ID="{80BED1EA-AD93-4416-9290-8011A456D953}" ShortID="980824250">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="lost" ID="{175D1739-7748-4E9B-8D4F-AD8ADA4155EB}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pl_respawn" ID="{E88C2422-0EB2-4C51-8FDC-965969ABF084}">
+					<ChildrenList>
+						<Action Name="" ID="{0E55324B-9A10-4EE7-861D-48B3962BDFE0}" ShortID="94276694">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="respawn" ID="{40C5CFBB-15E8-49B2-93DA-7AC51298DEB5}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="pl_victory" ID="{1FA91BE2-1DA1-4D30-84DC-EDE84DF00074}">
+					<ChildrenList>
+						<Action Name="" ID="{7AC9B12D-2BBD-44E0-8998-D18029286FA9}" ShortID="1011319722">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="victoria" ID="{E7DC4D7E-9060-4D61-A69E-1AD0F4644EAE}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

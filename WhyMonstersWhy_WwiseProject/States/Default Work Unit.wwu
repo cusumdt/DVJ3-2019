@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{87FC5F54-F45D-4787-A4ED-292C6736BC4B}" SchemaVersion="94">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{87FC5F54-F45D-4787-A4ED-292C6736BC4B}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{87FC5F54-F45D-4787-A4ED-292C6736BC4B}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="pause" ID="{54EFA588-B291-4909-875F-4C17E58ED55D}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0.5"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{7F4C71F2-BB5E-4BAF-AA9E-B988E7B8FCCA}"/>
+						<State Name="pause" ID="{70FFE9CF-F163-4FF6-BEC4-CC5801EEF9A2}"/>
+						<State Name="normal" ID="{3828E3AF-48C8-456A-969A-3BF353179974}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{E085B195-EC03-499D-8B74-7866FC374B18}" SchemaVersion="94">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{E085B195-EC03-499D-8B74-7866FC374B18}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{E085B195-EC03-499D-8B74-7866FC374B18}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="scenes" ID="{42C30EDB-99D1-4050-B3E4-4A8476995E45}">
+					<ChildrenList>
+						<Switch Name="title" ID="{48B22F03-2108-491C-9B79-0DDDBFC4958C}"/>
+						<Switch Name="mainmenu" ID="{39716328-D98D-4F9B-A0E6-2C2806D48D0F}"/>
+						<Switch Name="rony" ID="{AE241A21-346B-4C26-9E32-8D54EFABC0A2}"/>
+						<Switch Name="tutorial" ID="{710631AB-C00A-4B12-845E-CCAD672079F4}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="player" ID="{6DB81A6A-B968-41E3-B0C9-B8448E7D1AD5}">
+					<ChildrenList>
+						<Switch Name="rony" ID="{6D3AC917-9B76-4B33-84FB-1DA87F7E1DB1}"/>
+						<Switch Name="wambo" ID="{A5F1E971-05E5-461E-8F89-8C9C52B787B8}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="weapon" ID="{8147FB90-A5C4-4A1D-93E6-B7E7876CA53D}">
+					<ChildrenList>
+						<Switch Name="melee" ID="{572674F1-3725-433E-A3B7-3E92196708F2}"/>
+						<Switch Name="bat" ID="{0B94BCCD-5BD6-4BC4-9DA2-2DD78AF8DD4F}"/>
+						<Switch Name="ice" ID="{F7D904B3-8D8F-43EB-BC63-1E50C3604805}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

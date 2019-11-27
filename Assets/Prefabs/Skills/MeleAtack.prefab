@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8942235882300942526}
   - component: {fileID: 5412508055914785292}
-  - component: {fileID: 2597008299256753454}
+  - component: {fileID: 5042646298009018176}
   m_Layer: 0
   m_Name: MeleAtack
   m_TagString: Mele
@@ -58,7 +58,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7601166, y: 1.4777865}
   m_EdgeRadius: 0
---- !u!114 &2597008299256753454
+--- !u!114 &5042646298009018176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4757197721753227190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d917a27620758b544871ddb7b04f6d9c, type: 3}
+  m_Script: {fileID: 11500000, guid: d500583148e0c9949a7229916284e8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LimitTime: 0.2

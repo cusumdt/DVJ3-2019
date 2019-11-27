@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{62805583-3373-4740-8632-EDBF83CD5BBD}" SchemaVersion="94" RootDocumentID="{B6F03F5A-1321-4D06-A60E-F7EC9223E071}">
+	<Events>
+		<WorkUnit Name="UI" ID="{62805583-3373-4740-8632-EDBF83CD5BBD}" OwnerID="{B6F03F5A-1321-4D06-A60E-F7EC9223E071}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="ui_menu_move" ID="{60AFF5AD-8F3E-4C66-AD8A-3542E89C03E4}">
+					<ChildrenList>
+						<Action Name="" ID="{F928D171-EF82-4E94-A5CF-9DDF1E32716D}" ShortID="335507804">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="move" ID="{EFB8EE67-9E54-43F1-868F-9D34522A200A}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ui_menu_select" ID="{951A95C9-9062-47F1-86B4-BBE2B56764B7}">
+					<ChildrenList>
+						<Action Name="" ID="{BFA9B6A5-0F47-4EB7-A9CD-EC5ABC635355}" ShortID="302629699">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="scene" ID="{8C6ACC07-37D1-490D-8C0F-935B02172D8B}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ui_menu_play_start" ID="{D0936C50-DA91-42B9-8093-A0B16692A5E8}">
+					<ChildrenList>
+						<Action Name="" ID="{20DC3E25-A11A-49C5-BF93-AA6FA01D976C}" ShortID="132557301">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="in" ID="{EB735D2B-D260-4834-9D48-42D4B7DAFA6D}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ui_menu_play_stop" ID="{030B4130-BE9E-4050-8EB5-7B29C0CAE3BC}">
+					<ChildrenList>
+						<Action Name="" ID="{43D00C45-7894-4F8D-90F3-61BC7FE6C559}" ShortID="29811778">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="scene" ID="{8C6ACC07-37D1-490D-8C0F-935B02172D8B}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ui_tutorial_loading_full" ID="{E0189E7E-05ED-4753-A083-A76691705781}">
+					<ChildrenList>
+						<Action Name="" ID="{75772A4A-AD1F-4812-A641-39E9896CDEFB}" ShortID="612297038">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="scene" ID="{8C6ACC07-37D1-490D-8C0F-935B02172D8B}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ui_tutorial_startgame" ID="{FBD9D234-B37D-4BD8-BEFF-3FBB1BDACA14}">
+					<ChildrenList>
+						<Action Name="" ID="{99E8C20D-CE42-4100-9ADF-834CC21E4A0A}" ShortID="606817936">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="scene" ID="{8C6ACC07-37D1-490D-8C0F-935B02172D8B}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ui_pause_on" ID="{ABC21569-58F7-4D41-8E7B-DF84FE0483F1}">
+					<ChildrenList>
+						<Action Name="" ID="{AA0490BD-CA45-4321-BA03-D56DBB9D2DE4}" ShortID="558441204">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="in" ID="{EB735D2B-D260-4834-9D48-42D4B7DAFA6D}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ui_pause_off" ID="{E18E46CB-FA26-4C62-94D8-9F7698DBF8E0}">
+					<ChildrenList>
+						<Action Name="" ID="{204DBD4D-7882-4391-AF79-A2E28CA72F32}" ShortID="601890885">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="move" ID="{EFB8EE67-9E54-43F1-868F-9D34522A200A}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

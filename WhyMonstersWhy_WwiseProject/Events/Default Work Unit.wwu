@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{B6F03F5A-1321-4D06-A60E-F7EC9223E071}" SchemaVersion="94">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{B6F03F5A-1321-4D06-A60E-F7EC9223E071}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{B6F03F5A-1321-4D06-A60E-F7EC9223E071}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="title_anim" ID="{8EF4D5BC-F261-4796-BF1F-EF627B15EA29}">
+					<ChildrenList>
+						<Action Name="" ID="{73405BAF-5E41-4AEF-82A5-60BF8810A893}" ShortID="1067683294">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="scene" ID="{8C6ACC07-37D1-490D-8C0F-935B02172D8B}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<WorkUnit Name="Player" ID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" PersistMode="Reference"/>
+				<WorkUnit Name="Scenes" ID="{9F251BB2-F0EF-4DC6-9A1D-656A68C3C1F6}" PersistMode="Reference"/>
+				<WorkUnit Name="UI" ID="{62805583-3373-4740-8632-EDBF83CD5BBD}" PersistMode="Reference"/>
+				<WorkUnit Name="Ambient" ID="{9D4753A9-2B1A-40F8-BC32-B14B2DB7B9E1}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

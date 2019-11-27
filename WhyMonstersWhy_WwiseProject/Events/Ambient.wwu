@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9D4753A9-2B1A-40F8-BC32-B14B2DB7B9E1}" SchemaVersion="94" RootDocumentID="{B6F03F5A-1321-4D06-A60E-F7EC9223E071}">
+	<Events>
+		<WorkUnit Name="Ambient" ID="{9D4753A9-2B1A-40F8-BC32-B14B2DB7B9E1}" OwnerID="{B6F03F5A-1321-4D06-A60E-F7EC9223E071}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="amb_lava_warning" ID="{F7B97341-86A9-4D61-AF81-BF265647F631}">
+					<ChildrenList>
+						<Action Name="" ID="{961154BD-DFEA-4034-B723-B5DF9C4BD6CE}" ShortID="823252492">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="warning" ID="{8E830128-2CE0-4036-B046-DEBA17DA3C43}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="amb_lava_begins" ID="{608DE239-B766-4BA6-96A9-41747C4EA6CC}">
+					<ChildrenList>
+						<Action Name="" ID="{5EC592CA-93F9-4203-9F8A-82A3E9A5E287}" ShortID="68030755">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="lava" ID="{35264CD6-D09D-4E00-9CDA-2090164DB605}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="amb_lava_ends" ID="{680E6160-CAE9-4B6D-9BBC-661503E44995}">
+					<ChildrenList>
+						<Action Name="" ID="{14CF45FB-EFDB-4F4F-B8DC-440AAA119FB7}" ShortID="217318750">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="lava" ID="{35264CD6-D09D-4E00-9CDA-2090164DB605}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="amb_stalactite_breaks" ID="{E8B8BAC3-C699-42D0-88C8-A551CD9F8D6F}">
+					<ChildrenList>
+						<Action Name="" ID="{62B10C3B-F894-4767-926E-C7FE058FAA9F}" ShortID="160533221">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="estalactitas" ID="{FE3ED649-E2B1-4511-9C93-CE047C449B8F}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

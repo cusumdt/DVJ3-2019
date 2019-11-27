@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{51924852-642F-4F91-B71D-8D6AF02E5647}" SchemaVersion="94">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{51924852-642F-4F91-B71D-8D6AF02E5647}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{51924852-642F-4F91-B71D-8D6AF02E5647}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="sfx_lvl" ID="{BFA72B45-6411-4E31-BF9D-BF3E6D05CB87}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="90"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="mus_lvl" ID="{522CB41C-A41B-4D83-9EE5-AC2B98843AE0}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="90"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="ui_loading" ID="{648087F2-43AE-4BB5-862D-2B9B4CDB5254}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="pl_stamina" ID="{54CEEA62-6343-41E6-A52B-B11B98CE0DAD}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="pl_life" ID="{AF0BA592-B4DD-44A7-979D-C450B0D0A6E2}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="3"/>
+						<Property Name="Max" Type="Real64" Value="3"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>

@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{94BC15B3-837F-48D3-B2DB-F411E3610F13}" SchemaVersion="94">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{94BC15B3-837F-48D3-B2DB-F411E3610F13}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{94BC15B3-837F-48D3-B2DB-F411E3610F13}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{9C00FF5F-7423-4528-A689-9EA208882977}">
+					<ObjectInclusionList>
+						<ObjectRef Name="ui_menu_play_stop" ID="{030B4130-BE9E-4050-8EB5-7B29C0CAE3BC}" WorkUnitID="{62805583-3373-4740-8632-EDBF83CD5BBD}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pl_deathbybat" ID="{2432B2A8-67CA-414F-88DB-A8A460E37DCC}" WorkUnitID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="scenes_title" ID="{8E4A8ACB-AA44-4238-B887-32AFC52C00EE}" WorkUnitID="{9F251BB2-F0EF-4DC6-9A1D-656A68C3C1F6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="ui_menu_play_start" ID="{D0936C50-DA91-42B9-8093-A0B16692A5E8}" WorkUnitID="{62805583-3373-4740-8632-EDBF83CD5BBD}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="amb_stalactite_breaks" ID="{E8B8BAC3-C699-42D0-88C8-A551CD9F8D6F}" WorkUnitID="{9D4753A9-2B1A-40F8-BC32-B14B2DB7B9E1}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pl_powerup" ID="{A4386832-8967-453D-83F1-82463690F728}" WorkUnitID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pl_die" ID="{2DEC629E-2C7E-459A-A692-4B5B5454EEB2}" WorkUnitID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pl_dash" ID="{CCD7217E-BB54-45D5-9946-0095B86CFDA3}" WorkUnitID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pl_lost" ID="{0A780A4E-B976-4697-9006-A28F5225B3D5}" WorkUnitID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pl_frozen" ID="{5192718A-CFEC-46D4-AC1F-551C1162E4D1}" WorkUnitID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="scenes_combat" ID="{BEFB7E8B-AFB4-46D5-B0CD-B4B2CE66EB80}" WorkUnitID="{9F251BB2-F0EF-4DC6-9A1D-656A68C3C1F6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="ui_tutorial_loading_full" ID="{E0189E7E-05ED-4753-A083-A76691705781}" WorkUnitID="{62805583-3373-4740-8632-EDBF83CD5BBD}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="title_anim" ID="{8EF4D5BC-F261-4796-BF1F-EF627B15EA29}" WorkUnitID="{B6F03F5A-1321-4D06-A60E-F7EC9223E071}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="scenes_mainmenu" ID="{CFBE022C-F948-47B7-8F5F-9505F370DFCD}" WorkUnitID="{9F251BB2-F0EF-4DC6-9A1D-656A68C3C1F6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="ui_menu_select" ID="{951A95C9-9062-47F1-86B4-BBE2B56764B7}" WorkUnitID="{62805583-3373-4740-8632-EDBF83CD5BBD}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="scenes_firstscene" ID="{A98966B0-6BC3-490A-AB5A-A03AD698E645}" WorkUnitID="{9F251BB2-F0EF-4DC6-9A1D-656A68C3C1F6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pl_bat" ID="{0194EDBC-A15A-4B4D-BA4C-D973C0E96D57}" WorkUnitID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="amb_lava_ends" ID="{680E6160-CAE9-4B6D-9BBC-661503E44995}" WorkUnitID="{9D4753A9-2B1A-40F8-BC32-B14B2DB7B9E1}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="amb_lava_begins" ID="{608DE239-B766-4BA6-96A9-41747C4EA6CC}" WorkUnitID="{9D4753A9-2B1A-40F8-BC32-B14B2DB7B9E1}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="ui_tutorial_startgame" ID="{FBD9D234-B37D-4BD8-BEFF-3FBB1BDACA14}" WorkUnitID="{62805583-3373-4740-8632-EDBF83CD5BBD}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="scene_tutorial" ID="{21DFBA3B-5538-4BE8-BCB9-9CE0AC3B1770}" WorkUnitID="{9F251BB2-F0EF-4DC6-9A1D-656A68C3C1F6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pl_walk" ID="{DA3F2C2A-167C-4C0E-B7DF-8B2F676BEA96}" WorkUnitID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pl_respawn" ID="{E88C2422-0EB2-4C51-8FDC-965969ABF084}" WorkUnitID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="ui_pause_off" ID="{E18E46CB-FA26-4C62-94D8-9F7698DBF8E0}" WorkUnitID="{62805583-3373-4740-8632-EDBF83CD5BBD}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="ui_menu_move" ID="{60AFF5AD-8F3E-4C66-AD8A-3542E89C03E4}" WorkUnitID="{62805583-3373-4740-8632-EDBF83CD5BBD}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pl_victory" ID="{1FA91BE2-1DA1-4D30-84DC-EDE84DF00074}" WorkUnitID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="ui_pause_on" ID="{ABC21569-58F7-4D41-8E7B-DF84FE0483F1}" WorkUnitID="{62805583-3373-4740-8632-EDBF83CD5BBD}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="amb_lava_warning" ID="{F7B97341-86A9-4D61-AF81-BF265647F631}" WorkUnitID="{9D4753A9-2B1A-40F8-BC32-B14B2DB7B9E1}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pl_jump" ID="{54005E1B-94D0-4DDB-B804-F27258A5F799}" WorkUnitID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="pl_attack" ID="{0022BEE6-5051-4E53-ABCC-AD439452350D}" WorkUnitID="{FA251DFF-1C80-44D2-949D-9572D45AAAE6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="scenes_comb_rony" ID="{EC36D76A-FA78-4F45-83E2-AE5B7F811E08}" WorkUnitID="{9F251BB2-F0EF-4DC6-9A1D-656A68C3C1F6}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>

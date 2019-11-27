@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9F251BB2-F0EF-4DC6-9A1D-656A68C3C1F6}" SchemaVersion="94" RootDocumentID="{B6F03F5A-1321-4D06-A60E-F7EC9223E071}">
+	<Events>
+		<WorkUnit Name="Scenes" ID="{9F251BB2-F0EF-4DC6-9A1D-656A68C3C1F6}" OwnerID="{B6F03F5A-1321-4D06-A60E-F7EC9223E071}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="scenes_title" ID="{8E4A8ACB-AA44-4238-B887-32AFC52C00EE}">
+					<ChildrenList>
+						<Action Name="" ID="{C3455653-51F8-4930-9B2C-5B5543AACC02}" ShortID="161681897">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="scene" ID="{8C6ACC07-37D1-490D-8C0F-935B02172D8B}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="scenes_firstscene" ID="{A98966B0-6BC3-490A-AB5A-A03AD698E645}">
+					<ChildrenList>
+						<Action Name="" ID="{F5D0D8D9-10BD-468D-9396-02E81571B6AD}" ShortID="682629395">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="scene" ID="{8C6ACC07-37D1-490D-8C0F-935B02172D8B}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="scenes_mainmenu" ID="{CFBE022C-F948-47B7-8F5F-9505F370DFCD}">
+					<ChildrenList>
+						<Action Name="" ID="{927D70F5-8F99-4BC0-9D86-4D2A7C1E8AC2}" ShortID="981551109">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="scene" ID="{8C6ACC07-37D1-490D-8C0F-935B02172D8B}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="scene_tutorial" ID="{21DFBA3B-5538-4BE8-BCB9-9CE0AC3B1770}">
+					<ChildrenList>
+						<Action Name="" ID="{D75D6F84-BAE1-46E1-B0CE-1D0DD2DCC18B}" ShortID="626293079">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="scene" ID="{8C6ACC07-37D1-490D-8C0F-935B02172D8B}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="scenes_combat" ID="{BEFB7E8B-AFB4-46D5-B0CD-B4B2CE66EB80}">
+					<ChildrenList>
+						<Action Name="" ID="{4C596A87-8487-4362-94AD-D2A06FFC51F8}" ShortID="711681086">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="scene" ID="{8C6ACC07-37D1-490D-8C0F-935B02172D8B}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="scenes_comb_rony" ID="{EC36D76A-FA78-4F45-83E2-AE5B7F811E08}">
+					<ChildrenList>
+						<Action Name="" ID="{B5ADB3FE-0312-431E-B152-5883D0FE99BD}" ShortID="362883395">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="scene" ID="{8C6ACC07-37D1-490D-8C0F-935B02172D8B}" WorkUnitID="{BEFA469A-31F0-4DFF-8230-1314C9342563}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -15,33 +15,40 @@ public class Loading : MonoBehaviour
     private bool CargaOn;
     public Text text;
     public GameObject image;
+    bool SoundFullLoad = false;
     // Start is called before the first frame update
     void Start()
     {
         CargaOn = false;
+        SoundFullLoad = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-            if (carga >= 100)
+        if (carga >= 100)
+        {
+            if (SoundFullLoad)
             {
-
-                carga = 100;
-                 if (Input.GetKeyDown("joystick button 0")  || Input.GetKeyDown("space"))
-                 {
-                    carga = 0;
-                    ActualScene("Game");
-                    SceneManager.LoadScene("Game");
-                }
-                text.text = "To start";
-                image.SetActive(true);
+                SoundFullLoad = false;
+                AkSoundEngine.PostEvent("ui_tutorial_loading_full", gameObject);
             }
-            else
+            carga = 100;
+            if (Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("space"))
             {
-                carga = carga + (Time.deltaTime * velCarga);
-                text.text = ((int)carga).ToString() + "%"; 
+                AkSoundEngine.PostEvent("ui_tutorial_startgame", gameObject);
+                carga = 0;
+                ActualScene("Game");
+                SceneManager.LoadScene("Game");
             }
+            text.text = "To start";
+            image.SetActive(true);
+        }
+        else
+        {
+            carga = carga + (Time.deltaTime * velCarga);
+            text.text = ((int)carga).ToString() + "%";
+        }
     }
     void ActualScene(string _scene)
     {

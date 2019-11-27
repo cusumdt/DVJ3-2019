@@ -1,0 +1,66 @@
+Event	ID	Name			Wwise Object Path	Notes
+	272266195	scenes_firstscene			\Default Work Unit\Scenes\scenes_firstscene	
+	376099243	ui_menu_play_stop			\Default Work Unit\UI\ui_menu_play_stop	
+	477371494	pl_deathbybat			\Default Work Unit\Player\pl_deathbybat	
+	720681037	scenes_combat			\Default Work Unit\Scenes\scenes_combat	
+	797745526	pl_lost			\Default Work Unit\Player\pl_lost	
+	842924071	pl_walk			\Default Work Unit\Player\pl_walk	
+	952138190	ui_pause_off			\Default Work Unit\UI\ui_pause_off	
+	1275912799	ui_tutorial_loading_full			\Default Work Unit\UI\ui_tutorial_loading_full	
+	1406566429	amb_lava_begins			\Default Work Unit\Ambient\amb_lava_begins	
+	1581714431	title_anim			\Default Work Unit\title_anim	
+	1665851904	scene_tutorial			\Default Work Unit\Scenes\scene_tutorial	
+	1731872944	ui_pause_on			\Default Work Unit\UI\ui_pause_on	
+	1839761221	amb_lava_warning			\Default Work Unit\Ambient\amb_lava_warning	
+	1912879160	pl_respawn			\Default Work Unit\Player\pl_respawn	
+	2062236611	amb_stalactite_breaks			\Default Work Unit\Ambient\amb_stalactite_breaks	
+	2264357082	pl_frozen			\Default Work Unit\Player\pl_frozen	
+	2482983275	scenes_mainmenu			\Default Work Unit\Scenes\scenes_mainmenu	
+	2712402429	scenes_title			\Default Work Unit\Scenes\scenes_title	
+	2719840045	pl_bat			\Default Work Unit\Player\pl_bat	
+	2835950611	scenes_comb_rony			\Default Work Unit\Scenes\scenes_comb_rony	
+	3009675150	pl_victory			\Default Work Unit\Player\pl_victory	
+	3173259453	ui_menu_move			\Default Work Unit\UI\ui_menu_move	
+	3208440745	amb_lava_ends			\Default Work Unit\Ambient\amb_lava_ends	
+	3237620440	pl_dash			\Default Work Unit\Player\pl_dash	
+	3322848542	pl_die			\Default Work Unit\Player\pl_die	
+	3474566310	ui_menu_select			\Default Work Unit\UI\ui_menu_select	
+	3480935424	pl_jump			\Default Work Unit\Player\pl_jump	
+	3841011808	pl_attack			\Default Work Unit\Player\pl_attack	
+	3944973105	ui_menu_play_start			\Default Work Unit\UI\ui_menu_play_start	
+	4075572744	pl_powerup			\Default Work Unit\Player\pl_powerup	
+	4092758663	ui_tutorial_startgame			\Default Work Unit\UI\ui_tutorial_startgame	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	12576185	walk 1	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 1		21912
+	159834921	estalagtitas 4	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\estalactitas\estalagtitas 4		219168
+	173635762	walk 6	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 6		41940
+	256565412	die	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\die_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\die		123868
+	261821670	estalagtitas 6	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\estalactitas\estalagtitas 6		199012
+	263339427	powerup	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\powerup_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup		166956
+	273199589	dash 2	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\dash 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\dash\dash 2		57988
+	278622275	lost	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\lost_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\lost		508780
+	323615622	bat	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\bat_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\bat		598180
+	406498596	walk 4	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 4		35264
+	449587389	Dash 1	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\Dash 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\dash\Dash 1		67114
+	498587190	walk 5	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 5		32228
+	544287839	lava	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\lava_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\lava		699352
+	555204854	in	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\in_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\in		38464
+	563415613	estalagtitas 1	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\estalactitas\estalagtitas 1		99540
+	649773898	respawn	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\respawn_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\respawn		18626
+	681045325	walk 3	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 3		27374
+	699352988	jump	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\jump_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\jump\jump		30784
+	736198060	frozen	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\frozen_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\frozen		886540
+	758795241	estalagtitas 3	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\estalactitas\estalagtitas 3		153684
+	768365828	Attack 2	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\Attack 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\attack\Attack 2		42878
+	807365543	deathByBat	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\deathByBat_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\deathByBat		969648
+	830428137	warning	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\warning_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\warning		746552
+	839944065	Attack 1	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\Attack 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\attack\Attack 1		55468
+	852256812	walk 2	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 2		25552
+	856586928	jump 2	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\jump 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\jump\jump 2		34624
+	902745752	scene	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\scene_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\scene		157504
+	912002119	estalagtitas 5	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\estalactitas\estalagtitas 5		105836
+	954441081	victoria	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\victoria_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\victoria		704048
+	1036441114	estalagtitas 2	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\estalactitas\estalagtitas 2		100800
+	1063096924	move	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\move_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\move		19264
+

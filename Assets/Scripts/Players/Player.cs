@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
     bool effect;
     bool immune = false;
     bool emojiOn;
+    bool walkSound = true;
     #endregion
     #region INT
     const int DashCost = 25;
@@ -247,6 +248,13 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.0f);
         meleInvoque = false;
     }
+    IEnumerator TimeSoundWalk()
+    {
+        walkSound = false;
+        yield return new WaitForSeconds(0.5f);
+        walkSound = true;
+
+    }
     #endregion
 
     #region Functions
@@ -353,10 +361,12 @@ public class Player : MonoBehaviour
             }
             if (collision.CompareTag("Ice"))
             {
+                AkSoundEngine.PostEvent("pl_frozen", gameObject);
                 playerState = PlayerState.OnIce;
             }
             if (collision.CompareTag("Mele"))
             {
+                AkSoundEngine.PostEvent("pl_deathbybat", gameObject);
                 TraumaInducer.Shake();
                 rotationEnemy = Enemy.transform.rotation;
                 playerState = PlayerState.OnImpulse;
@@ -385,11 +395,13 @@ public class Player : MonoBehaviour
         {
             if (collision.CompareTag("IcePowerUp"))
             {
+                AkSoundEngine.PostEvent("pl_powerup", gameObject);
                 PowerUpUI.sprite = PowerUpHielo;
                 ActiveSkill = Skill.ice;
             }
             if (collision.CompareTag("EmpujePowerUp"))
             {
+                AkSoundEngine.PostEvent("pl_bat", gameObject);
                 PowerUpUI.sprite = PowerUpEmpuje;
                 ActiveSkill = Skill.mele;
             }
@@ -481,15 +493,22 @@ public class Player : MonoBehaviour
         {
             if (jump == true && InFloor)
             {
+                AkSoundEngine.PostEvent("pl_jump", gameObject);
                 StartCoroutine(Impulse());
             }
         }
         if (control.Right())
         {
+            StartCoroutine(TimeSoundWalk());
+            if (walkSound)
+                AkSoundEngine.PostEvent("pl_walk", gameObject);
             Walk(Movement, RotationRight);
         }
         else if (control.Left())
         {
+            StartCoroutine(TimeSoundWalk());
+            if(walkSound)
+                AkSoundEngine.PostEvent("pl_walk", gameObject);
             Walk(-Movement, RotationLeft);
         }
         else
@@ -538,6 +557,7 @@ public class Player : MonoBehaviour
 
             if (control.Dash())
             {
+                AkSoundEngine.PostEvent("pl_dash", gameObject);
                 StartCoroutine(Dash());
                 myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
                 m_Animator.SetTrigger("Dash");
@@ -557,7 +577,7 @@ public class Player : MonoBehaviour
     }
 
     void DashState()
-    {
+    { 
         myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
         if (myRotation.y == 0.0f)
         {

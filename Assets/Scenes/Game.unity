@@ -537,13 +537,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95052224}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.33, y: 7.7930446, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.5773754, y: 6.5562677, z: 13.348925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1163331908}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 495076360}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &95052229
 BoxCollider2D:
@@ -883,7 +883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197478224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.10397, y: 21.078772, z: -60.984375}
+  m_LocalPosition: {x: -23.9, y: 8, z: -60.984375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1435938013}
@@ -1264,7 +1264,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &464213270
 MonoBehaviour:
@@ -1348,6 +1348,12 @@ Transform:
   m_Father: {fileID: 197478225}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &495076360 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6224185143613734014, guid: 8c9a5cfe611d86f4896b46392dde0243,
+    type: 3}
+  m_PrefabInstance: {fileID: 1896323921}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &507794211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,7 +2133,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &816735538
 GameObject:
@@ -8012,7 +8018,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1435938011
 GameObject:
@@ -8954,6 +8960,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Environment A
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500691236237121310, guid: 8c9a5cfe611d86f4896b46392dde0243,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9101353624212727908, guid: 8c9a5cfe611d86f4896b46392dde0243,
         type: 3}

@@ -20,12 +20,14 @@ public class PauseManager : MonoBehaviour
          {
              if(Time.timeScale != 0f)
              {
+                 AkSoundEngine.PostEvent("ui_pause_on", gameObject);
                 SetPause(true);
                  Panel.SetActive(true);
                 Time.timeScale = 0f;
              }
              else
              {
+                 AkSoundEngine.PostEvent("ui_pause_off", gameObject);
                  SetPause(false);
                  Panel.SetActive(false);
                  Time.timeScale = 1f;

@@ -12,14 +12,696 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7fd326ef204764197baa6646c0e347, type: 3}
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
-  AcousticTextureWwu: []
-  AuxBusWwu: []
-  BankWwu: []
-  EventWwu: []
-  RtpcWwu: []
-  StateWwu: []
-  SwitchWwu: []
-  TriggerWwu: []
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 906613c6d17ae74f952061cb98d35e21
+    GuidInternal: 
+    m_lastTime: -8586267794162522798
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: a206c7776ac4c543bc1cae363a0cec4c
+    GuidInternal: 
+    m_lastTime: -8586267794164687008
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: b315bc947f83d348b2dbf411e3610f13
+    GuidInternal: 
+    m_lastTime: -8586267794162662449
+    List:
+    - name: Main
+      guid: 5fff009c23742845a6899ea208882977
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main
+        ObjectType: 7
+      Path: Default Work Unit\Main
+  EventWwu:
+  - PhysicalPath: Events\Ambient.wwu
+    ParentPhysicalPath: Events\Default Work Unit.wwu
+    guid: a953479d1a2bf840bc32b14b2db7b9e1
+    GuidInternal: 
+    m_lastTime: -8586267794165145798
+    List:
+    - name: amb_lava_begins
+      guid: 39e28d6066b7a64b96a941747c4ea6cc
+      id: 1406566429
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambient
+        ObjectType: 12
+      - ElementName: amb_lava_begins
+        ObjectType: 3
+      Path: Default Work Unit\Ambient\amb_lava_begins
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: amb_lava_ends
+      guid: 60610e68e9ca6d4b9bbc661503e44995
+      id: 3208440745
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambient
+        ObjectType: 12
+      - ElementName: amb_lava_ends
+        ObjectType: 3
+      Path: Default Work Unit\Ambient\amb_lava_ends
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: amb_lava_warning
+      guid: 4173b9f7a986614daf81bf265647f631
+      id: 1839761221
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambient
+        ObjectType: 12
+      - ElementName: amb_lava_warning
+        ObjectType: 3
+      Path: Default Work Unit\Ambient\amb_lava_warning
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: amb_stalactite_breaks
+      guid: c3bab8e899c6d04288c8a551cd9f8d6f
+      id: 2062236611
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambient
+        ObjectType: 12
+      - ElementName: amb_stalactite_breaks
+        ObjectType: 3
+      Path: Default Work Unit\Ambient\amb_stalactite_breaks
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 5a3ff0b62113064da60ef7ec9223e071
+    GuidInternal: 
+    m_lastTime: -8586267794165155772
+    List:
+    - name: title_anim
+      guid: bcd5f48e61f29647bf1fef627b15ea29
+      id: 1581714431
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: title_anim
+        ObjectType: 3
+      Path: Default Work Unit\title_anim
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\Player.wwu
+    ParentPhysicalPath: Events\Default Work Unit.wwu
+    guid: ff1d25fa801cd244949d9572d45aaae6
+    GuidInternal: 
+    m_lastTime: -8586267794165155772
+    List:
+    - name: pl_attack
+      guid: e6be22005150534eabccad439452350d
+      id: 3841011808
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: pl_attack
+        ObjectType: 3
+      Path: Default Work Unit\Player\pl_attack
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: pl_bat
+      guid: bced94015aa14d4bba4cd973c0e96d57
+      id: 2719840045
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: pl_bat
+        ObjectType: 3
+      Path: Default Work Unit\Player\pl_bat
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: pl_dash
+      guid: 7e21d7cc54bbd54599460095b86cfda3
+      id: 3237620440
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: pl_dash
+        ObjectType: 3
+      Path: Default Work Unit\Player\pl_dash
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: pl_deathbybat
+      guid: a8b23224ca674f4188dba8a460e37dcc
+      id: 477371494
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: pl_deathbybat
+        ObjectType: 3
+      Path: Default Work Unit\Player\pl_deathbybat
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: pl_die
+      guid: 9e62ec2d7e2c9a45a6924b5b5454eeb2
+      id: 3322848542
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: pl_die
+        ObjectType: 3
+      Path: Default Work Unit\Player\pl_die
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: pl_frozen
+      guid: 8a719251eccfd446ac1f551c1162e4d1
+      id: 2264357082
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: pl_frozen
+        ObjectType: 3
+      Path: Default Work Unit\Player\pl_frozen
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: pl_jump
+      guid: 1b5e0054d094db4db804f27258a5f799
+      id: 3480935424
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: pl_jump
+        ObjectType: 3
+      Path: Default Work Unit\Player\pl_jump
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: pl_lost
+      guid: 4e0a780a76b997469006a28f5225b3d5
+      id: 797745526
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: pl_lost
+        ObjectType: 3
+      Path: Default Work Unit\Player\pl_lost
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: pl_powerup
+      guid: 326838a467893d4583f182463690f728
+      id: 4075572744
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: pl_powerup
+        ObjectType: 3
+      Path: Default Work Unit\Player\pl_powerup
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: pl_respawn
+      guid: 22248ce8b20e514c8fdc965969abf084
+      id: 1912879160
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: pl_respawn
+        ObjectType: 3
+      Path: Default Work Unit\Player\pl_respawn
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: pl_victory
+      guid: e21ba91fa11d304d84dcede84df00074
+      id: 3009675150
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: pl_victory
+        ObjectType: 3
+      Path: Default Work Unit\Player\pl_victory
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: pl_walk
+      guid: 2a2c3fda7c160e4cb7df8b2f676bea96
+      id: 842924071
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: pl_walk
+        ObjectType: 3
+      Path: Default Work Unit\Player\pl_walk
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\Scenes.wwu
+    ParentPhysicalPath: Events\Default Work Unit.wwu
+    guid: b21b259feff0c64d9a1d656a68c3c1f6
+    GuidInternal: 
+    m_lastTime: -8586267794165135828
+    List:
+    - name: scene_tutorial
+      guid: 3bbadf213855e84bbcb99ce0ac3b1770
+      id: 1665851904
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Scenes
+        ObjectType: 12
+      - ElementName: scene_tutorial
+        ObjectType: 3
+      Path: Default Work Unit\Scenes\scene_tutorial
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: scenes_comb_rony
+      guid: 6ad736ec78fa454f83e2ae5b7f811e08
+      id: 2835950611
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Scenes
+        ObjectType: 12
+      - ElementName: scenes_comb_rony
+        ObjectType: 3
+      Path: Default Work Unit\Scenes\scenes_comb_rony
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: scenes_combat
+      guid: 8b7efbbeb4afd546b0cdb4b2ce66eb80
+      id: 720681037
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Scenes
+        ObjectType: 12
+      - ElementName: scenes_combat
+        ObjectType: 3
+      Path: Default Work Unit\Scenes\scenes_combat
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: scenes_firstscene
+      guid: b06689a9c36b0a49ab5aa03ad698e645
+      id: 272266195
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Scenes
+        ObjectType: 12
+      - ElementName: scenes_firstscene
+        ObjectType: 3
+      Path: Default Work Unit\Scenes\scenes_firstscene
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: scenes_mainmenu
+      guid: 2c02becf48f9b7478f5f9505f370dfcd
+      id: 2482983275
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Scenes
+        ObjectType: 12
+      - ElementName: scenes_mainmenu
+        ObjectType: 3
+      Path: Default Work Unit\Scenes\scenes_mainmenu
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: scenes_title
+      guid: cb8a4a8e44aa3842b88732afc52c00ee
+      id: 2712402429
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Scenes
+        ObjectType: 12
+      - ElementName: scenes_title
+        ObjectType: 3
+      Path: Default Work Unit\Scenes\scenes_title
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\UI.wwu
+    ParentPhysicalPath: Events\Default Work Unit.wwu
+    guid: 83558062733340478632edbf83cd5bbd
+    GuidInternal: 
+    m_lastTime: -8586267794165125850
+    List:
+    - name: ui_menu_move
+      guid: adf5af603e8f664cad8a3542e89c03e4
+      id: 3173259453
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: ui_menu_move
+        ObjectType: 3
+      Path: Default Work Unit\UI\ui_menu_move
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ui_menu_play_start
+      guid: 506c93d091dab9428093a0b16692a5e8
+      id: 3944973105
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: ui_menu_play_start
+        ObjectType: 3
+      Path: Default Work Unit\UI\ui_menu_play_start
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ui_menu_play_stop
+      guid: 30410b039ebe50408eb57b29c0cae3bc
+      id: 376099243
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: ui_menu_play_stop
+        ObjectType: 3
+      Path: Default Work Unit\UI\ui_menu_play_stop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ui_menu_select
+      guid: c9951a956290f14786b4bbe2b56764b7
+      id: 3474566310
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: ui_menu_select
+        ObjectType: 3
+      Path: Default Work Unit\UI\ui_menu_select
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ui_pause_off
+      guid: cb468ee126fa624c94d89f7698dbf8e0
+      id: 952138190
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: ui_pause_off
+        ObjectType: 3
+      Path: Default Work Unit\UI\ui_pause_off
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ui_pause_on
+      guid: 6915c2abf758414d8e7bdf84fe0483f1
+      id: 1731872944
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: ui_pause_on
+        ObjectType: 3
+      Path: Default Work Unit\UI\ui_pause_on
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ui_tutorial_loading_full
+      guid: 7e9e18e0ed055347a083a76691705781
+      id: 1275912799
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: ui_tutorial_loading_full
+        ObjectType: 3
+      Path: Default Work Unit\UI\ui_tutorial_loading_full
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ui_tutorial_startgame
+      guid: 34d2d9fb7db3d84bbeff3fbb1bdaca14
+      id: 4092758663
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: ui_tutorial_startgame
+        ObjectType: 3
+      Path: Default Work Unit\UI\ui_tutorial_startgame
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 524892512f64914fb71d8d6af02e5647
+    GuidInternal: 
+    m_lastTime: -8586267794165075989
+    List:
+    - name: mus_lvl
+      guid: 1cb42c521ba4834d9ee5ac2b98843ae0
+      id: 1194683405
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: mus_lvl
+        ObjectType: 13
+      Path: Default Work Unit\mus_lvl
+    - name: pl_life
+      guid: 92a50bafddb4a744979dc450b0d0a6e2
+      id: 1014868618
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: pl_life
+        ObjectType: 13
+      Path: Default Work Unit\pl_life
+    - name: pl_stamina
+      guid: 62eace544363e641a52bb11b98ce0dad
+      id: 3166987955
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: pl_stamina
+        ObjectType: 13
+      Path: Default Work Unit\pl_stamina
+    - name: sfx_lvl
+      guid: 452ba7bf1164314ebf9dbf3e6d05cb87
+      id: 463565953
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: sfx_lvl
+        ObjectType: 13
+      Path: Default Work Unit\sfx_lvl
+    - name: ui_loading
+      guid: f2878064ae43b54b862d2b9b4cdb5254
+      id: 2563992102
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ui_loading
+        ObjectType: 13
+      Path: Default Work Unit\ui_loading
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 545ffc875df48747a4ed292c6736bc4b
+    GuidInternal: 
+    m_lastTime: -8586267794162602611
+    List:
+    - name: pause
+      guid: 88a5ef5491b20949875f4c17e58ed55d
+      id: 3092587493
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: pause
+        ObjectType: 9
+      Path: Default Work Unit\pause
+      values:
+      - name: None
+        guid: f2714c7f5ebbaf4baa9eb988e7b8fcca
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: normal
+        guid: afe32838c8486a45969a3bf353179974
+        id: 1160234136
+        PathAndIcons:
+        - ElementName: normal
+          ObjectType: 8
+      - name: pause
+        guid: cfe9ff7063f1f64fbec4cc5801eef9a2
+        id: 3092587493
+        PathAndIcons:
+        - ElementName: pause
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 95b185e003ec9d498b747866fc374b18
+    GuidInternal: 
+    m_lastTime: -8586267794162572686
+    List:
+    - name: player
+      guid: 6a1ab86d68b9e341b0c9b8448e7d1ad5
+      id: 1069431850
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: player
+        ObjectType: 11
+      Path: Default Work Unit\player
+      values:
+      - name: rony
+        guid: 17c93a6d769b334b84fb1da87f7e1db1
+        id: 2060475659
+        PathAndIcons:
+        - ElementName: rony
+          ObjectType: 10
+      - name: wambo
+        guid: 71e9f1a5e5051e468f898c9c52b787b8
+        id: 1800222223
+        PathAndIcons:
+        - ElementName: wambo
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: scenes
+      guid: db0ec342d1995040b3e44a8476995e45
+      id: 1544306542
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: scenes
+        ObjectType: 11
+      Path: Default Work Unit\scenes
+      values:
+      - name: mainmenu
+        guid: 286371398dd99b4fa0e62c2806d48d0f
+        id: 3604647259
+        PathAndIcons:
+        - ElementName: mainmenu
+          ObjectType: 10
+      - name: rony
+        guid: 211a24ae6b34264c9e328d54efabc0a2
+        id: 2060475659
+        PathAndIcons:
+        - ElementName: rony
+          ObjectType: 10
+      - name: title
+        guid: 032fb24808211c499b790dddbfc4958c
+        id: 3705726509
+        PathAndIcons:
+        - ElementName: title
+          ObjectType: 10
+      - name: tutorial
+        guid: ab3106710ac0124b845eccad672079f4
+        id: 3762955427
+        PathAndIcons:
+        - ElementName: tutorial
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: weapon
+      guid: 90fb4781c4a51d4a93e6b7e7876ca53d
+      id: 3893417221
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: weapon
+        ObjectType: 11
+      Path: Default Work Unit\weapon
+      values:
+      - name: bat
+        guid: cdbc940bd65bc44b9da22dd78af8dd4f
+        id: 513390118
+        PathAndIcons:
+        - ElementName: bat
+          ObjectType: 10
+      - name: ice
+        guid: b304d9f78f8deb43bc631e50c3604805
+        id: 344481046
+        PathAndIcons:
+        - ElementName: ice
+          ObjectType: 10
+      - name: melee
+        guid: f174265725373e43a3b73e92196708f2
+        id: 3208241451
+        PathAndIcons:
+        - ElementName: melee
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 3f3a3d18bc1c364dbdbbfa41d3486424
+    GuidInternal: 
+    m_lastTime: -8586267794162572686
+    List: []
   ExpandedItems: []
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

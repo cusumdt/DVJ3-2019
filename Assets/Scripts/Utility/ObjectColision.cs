@@ -26,8 +26,9 @@ public class ObjectColision : MonoBehaviour
     {
         if (coll.transform.tag == "LavaCollector")
         {
+            AkSoundEngine.PostEvent("amb_lava_ends", gameObject);
             this.transform.position = new Vector3(10.0f, 120.0f, 1.0f);
-            TimeManager.Clock = 30.0f;
+            TimeManager.Clock = 5.0f;
             TimeManager.lavaOn = false;
         }
         if (coll.transform.tag == "CoinCollector" && this.transform.tag == "EnemyObject" || coll.transform.tag == "LavaCollector")
@@ -38,6 +39,7 @@ public class ObjectColision : MonoBehaviour
         }
         if(coll.transform.tag == "Player" && this.transform.tag == "EnemyObject")
         {
+           AkSoundEngine.PostEvent("amb_stalactite_breaks", gameObject);
            Instantiate(Effect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
            this.gameObject.SetActive(false);
         }

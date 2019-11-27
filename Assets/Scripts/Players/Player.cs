@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     Control control;
     #endregion
     #region Floats
+    const float LimitTimeWalfSound = 0.2f;
     const float LookToTheLeft = -1f;
     const float ForceDash = 0.7f;
     const float RotationLeft = 180f;
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
     float jumpForce;
     float stamina;
     float time;
+    float timeWalkSound;
     float timeEmoji;
     #endregion
     #region Vector2
@@ -176,6 +178,7 @@ public class Player : MonoBehaviour
                 if (!defeat)
                 {
                     MultipleTargetCamera.SetTargets(this.transform, 1);
+                    AkSoundEngine.PostEvent("pl_lost", gameObject);
                     GameManager.Get().SetPlayers(prefab);
                     defeat = true;
                 }
@@ -206,6 +209,7 @@ public class Player : MonoBehaviour
         {
             Instantiate(Flecha, new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.identity);
             yield return new WaitForSeconds(2.0f);
+            AkSoundEngine.PostEvent("pl_respawn", gameObject);
             playerState = PlayerState.Normal;
             transform.position = ActualRespawnPoint;
             Instantiate(Respawn, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
@@ -247,13 +251,6 @@ public class Player : MonoBehaviour
         meleInvoque = true;
         yield return new WaitForSeconds(0.0f);
         meleInvoque = false;
-    }
-    IEnumerator TimeSoundWalk()
-    {
-        walkSound = false;
-        yield return new WaitForSeconds(0.5f);
-        walkSound = true;
-
     }
     #endregion
 
@@ -313,7 +310,7 @@ public class Player : MonoBehaviour
     void IfDamage()
     {
         Life--;
-
+        AkSoundEngine.PostEvent("pl_die", gameObject);
         Instantiate(Damage, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         if (Life > 0)
         {
@@ -330,6 +327,12 @@ public class Player : MonoBehaviour
 
     void Walk(float velocity, float rotation)
     {
+        timeWalkSound += Time.deltaTime;
+        if(timeWalkSound>=LimitTimeWalfSound)
+        {
+            timeWalkSound = 0;
+            AkSoundEngine.PostEvent("pl_walk", gameObject);
+        }
         m_Animator.SetBool("Caminata", true);
         if (transform.rotation.y != rotation)
         {
@@ -499,20 +502,15 @@ public class Player : MonoBehaviour
         }
         if (control.Right())
         {
-            StartCoroutine(TimeSoundWalk());
-            if (walkSound)
-                AkSoundEngine.PostEvent("pl_walk", gameObject);
             Walk(Movement, RotationRight);
         }
         else if (control.Left())
         {
-            StartCoroutine(TimeSoundWalk());
-            if(walkSound)
-                AkSoundEngine.PostEvent("pl_walk", gameObject);
             Walk(-Movement, RotationLeft);
         }
         else
         {
+            timeWalkSound = LimitTimeWalfSound;
             m_Animator.SetBool("Caminata", false);
         }
         velocity = rig.velocity;

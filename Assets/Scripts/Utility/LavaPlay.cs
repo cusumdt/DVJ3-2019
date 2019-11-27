@@ -8,6 +8,7 @@ public class LavaPlay : MonoBehaviour
 
     public void LavaOn()
     {
+        AkSoundEngine.PostEvent("amb_lava_begins", gameObject);
         Obj.SetActive(true);
         Obj.transform.position = new Vector3(15.0f, 200.0f, 1.0f);
         this.gameObject.SetActive(false);

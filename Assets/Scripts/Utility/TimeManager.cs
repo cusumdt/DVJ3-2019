@@ -36,6 +36,7 @@ public class TimeManager : MonoBehaviour
         {
             if (!lavaOn)
             {
+                 AkSoundEngine.PostEvent("amb_lava_warning", gameObject);
                 Flecha.SetActive(true);
                 lavaOn = true;
             }

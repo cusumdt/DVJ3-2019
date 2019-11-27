@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drop : MonoBehaviour
+public class ObjectsSpawner : MonoBehaviour
 {
     public GameObject[] GoodDrop;
     public GameObject[] BadDrop;

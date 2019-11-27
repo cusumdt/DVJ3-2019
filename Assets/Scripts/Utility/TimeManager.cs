@@ -1,48 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class TimeManager : MonoBehaviour
-{
+public class TimeManager : MonoBehaviour {
 
     static public float Clock;
-   public float veamosClock;
+    public float actualClock;
     static public bool lavaOn;
     [SerializeField]
     private float TimeMax;
     public Image ClockImage;
+    public GameObject Arrow;
 
-    public GameObject Flecha;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start () {
+
         Clock = TimeMax;
         lavaOn = false;
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Clock > 0)
-        {
+    void Update () {
+        if (Clock > 0) {
             ClockImage.fillAmount = Clock / TimeMax;
             Clock -= 1 * Time.deltaTime;
-        }
-        else
-        {
-            if (!lavaOn)
-            {
-                 AkSoundEngine.PostEvent("amb_lava_warning", gameObject);
-                Flecha.SetActive(true);
+        } else {
+            if (!lavaOn) {
+                AkSoundEngine.PostEvent ("amb_lava_warning", gameObject);
+                Arrow.SetActive (true);
                 lavaOn = true;
             }
         }
-        veamosClock = Clock;
+        actualClock = Clock;
     }
-
 
 }

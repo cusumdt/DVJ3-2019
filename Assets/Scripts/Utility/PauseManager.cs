@@ -42,7 +42,7 @@ public class PauseManager : MonoBehaviour {
     public void SoundOff () {
 
     }
-    
+
     void SetPause (bool state) {
         if (OnPause != null) {
             float amount = 1;

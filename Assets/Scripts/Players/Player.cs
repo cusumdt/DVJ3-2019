@@ -1,21 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class Player : MonoBehaviour
-{
+public class Player : MonoBehaviour {
     public Rigidbody2D rig;
     #region Enums
-    public enum Skill
-    {
+    public enum Skill {
         none,
         ice,
         mele
     }
-    enum PlayerState
-    {
+    enum PlayerState {
         OnIce,
         OnSkill,
         OnImpulse,
@@ -121,29 +118,28 @@ public class Player : MonoBehaviour
     #endregion
     #region Sprites
     [SerializeField]
-    Sprite PowerUpHielo;
+    Sprite PowerUpIce;
     [SerializeField]
-    Sprite PowerUpEmpuje;
+    Sprite PowerUpPush;
     [SerializeField]
     Sprite nothing;
     #endregion
 
-    void Start()
-    {
+    void Start () {
         Life = MaxLife;
         stamina = MaxStamina;
-        pos = new Vector2(transform.position.x, transform.position.y);
+        pos = new Vector2 (transform.position.x, transform.position.y);
         defeat = false;
         ActiveSkill = Skill.none;
-        control = new Control();
-        control.SetPlayer(player);
+        control = new Control ();
+        control.SetPlayer (player);
         emojiOn = false;
         timeEmoji = 0;
         playerState = PlayerState.Normal;
         #region GetComponent
-        m_Animator = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
-        circleCollider = GetComponent<CircleCollider2D>();
+        m_Animator = GetComponent<Animator> ();
+        sprite = GetComponent<SpriteRenderer> ();
+        circleCollider = GetComponent<CircleCollider2D> ();
         #endregion
         #region SetEvents
         GameManager.OnPause += PauseInFalse;
@@ -151,281 +147,226 @@ public class Player : MonoBehaviour
         #endregion
     }
 
-    void Update()
-    {
-        if (!pause)
-        {
-            if (Life > 0)
-            {
-                switch (playerState)
-                {
+    void Update () {
+        if (!pause) {
+            if (Life > 0) {
+                switch (playerState) {
                     case PlayerState.OnIce:
-                        StartCoroutine(IceEffect());
+                        StartCoroutine (IceEffect ());
                         break;
                     case PlayerState.OnImpulse:
-                        ImpulseState();
+                        ImpulseState ();
                         break;
                     case PlayerState.OnDash:
-                        DashState();
+                        DashState ();
                         break;
                     case PlayerState.Normal:
-                        NormalState();
+                        NormalState ();
                         break;
                 }
-            }
-            else
-            {
-                if (!defeat)
-                {
-                    MultipleTargetCamera.SetTargets(this.transform, 1);
-                    AkSoundEngine.PostEvent("pl_lost", gameObject);
-                    GameManager.Get().SetPlayers(prefab);
+            } else {
+                if (!defeat) {
+                    MultipleTargetCamera.SetTargets (this.transform, 1);
+                    AkSoundEngine.PostEvent ("pl_lost", gameObject);
+                    GameManager.Get ().SetPlayers (prefab);
                     defeat = true;
                 }
             }
         }
     }
     #region Corrutines
-    IEnumerator Impulse()
-    {
-        Vector2 force = new Vector2(0, 2);
-        rig.AddForce(force * jumpForce, ForceMode2D.Impulse);
+    IEnumerator Impulse () {
+        Vector2 force = new Vector2 (0, 2);
+        rig.AddForce (force * jumpForce, ForceMode2D.Impulse);
         jump = false;
         InFloor = false;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds (0.2f);
         jump = true;
     }
 
-    IEnumerator ImmunePlayer()
-    {
+    IEnumerator ImmunePlayer () {
 
         immune = true;
         playerState = PlayerState.Normal;
         rig.velocity = Vector3.zero;
-        sprite.color = new Vector4(255, 255, 255, 0);
+        sprite.color = new Vector4 (255, 255, 255, 0);
         playerState = PlayerState.OnSkill;
         circleCollider.isTrigger = false;
-        if (Life > 0)
-        {
-            Instantiate(Flecha, new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.identity);
-            yield return new WaitForSeconds(2.0f);
-            AkSoundEngine.PostEvent("pl_respawn", gameObject);
+        if (Life > 0) {
+            Instantiate (Flecha, new Vector3 (transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.identity);
+            yield return new WaitForSeconds (2.0f);
+            AkSoundEngine.PostEvent ("pl_respawn", gameObject);
             playerState = PlayerState.Normal;
             transform.position = ActualRespawnPoint;
-            Instantiate(Respawn, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            sprite.color = new Vector4(255, 255, 0, 255);
-            yield return new WaitForSeconds(2.0f);
-            sprite.color = new Vector4(255, 255, 255, 255);
+            Instantiate (Respawn, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            sprite.color = new Vector4 (255, 255, 0, 255);
+            yield return new WaitForSeconds (2.0f);
+            sprite.color = new Vector4 (255, 255, 255, 255);
             immune = false;
         }
     }
 
-    IEnumerator Dash()
-    {
+    IEnumerator Dash () {
         dash = true;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds (0.2f);
         dash = false;
     }
 
-    IEnumerator IceEffect()
-    {
-        if (!effect)
-        {
+    IEnumerator IceEffect () {
+        if (!effect) {
             effect = true;
-            Instantiate(IceEffectState, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
+            Instantiate (IceEffectState, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
         }
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds (2.0f);
         effect = false;
         playerState = PlayerState.Normal;
     }
 
-    IEnumerator IceSkillCD()
-    {
+    IEnumerator IceSkillCD () {
         iceInvoque = true;
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds (2.0f);
         iceInvoque = false;
     }
 
-    IEnumerator MeleSkillCD()
-    {
+    IEnumerator MeleSkillCD () {
         meleInvoque = true;
-        yield return new WaitForSeconds(0.0f);
+        yield return new WaitForSeconds (0.0f);
         meleInvoque = false;
     }
     #endregion
 
     #region Functions
-    void IceOn()
-    {
-        InstantiateSkill(IceSkill, false);
+    void IceOn () {
+        InstantiateSkill (IceSkill, false);
     }
 
-    void MeleOn()
-    {
-        InstantiateSkill(MeleSkill, true);
+    void MeleOn () {
+        InstantiateSkill (MeleSkill, true);
     }
 
-    void InstantiateSkill(GameObject Skill, bool Children)
-    {
-        if (playerState != PlayerState.OnIce)
-        {
-            if (Children)
-            {
-                if (transform.rotation.y == 0)
-                {
-                    Instantiate(Skill, new Vector3(transform.position.x + 0.5F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
+    void InstantiateSkill (GameObject Skill, bool Children) {
+        if (playerState != PlayerState.OnIce) {
+            if (Children) {
+                if (transform.rotation.y == 0) {
+                    Instantiate (Skill, new Vector3 (transform.position.x + 0.5F, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
 
+                } else {
+                    Instantiate (MeleSkill, new Vector3 (transform.position.x - 0.5F, transform.position.y, transform.position.z), new Quaternion (0.0f, 180.0f, 0.0f, 1.0f), this.transform);
                 }
-                else
-                {
-                    Instantiate(MeleSkill, new Vector3(transform.position.x - 0.5F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f), this.transform);
-                }
-            }
-            else
-            {
-                if (transform.rotation.y == 0)
-                {
-                    Instantiate(IceSkill, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
+            } else {
+                if (transform.rotation.y == 0) {
+                    Instantiate (IceSkill, new Vector3 (transform.position.x + 1.0F, transform.position.y, transform.position.z), Quaternion.identity);
 
-                }
-                else
-                {
-                    Instantiate(IceSkill, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion(0.0f, 180.0f, 0.0f, 1.0f));
+                } else {
+                    Instantiate (IceSkill, new Vector3 (transform.position.x - 1.0F, transform.position.y, transform.position.z), new Quaternion (0.0f, 180.0f, 0.0f, 1.0f));
                 }
             }
         }
     }
 
-    void EmojiInvoque(GameObject Emoji)
-    {
-        Instantiate(Emoji, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
+    void EmojiInvoque (GameObject Emoji) {
+        Instantiate (Emoji, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
         emojiOn = true;
     }
 
-    void OnSkillSet()
-    {
+    void OnSkillSet () {
         playerState = PlayerState.Normal;
     }
 
-    void IfDamage()
-    {
+    void IfDamage () {
         Life--;
-        AkSoundEngine.PostEvent("pl_die", gameObject);
-        Instantiate(Damage, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-        if (Life > 0)
-        {
-            int randomPoint = Random.Range(0, 3);
-            ActualRespawnPoint = new Vector3(RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y, 0.0f);
+        AkSoundEngine.PostEvent ("pl_die", gameObject);
+        Instantiate (Damage, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        if (Life > 0) {
+            int randomPoint = Random.Range (0, 3);
+            ActualRespawnPoint = new Vector3 (RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y, 0.0f);
             transform.position = ActualRespawnPoint;
         }
 
+        TraumaInducer.Shake ();
 
-        TraumaInducer.Shake();
-
-        lifeImage[Life].SetActive(false);
+        lifeImage[Life].SetActive (false);
     }
 
-    void Walk(float velocity, float rotation)
-    {
+    void Walk (float velocity, float rotation) {
         timeWalkSound += Time.deltaTime;
-        if(timeWalkSound>=LimitTimeWalfSound)
-        {
+        if (timeWalkSound >= LimitTimeWalfSound) {
             timeWalkSound = 0;
-            AkSoundEngine.PostEvent("pl_walk", gameObject);
+            AkSoundEngine.PostEvent ("pl_walk", gameObject);
         }
-        m_Animator.SetBool("Caminata", true);
-        if (transform.rotation.y != rotation)
-        {
-            transform.rotation = Quaternion.Euler(0, rotation, 0);
+        m_Animator.SetBool ("Caminata", true);
+        if (transform.rotation.y != rotation) {
+            transform.rotation = Quaternion.Euler (0, rotation, 0);
 
         }
-        Vector2 direction = new Vector2(velocity, 0);
-        rig.AddForce(direction * speed, ForceMode2D.Force);
+        Vector2 direction = new Vector2 (velocity, 0);
+        rig.AddForce (direction * speed, ForceMode2D.Force);
     }
 
-    void OnTriggerEnter2D(Collider2D coll)
-    {
+    void OnTriggerEnter2D (Collider2D coll) {
         collision = coll.transform;
-        if (collision.CompareTag("Floor") || collision.CompareTag("Player"))
-        {
+        if (collision.CompareTag ("Floor") || collision.CompareTag ("Player")) {
             InFloor = true;
-        }
-        else
-        {
+        } else {
             InFloor = false;
         }
-        if (!immune)
-        {
-            if (collision.CompareTag("EnemyObject") || collision.CompareTag("Lava"))
-            {
-                IfDamage();
+        if (!immune) {
+            if (collision.CompareTag ("EnemyObject") || collision.CompareTag ("Lava")) {
+                IfDamage ();
                 playerState = PlayerState.Normal;
-                StartCoroutine(ImmunePlayer());
+                StartCoroutine (ImmunePlayer ());
             }
-            if (collision.CompareTag("Ice"))
-            {
-                AkSoundEngine.PostEvent("pl_frozen", gameObject);
+            if (collision.CompareTag ("Ice")) {
+                AkSoundEngine.PostEvent ("pl_frozen", gameObject);
                 playerState = PlayerState.OnIce;
             }
-            if (collision.CompareTag("Mele"))
-            {
-                AkSoundEngine.PostEvent("pl_deathbybat", gameObject);
-                TraumaInducer.Shake();
+            if (collision.CompareTag ("Mele")) {
+                AkSoundEngine.PostEvent ("pl_deathbybat", gameObject);
+                TraumaInducer.Shake ();
                 rotationEnemy = Enemy.transform.rotation;
                 playerState = PlayerState.OnImpulse;
             }
         }
     }
 
-    void OnTriggerStay2D(Collider2D coll)
-    {
+    void OnTriggerStay2D (Collider2D coll) {
         collision = coll.transform;
-        if (!immune)
-        {
-            if ((collision.CompareTag("EnemyObject") || collision.CompareTag("Lava")))
-            {
-                IfDamage();
+        if (!immune) {
+            if ((collision.CompareTag ("EnemyObject") || collision.CompareTag ("Lava"))) {
+                IfDamage ();
                 playerState = PlayerState.Normal;
-                StartCoroutine(ImmunePlayer());
+                StartCoroutine (ImmunePlayer ());
             }
         }
     }
 
-    void OnCollisionEnter2D(Collision2D coll)
-    {
+    void OnCollisionEnter2D (Collision2D coll) {
         collision = coll.transform;
-        if (playerState != PlayerState.OnSkill)
-        {
-            if (collision.CompareTag("IcePowerUp"))
-            {
-                AkSoundEngine.PostEvent("pl_powerup", gameObject);
-                PowerUpUI.sprite = PowerUpHielo;
+        if (playerState != PlayerState.OnSkill) {
+            if (collision.CompareTag ("IcePowerUp")) {
+                AkSoundEngine.PostEvent ("pl_powerup", gameObject);
+                PowerUpUI.sprite = PowerUpIce;
                 ActiveSkill = Skill.ice;
             }
-            if (collision.CompareTag("EmpujePowerUp"))
-            {
-                AkSoundEngine.PostEvent("pl_bat", gameObject);
-                PowerUpUI.sprite = PowerUpEmpuje;
+            if (collision.CompareTag ("EmpujePowerUp")) {
+                AkSoundEngine.PostEvent ("pl_bat", gameObject);
+                PowerUpUI.sprite = PowerUpPush;
                 ActiveSkill = Skill.mele;
             }
         }
     }
 
-    void ImpulseDamage(Vector2 direction)
-    {
-        if (!circleCollider.isTrigger)
-        {
+    void ImpulseDamage (Vector2 direction) {
+        if (!circleCollider.isTrigger) {
             circleCollider.isTrigger = true;
         }
-        rig.AddForce(direction * 2, ForceMode2D.Impulse);
+        rig.AddForce (direction * 2, ForceMode2D.Impulse);
         time += 1 * Time.deltaTime;
-        if (playerState != PlayerState.OnImpulse)
-        {
+        if (playerState != PlayerState.OnImpulse) {
             circleCollider.isTrigger = false;
         }
 
-        if (time >= 1.0f)
-        {
+        if (time >= 1.0f) {
             circleCollider.isTrigger = false;
             playerState = PlayerState.Normal;
             playerState = PlayerState.OnSkill;
@@ -433,114 +374,84 @@ public class Player : MonoBehaviour
         }
     }
 
-    void ImpulseDash(Vector2 direction)
-    {
+    void ImpulseDash (Vector2 direction) {
         rig.velocity = direction * ForceImpulseDash;
         time += 1 * Time.deltaTime;
-        if (time >= 0.5f)
-        {
+        if (time >= 0.5f) {
             playerState = PlayerState.Normal;
             time = 0;
         }
     }
 
-    public void PauseInFalse(float v)
-    {
+    public void PauseInFalse (float v) {
         pause = false;
     }
 
-    public void SetPause(float v, bool state)
-    {
+    public void SetPause (float v, bool state) {
         pause = state;
     }
 
-    public void OnDestroy()
-    {
+    public void OnDestroy () {
         GameManager.OnPause -= PauseInFalse;
     }
     #endregion
 
     #region SwitchStatesFunctios
-    void NormalState()
-    {
-        if (!emojiOn)
-        {
-            if (control.Emoji1())
-            {
-                EmojiInvoque(Emoji1);
+    void NormalState () {
+        if (!emojiOn) {
+            if (control.Emoji1 ()) {
+                EmojiInvoque (Emoji1);
+            } else if (control.Emoji2 ()) {
+                EmojiInvoque (Emoji2);
+            } else if (control.Emoji3 ()) {
+                EmojiInvoque (Emoji3);
+            } else if (control.Emoji4 ()) {
+                EmojiInvoque (Emoji4);
             }
-            else if (control.Emoji2())
-            {
-                EmojiInvoque(Emoji2);
-            }
-            else if (control.Emoji3())
-            {
-                EmojiInvoque(Emoji3);
-            }
-            else if (control.Emoji4())
-            {
-                EmojiInvoque(Emoji4);
-            }
-        }
-        else
-        {
+        } else {
             timeEmoji += 1 * Time.deltaTime;
-            if (timeEmoji >= 2.0f)
-            {
+            if (timeEmoji >= 2.0f) {
                 timeEmoji = 0;
                 emojiOn = false;
             }
         }
-        pos = new Vector2(transform.position.x, transform.position.y);
-        if (control.Jump())
-        {
-            if (jump == true && InFloor)
-            {
-                AkSoundEngine.PostEvent("pl_jump", gameObject);
-                StartCoroutine(Impulse());
+        pos = new Vector2 (transform.position.x, transform.position.y);
+        if (control.Jump ()) {
+            if (jump == true && InFloor) {
+                AkSoundEngine.PostEvent ("pl_jump", gameObject);
+                StartCoroutine (Impulse ());
             }
         }
-        if (control.Right())
-        {
-            Walk(Movement, RotationRight);
-        }
-        else if (control.Left())
-        {
-            Walk(-Movement, RotationLeft);
-        }
-        else
-        {
+        if (control.Right ()) {
+            Walk (Movement, RotationRight);
+        } else if (control.Left ()) {
+            Walk (-Movement, RotationLeft);
+        } else {
             timeWalkSound = LimitTimeWalfSound;
-            m_Animator.SetBool("Caminata", false);
+            m_Animator.SetBool ("Caminata", false);
         }
         velocity = rig.velocity;
-        if (rig.velocity.x >= MaxVelocity)
-        {
-            rig.velocity = new Vector2(MaxVelocity, rig.velocity.y);
+        if (rig.velocity.x >= MaxVelocity) {
+            rig.velocity = new Vector2 (MaxVelocity, rig.velocity.y);
         }
-        if (rig.velocity.x <= MinVelocity)
-        {
-            rig.velocity = new Vector2(MinVelocity, rig.velocity.y);
+        if (rig.velocity.x <= MinVelocity) {
+            rig.velocity = new Vector2 (MinVelocity, rig.velocity.y);
         }
-        if (control.Skill())
-        {
-            switch (ActiveSkill)
-            {
+        if (control.Skill ()) {
+            switch (ActiveSkill) {
                 case Skill.ice:
-                    if (iceInvoque == false)
-                    {
-                        StartCoroutine(IceSkillCD());
-                        m_Animator.SetTrigger("IceSkill");
+                    if (iceInvoque == false) {
+                        StartCoroutine (IceSkillCD ());
+                        m_Animator.SetTrigger ("IceSkill");
                         playerState = PlayerState.OnSkill;
                         ActiveSkill = Skill.none;
                         PowerUpUI.sprite = nothing;
                     }
                     break;
                 case Skill.mele:
-                    if (meleInvoque == false)
-                    {
-                        StartCoroutine(MeleSkillCD());
-                        m_Animator.SetTrigger("MeleSkill");
+                    if (meleInvoque == false) {
+                        StartCoroutine (MeleSkillCD ());
+                        m_Animator.SetTrigger ("MeleSkill");
                         ActiveSkill = Skill.none;
                         PowerUpUI.sprite = nothing;
                     }
@@ -550,56 +461,42 @@ public class Player : MonoBehaviour
                     break;
             }
         }
-        if (stamina > 0 && stamina >= DashCost)
-        {
+        if (stamina > 0 && stamina >= DashCost) {
 
-            if (control.Dash())
-            {
-                AkSoundEngine.PostEvent("pl_dash", gameObject);
-                StartCoroutine(Dash());
-                myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
-                m_Animator.SetTrigger("Dash");
+            if (control.Dash ()) {
+                AkSoundEngine.PostEvent ("pl_dash", gameObject);
+                StartCoroutine (Dash ());
+                myRotation = new Quaternion (transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
+                m_Animator.SetTrigger ("Dash");
                 stamina -= DashCost;
                 playerState = PlayerState.OnDash;
             }
         }
-        if (stamina > MaxStamina)
-        {
+        if (stamina > MaxStamina) {
             stamina = MaxStamina;
         }
-        if (stamina < MaxStamina)
-        {
+        if (stamina < MaxStamina) {
             stamina += RegenStamina * Time.deltaTime;
         }
         StaminaObj.size = stamina / MaxStamina;
     }
 
-    void DashState()
-    { 
-        myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
-        if (myRotation.y == 0.0f)
-        {
-            ImpulseDash(Vector2.right * ForceDash);
-        }
-        else
-        {
-            ImpulseDash(Vector2.left * ForceDash);
+    void DashState () {
+        myRotation = new Quaternion (transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
+        if (myRotation.y == 0.0f) {
+            ImpulseDash (Vector2.right * ForceDash);
+        } else {
+            ImpulseDash (Vector2.left * ForceDash);
         }
     }
 
-    void ImpulseState()
-    {
-        if (rotationEnemy.y == LookToTheLeft)
-        {
+    void ImpulseState () {
+        if (rotationEnemy.y == LookToTheLeft) {
 
-            ImpulseDamage(new Vector2(-1.0f, 0.6f));
-        }
-        else
-        {
-            ImpulseDamage(new Vector2(1.0f, 0.6f));
+            ImpulseDamage (new Vector2 (-1.0f, 0.6f));
+        } else {
+            ImpulseDamage (new Vector2 (1.0f, 0.6f));
         }
     }
     #endregion
 }
-
-

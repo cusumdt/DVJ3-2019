@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sound : MonoBehaviour
-{
+public class Sound : MonoBehaviour {
     public string name;
-    void Start()
-    {
-        AkSoundEngine.PostEvent(name, gameObject);
+    void Start () {
+        AkSoundEngine.PostEvent (name, gameObject);
     }
-
 }

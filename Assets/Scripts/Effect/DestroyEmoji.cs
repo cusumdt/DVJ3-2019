@@ -9,7 +9,6 @@ public class DestroyEmoji : MonoBehaviour
         if (transform.rotation.y != 0)
         {
             transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 1.0f);
-
         }
     }
     public void DeleteEmoji()

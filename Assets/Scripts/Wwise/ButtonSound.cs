@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class ButtonSound : MonoBehaviour {
-
     public void PressedButton () {
         AkSoundEngine.PostEvent ("ui_menu_select", gameObject);
     }

@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[RequireComponent(typeof(Camera))]
-public class MultipleTargetCamera : MonoBehaviour
-{
+[RequireComponent (typeof (Camera))]
+public class MultipleTargetCamera : MonoBehaviour {
     public List<Transform> targets;
     public Vector3 offset;
     public float smoothTime = .5f;
@@ -18,92 +16,68 @@ public class MultipleTargetCamera : MonoBehaviour
 
     static public int cantTargets;
     static public Transform target;
-    void Start()
-    {
-        cam = GetComponent<Camera>();
+    void Start () {
+        cam = GetComponent<Camera> ();
         cantTargets = 2;
     }
 
+    void LateUpdate () {
 
-
-    void LateUpdate()
-    {
-        
         if (targets.Count == 0)
             return;
 
-        Move();
-        Zoom();
- 
+        Move ();
+        Zoom ();
+
     }
-    void Zoom()
-    {
-        float newZoom = Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance()/ zoomLimiter);
-        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,newZoom, Time.deltaTime);
+    void Zoom () {
+        float newZoom = Mathf.Lerp (maxZoom, minZoom, GetGreatestDistance () / zoomLimiter);
+        cam.fieldOfView = Mathf.Lerp (cam.fieldOfView, newZoom, Time.deltaTime);
     }
 
-    void Move()
-    {
-        Vector3 centerPoint = GetCenterPoint();
+    void Move () {
+        Vector3 centerPoint = GetCenterPoint ();
         Vector3 newPosition = centerPoint + offset;
-        transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+        transform.position = Vector3.SmoothDamp (transform.position, newPosition, ref velocity, smoothTime);
     }
-    float GetGreatestDistance()
-    {
+    float GetGreatestDistance () {
         Bounds bounds;
-        if (cantTargets != 1)
-        {
-            bounds = new Bounds(targets[0].position, Vector3.zero);
+        if (cantTargets != 1) {
+            bounds = new Bounds (targets[0].position, Vector3.zero);
+        } else {
+            bounds = new Bounds (target.position, Vector3.zero);
         }
-        else
-        {
-            bounds = new Bounds(target.position, Vector3.zero);
-        }
-        for (int i = 0; i < targets.Count; i++)
-        {
-            if (cantTargets != 1)
-            {
-                bounds.Encapsulate(targets[i].position);
-            }
-            else
-            {
-                bounds.Encapsulate(target.position);
+        for (int i = 0; i < targets.Count; i++) {
+            if (cantTargets != 1) {
+                bounds.Encapsulate (targets[i].position);
+            } else {
+                bounds.Encapsulate (target.position);
             }
         }
         return bounds.size.x;
     }
-    Vector3 GetCenterPoint()
-    {
-        if (targets.Count == 1)
-        {
+    Vector3 GetCenterPoint () {
+        if (targets.Count == 1) {
             return targets[0].position;
         }
         Bounds bounds;
-        if (cantTargets != 1)
-        {
-            bounds = new Bounds(targets[0].position, Vector3.zero);
+        if (cantTargets != 1) {
+            bounds = new Bounds (targets[0].position, Vector3.zero);
+        } else {
+            bounds = new Bounds (target.position, Vector3.zero);
         }
-        else {
-           bounds = new Bounds(target.position, Vector3.zero);
-        }
-        
-        for (int i = 0; i < targets.Count; i++)
-        {
-            if (cantTargets != 1)
-            {
-                bounds.Encapsulate(targets[i].position);
-            }
-            else
-            {
-                bounds.Encapsulate(target.position);
+
+        for (int i = 0; i < targets.Count; i++) {
+            if (cantTargets != 1) {
+                bounds.Encapsulate (targets[i].position);
+            } else {
+                bounds.Encapsulate (target.position);
             }
 
-          
         }
         return bounds.center;
     }
-    static public void SetTargets(Transform _target, int _cantTargets)
-    {
+    static public void SetTargets (Transform _target, int _cantTargets) {
         target = _target;
         cantTargets = _cantTargets;
     }

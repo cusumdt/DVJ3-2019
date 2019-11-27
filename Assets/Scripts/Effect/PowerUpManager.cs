@@ -2,22 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpManager : MonoBehaviour
-{
+public class PowerUpManager : MonoBehaviour {
     public GameObject Empuje;
     public float time;
-
-    void Update()
-    {
-        if (!Empuje.activeSelf)
-        {
+    public float MaxTime = 10f;
+    void Update () {
+        if (!Empuje.activeSelf) {
             time += 1 * Time.deltaTime;
-            if (time >= 10f)
-            {
+            if (time >= MaxTime) {
                 time = 0.0f;
-                Empuje.SetActive(true);
+                Empuje.SetActive (true);
             }
         }
-
     }
 }

@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shake : MonoBehaviour
-{
-
+public class Shake : MonoBehaviour {
     public Animator m_Animator;
 
-
-    // Update is called once per frame
-    void ShakeCamera()
-    {
-        m_Animator.SetBool("On", true);
+    void ShakeCamera () {
+        m_Animator.SetBool ("On", true);
     }
 }

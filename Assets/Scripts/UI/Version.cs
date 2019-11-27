@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Version : MonoBehaviour
-{
+public class Version : MonoBehaviour {
     public Text textoDeVersion;
 
-    void Start()
-    {
+    void Start () {
         textoDeVersion.text = "v" + Application.version;
-	}
-
+    }
 }

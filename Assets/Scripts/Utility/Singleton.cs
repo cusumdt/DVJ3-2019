@@ -2,27 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Singleton<T> : MonoBehaviour where T : Component
-{
+public class Singleton<T> : MonoBehaviour where T : Component {
     private static T instance;
 
-    public static T Get()
-    {
+    public static T Get () {
         return instance;
     }
 
-    public virtual void Awake()
-    {
-        if (instance == null)
-        {
+    public virtual void Awake () {
+        if (instance == null) {
             instance = this as T;
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad (this);
             return;
+        } else {
+            Destroy (gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
-      
+
     }
 }

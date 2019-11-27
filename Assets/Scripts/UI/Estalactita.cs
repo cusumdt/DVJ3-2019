@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Estalactita : MonoBehaviour
-{
- 
-
-   void PlayGame()
-    {
-        SceneManager.LoadScene("Loading");
+public class Estalactita : MonoBehaviour {
+    void PlayGame () {
+        SceneManager.LoadScene ("Loading");
     }
 }

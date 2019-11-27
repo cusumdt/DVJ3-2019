@@ -2,23 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeDestroy : MonoBehaviour
-{
+public class TimeDestroy : MonoBehaviour {
     private float time;
     public float totalTime;
-    // Start is called before the first frame update
-    void Start()
-    {
+    
+    void Start () {
         time = 0.0f;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
+    
+    void Update () {
         time += 1 * Time.deltaTime;
-        if (time >= totalTime)
-        {
-            Destroy(this.gameObject);
+        if (time >= totalTime) {
+            Destroy (this.gameObject);
         }
     }
 }

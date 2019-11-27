@@ -459,10 +459,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 95052224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcf8d3a55cc6a1e45b3d7e88f7611a96, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a931040c50b9894ba471d0782d6b08e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Effect: {fileID: 0}
 --- !u!95 &95052226
 Animator:
   serializedVersion: 3
@@ -1303,7 +1302,7 @@ GameObject:
   - component: {fileID: 489701470}
   - component: {fileID: 489701469}
   m_Layer: 0
-  m_Name: CoinCollector
+  m_Name: EnemyCollector
   m_TagString: CoinCollector
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -9974,7 +9973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   veamosClock: 0
-  TimeMax: 5
+  TimeMax: 30
   ClockImage: {fileID: 44509098}
   Flecha: {fileID: 1455868156}
 --- !u!1 &2090905762

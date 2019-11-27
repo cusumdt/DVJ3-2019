@@ -586,17 +586,17 @@ PrefabInstance:
     - target: {fileID: 457097154372221028, guid: a86149c2e7b5d914daf259b32c34ad83,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8868710352186151440, guid: a86149c2e7b5d914daf259b32c34ad83,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 533.1625
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 8868710352186151440, guid: a86149c2e7b5d914daf259b32c34ad83,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 541.78094
+      value: -163
       objectReference: {fileID: 0}
     - target: {fileID: 8868710352186151440, guid: a86149c2e7b5d914daf259b32c34ad83,
         type: 3}
@@ -883,7 +883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197478224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.9, y: 8, z: -60.984375}
+  m_LocalPosition: {x: -23.9, y: 19.8, z: -60.984375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1435938013}
@@ -1303,7 +1303,7 @@ GameObject:
   - component: {fileID: 489701469}
   m_Layer: 0
   m_Name: EnemyCollector
-  m_TagString: CoinCollector
+  m_TagString: EnemyCollector
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1321,7 +1321,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.98398113, y: 0}
+  m_Offset: {x: 0.9839754, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1332,7 +1332,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 26.917059, y: 1}
+  m_Size: {x: 39.37436, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &489701470
 Transform:
@@ -8031,7 +8031,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1435938013}
   - component: {fileID: 1435938012}
-  - component: {fileID: 1435938014}
   m_Layer: 0
   m_Name: LavaCollector
   m_TagString: LavaCollector
@@ -8073,25 +8072,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435938011}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -235.3187, y: -583, z: -326.51562}
+  m_LocalPosition: {x: -235.3187, y: -337.5, z: -326.51562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 197478225}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1435938014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435938011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcf8d3a55cc6a1e45b3d7e88f7611a96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Effect: {fileID: 0}
 --- !u!1 &1442161856
 GameObject:
   m_ObjectHideFlags: 0
@@ -9987,7 +9973,7 @@ MonoBehaviour:
   actualClock: 0
   TimeMax: 30
   ClockImage: {fileID: 44509098}
-  Arrow: {fileID: 1204055269}
+  Arrow: {fileID: 1455868156}
 --- !u!1 &2090905762
 GameObject:
   m_ObjectHideFlags: 0
@@ -10603,6 +10589,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 2c57a6c14027a7e4789d1bd2fd5e05c7,
         type: 3}
+    - target: {fileID: 3702663527405832659, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702663527405832659, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 8.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702663527405832659, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 5.12
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3702663527405832663, guid: 86f677a265ea6fe4baba22aee4c75c71, type: 3}
     - {fileID: 3702663527405832657, guid: 86f677a265ea6fe4baba22aee4c75c71, type: 3}

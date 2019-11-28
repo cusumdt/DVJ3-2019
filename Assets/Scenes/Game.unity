@@ -10670,12 +10670,12 @@ PrefabInstance:
     - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
         type: 3}
       propertyPath: control.InputRightString
-      value: right
+      value: RightArrow
       objectReference: {fileID: 0}
     - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
         type: 3}
       propertyPath: control.InputLeftString
-      value: left
+      value: LeftArrow
       objectReference: {fileID: 0}
     - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
         type: 3}

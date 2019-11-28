@@ -24,8 +24,6 @@ public class Player : MonoBehaviour
     }
     #endregion
     #region Control
-    [SerializeField]
-    Control.PlayerType player;
     public Control control;
     #endregion
     #region Floats
@@ -44,7 +42,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     float jumpForce;
     float stamina;
-    float time;
+    float timeSkill;
     float timeWalkSound;
     #endregion
     #region Vector2
@@ -58,7 +56,7 @@ public class Player : MonoBehaviour
     bool iceInvoque = false;
     bool meleInvoque = false;
     bool defeat;
-    bool pause;
+    bool cantMove;
     bool effect;
     bool immune = false;
     bool walkSound = true;
@@ -126,7 +124,6 @@ public class Player : MonoBehaviour
         pos = new Vector2(transform.position.x, transform.position.y);
         defeat = false;
         ActiveSkill = Skill.none;
-        control.SetPlayer(player);
         playerState = PlayerState.Normal;
         #region GetComponent
         m_Animator = GetComponent<Animator>();
@@ -141,7 +138,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!pause)
+        if (!cantMove)
         {
             if (Life > 0)
             {
@@ -165,7 +162,7 @@ public class Player : MonoBehaviour
             {
                 if (!defeat)
                 {
-                    MultipleTargetCamera.SetTargets(this.transform, 1);
+                    MultipleTargetCamera.SetTargets(transform, 1);
                     AkSoundEngine.PostEvent("pl_lost", gameObject);
                     GameManager.Get().SetPlayers(prefab);
                     defeat = true;
@@ -380,40 +377,40 @@ public class Player : MonoBehaviour
             circleCollider.isTrigger = true;
         }
         rig.AddForce(direction * 2, ForceMode2D.Impulse);
-        time += 1 * Time.deltaTime;
+        timeSkill += 1 * Time.deltaTime;
         if (playerState != PlayerState.OnImpulse)
         {
             circleCollider.isTrigger = false;
         }
 
-        if (time >= 1.0f)
+        if (timeSkill >= 1.0f)
         {
             circleCollider.isTrigger = false;
             playerState = PlayerState.Normal;
             playerState = PlayerState.OnSkill;
-            time = 0;
+            timeSkill = 0;
         }
     }
 
     void ImpulseDash(Vector2 direction)
     {
         rig.velocity = direction * ForceImpulseDash;
-        time += 1 * Time.deltaTime;
-        if (time >= 0.5f)
+        timeSkill += 1 * Time.deltaTime;
+        if (timeSkill >= 0.5f)
         {
             playerState = PlayerState.Normal;
-            time = 0;
+            timeSkill = 0;
         }
     }
 
     public void PauseInFalse(float v)
     {
-        pause = false;
+        cantMove = false;
     }
 
     public void SetPause(float v, bool state)
     {
-        pause = state;
+        cantMove = state;
     }
 
     public void OnDestroy()

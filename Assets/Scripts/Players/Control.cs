@@ -60,9 +60,4 @@ public class Control
 
         return false;
     }
-
-    public void SetPlayer(PlayerType _player)
-    {
-        player = _player;
-    }
 }

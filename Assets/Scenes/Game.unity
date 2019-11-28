@@ -8914,6 +8914,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5074066213564113991}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1876540345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876540344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9e3c80a7c7bce4d933fa624578d5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Emojis:
+  - {fileID: 8661023408891851134, guid: 97c17590a93bd7740a2321bb57b196e2, type: 3}
+  - {fileID: 28045211968437304, guid: a14ac153f0406114c8f9dfba2092fc4a, type: 3}
+  - {fileID: 4371561759016500069, guid: 5bb75111bc911a14282e0aeac5cb9b1c, type: 3}
+  - {fileID: 5003848424867057128, guid: 8d5bdea51f56f8e4fad46532b1caa7c5, type: 3}
+  emojiOn: 0
+  JoystickEmojiString: EmojiVertical1
+  JoystickEmojiString2: EmoijHorizontal1
+  InputEmojiString: z
+  InputEmoji2String: x
+  InputEmoji3String: c
+  InputEmoji4String: v
 --- !u!58 &1876540346
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10038,6 +10062,30 @@ Rigidbody2D:
     type: 3}
   m_PrefabInstance: {fileID: 3702663526622453636}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2117068128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117068121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9e3c80a7c7bce4d933fa624578d5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Emojis:
+  - {fileID: 8661023408891851134, guid: 97c17590a93bd7740a2321bb57b196e2, type: 3}
+  - {fileID: 28045211968437304, guid: a14ac153f0406114c8f9dfba2092fc4a, type: 3}
+  - {fileID: 4371561759016500069, guid: 5bb75111bc911a14282e0aeac5cb9b1c, type: 3}
+  - {fileID: 5003848424867057128, guid: 8d5bdea51f56f8e4fad46532b1caa7c5, type: 3}
+  emojiOn: 0
+  JoystickEmojiString: EmojiVertical2
+  JoystickEmojiString2: EmojiHorizontal2
+  InputEmojiString: h
+  InputEmoji2String: j
+  InputEmoji3String: k
+  InputEmoji4String: l
 --- !u!1 &2125323449
 GameObject:
   m_ObjectHideFlags: 0

@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
     bool walkSound = true;
     #endregion
     #region INT
+    const int MaxRandomPoint = 3;
     const int DashCost = 25;
     const int RegenStamina = 10;
     const int MaxStamina = 100;
@@ -274,7 +275,7 @@ public class Player : MonoBehaviour
         Instantiate(Damage, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         if (Life > 0)
         {
-            int randomPoint = Random.Range(0, 3);
+            int randomPoint = Random.Range(0, MaxRandomPoint);
             ActualRespawnPoint = new Vector3(RespawnPoint[randomPoint].position.x, RespawnPoint[randomPoint].position.y, 0.0f);
             transform.position = ActualRespawnPoint;
         }
@@ -296,7 +297,6 @@ public class Player : MonoBehaviour
         if (transform.rotation.y != rotation)
         {
             transform.rotation = Quaternion.Euler(0, rotation, 0);
-
         }
         Vector2 direction = new Vector2(velocity, 0);
         rig.AddForce(direction * speed, ForceMode2D.Force);
@@ -483,7 +483,6 @@ public class Player : MonoBehaviour
         }
         if (stamina > 0 && stamina >= DashCost)
         {
-
             if (control.Dash())
             {
                 AkSoundEngine.PostEvent("pl_dash", gameObject);

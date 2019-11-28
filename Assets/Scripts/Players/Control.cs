@@ -6,14 +6,6 @@ using UnityEngine;
 [Serializable]
 public class Control
 {
-    public enum PlayerType
-    {
-        player1,
-        player2,
-        player3,
-        player4
-    }
-    PlayerType player;
     public string JoystickJumpString;
     public string JoystickDashString;
     public string JoystickMovementString;

@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     #region Control
     [SerializeField]
     Control.PlayerType player;
-    Control control;
+    public Control control;
     #endregion
     #region Floats
     const float LimitTimeWalfSound = 0.2f;
@@ -126,7 +126,6 @@ public class Player : MonoBehaviour
         pos = new Vector2(transform.position.x, transform.position.y);
         defeat = false;
         ActiveSkill = Skill.none;
-        control = new Control();
         control.SetPlayer(player);
         playerState = PlayerState.Normal;
         #region GetComponent

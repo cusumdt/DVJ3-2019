@@ -10637,6 +10637,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 2c57a6c14027a7e4789d1bd2fd5e05c7,
         type: 3}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: control.JoystickJumpString
+      value: joystick 2 button 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: control.JoystickDashString
+      value: joystick 2 button 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: control.JoystickMovementString
+      value: HorizontalJoystick2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: control.JoystickSkillString
+      value: joystick 2 button 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: control.InputJumpString
+      value: '[0]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: control.InputDashString
+      value: '[.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: control.InputRightString
+      value: RightArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: control.InputLeftString
+      value: LeftArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: control.InputSkillString
+      value: '[5]'
+      objectReference: {fileID: 0}
     - target: {fileID: 3702663527405832659, guid: 86f677a265ea6fe4baba22aee4c75c71,
         type: 3}
       propertyPath: m_WasSpriteAssigned
@@ -11001,6 +11046,56 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 2c57a6c14027a7e4789d1bd2fd5e05c7,
         type: 3}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: control.JoystickJumpString
+      value: joystick 1 button 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: control.InputJumpString
+      value: space
+      objectReference: {fileID: 0}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: control.InputDashString
+      value: left shift
+      objectReference: {fileID: 0}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: control.InputRightString
+      value: d
+      objectReference: {fileID: 0}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: control.InputLeftString
+      value: a
+      objectReference: {fileID: 0}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: control.InputSkillString
+      value: f
+      objectReference: {fileID: 0}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: control.JoystickSkillString
+      value: joystick 1 button 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: control.JoystickLeftString
+      value: HorizontalJoystick1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: control.JoystickDashString
+      value: joystick 1 button 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: control.JoystickMovementString
+      value: HorizontalJoystick1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5074066211765735977, guid: 7fc530448fbfb154c8d2451f1e74421f, type: 3}
     - {fileID: 5074066211765735990, guid: 7fc530448fbfb154c8d2451f1e74421f, type: 3}

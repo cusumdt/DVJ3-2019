@@ -8933,7 +8933,7 @@ MonoBehaviour:
   - {fileID: 5003848424867057128, guid: 8d5bdea51f56f8e4fad46532b1caa7c5, type: 3}
   emojiOn: 0
   JoystickEmojiString: EmojiVertical1
-  JoystickEmojiString2: EmoijHorizontal1
+  JoystickEmojiString2: EmojiHorizontal1
   InputEmojiString: z
   InputEmoji2String: x
   InputEmoji3String: c

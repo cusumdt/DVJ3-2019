@@ -8,6 +8,7 @@ public class GameOverStage : MonoBehaviour {
     public SpriteRenderer thisWinner;
     public SpriteRenderer thisLose;
     public Animator WinnerAnim;
+    public Animator LooserAnim;
 
     void Start () {
         GameObject Loser = GameManager.Get().GetLose();
@@ -15,6 +16,7 @@ public class GameOverStage : MonoBehaviour {
         thisLose = Loser.GetComponent<SpriteRenderer>();
         thisWinner = Winner.GetComponent<SpriteRenderer>();
         WinnerAnim.SetInteger("Player", Winner.name == "player" ? 1 : 2);
+        LooserAnim.SetInteger("Player", Loser.name =="player" ? 1 : 2);
         seccond.sprite = thisLose.sprite;
         winner.sprite = thisWinner.sprite;
     }

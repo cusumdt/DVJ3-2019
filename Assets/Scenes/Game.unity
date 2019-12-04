@@ -543,7 +543,7 @@ Transform:
   m_Children:
   - {fileID: 1163331908}
   m_Father: {fileID: 495076360}
-  m_RootOrder: 20
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &95052229
 BoxCollider2D:
@@ -9635,6 +9635,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[42].y
       value: 4.055882
+      objectReference: {fileID: 0}
+    - target: {fileID: 3348641817895057992, guid: 8c9a5cfe611d86f4896b46392dde0243,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914177504289447941, guid: 8c9a5cfe611d86f4896b46392dde0243,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6208496667504823328, guid: 8c9a5cfe611d86f4896b46392dde0243,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 840535879050770609, guid: 8c9a5cfe611d86f4896b46392dde0243,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976370077497359302, guid: 8c9a5cfe611d86f4896b46392dde0243,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443047089334478241, guid: 8c9a5cfe611d86f4896b46392dde0243,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722635644816315496, guid: 8c9a5cfe611d86f4896b46392dde0243,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 67658356590136027, guid: 8c9a5cfe611d86f4896b46392dde0243,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950124536955898063, guid: 8c9a5cfe611d86f4896b46392dde0243,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9a5cfe611d86f4896b46392dde0243, type: 3}

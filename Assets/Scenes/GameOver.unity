@@ -363,6 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 35449638}
   - component: {fileID: 35449637}
+  - component: {fileID: 35449639}
   - component: {fileID: 35449636}
   m_Layer: 0
   m_Name: Main Camera
@@ -371,14 +372,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &35449636
-AudioListener:
+--- !u!114 &35449636
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35449635}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c62f4224e7148f4b880aa79dfd38f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
 --- !u!20 &35449637
 Camera:
   m_ObjectHideFlags: 0
@@ -436,6 +443,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &35449639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35449635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c241517c571a94daf582dcf7595454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &82139380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,6 +1197,7 @@ MonoBehaviour:
   seccond: {fileID: 3216142}
   thisWinner: {fileID: 0}
   thisLose: {fileID: 0}
+  WinnerAnim: {fileID: 1854031793}
 --- !u!4 &855530456
 Transform:
   m_ObjectHideFlags: 0
@@ -1373,7 +1403,8 @@ MonoBehaviour:
   pjs:
   - {fileID: 5074066211765735979, guid: 7fc530448fbfb154c8d2451f1e74421f, type: 3}
   - {fileID: 3702663527405832662, guid: 86f677a265ea6fe4baba22aee4c75c71, type: 3}
-  velCarga: 0
+  velLoad: 0
+  scene: 
 --- !u!4 &1491436584
 Transform:
   m_ObjectHideFlags: 0
@@ -1387,6 +1418,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1536626838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1536626840}
+  - component: {fileID: 1536626839}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1536626839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536626838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66fbbc4de98bea45a4df9e1f697dee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: 60975ad8e44ba0d438448d9ef5f875aa,
+    type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  diffractionFlags: 11
+  engineLogging: 0
+--- !u!4 &1536626840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536626838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1814668475
 GameObject:
@@ -1417,7 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5ab9f6024c67643b7591d42d6ae0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velCarga: 100
+  velLoad: 0
   menu: {fileID: 762933878}
 --- !u!4 &1814668477
 Transform:
@@ -1444,6 +1533,7 @@ GameObject:
   - component: {fileID: 1854031790}
   - component: {fileID: 1854031791}
   - component: {fileID: 1854031792}
+  - component: {fileID: 1854031793}
   m_Layer: 5
   m_Name: Winner
   m_TagString: Untagged
@@ -1508,6 +1598,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1854031793
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854031789}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90268d4c1f6c906498ebc3122fbb6407, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2049755642
 GameObject:
   m_ObjectHideFlags: 0

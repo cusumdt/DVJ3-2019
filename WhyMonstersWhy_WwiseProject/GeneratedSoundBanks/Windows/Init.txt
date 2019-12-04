@@ -1,13 +1,33 @@
 State Group	ID	Name			Wwise Object Path	Notes
+	1544306542	scenes			\Default Work Unit\scenes	
 	3092587493	pause			\Default Work Unit\pause	
 
 State	ID	Name	State Group			Notes
+	0	None	scenes			
+	331684510	combat_rony	scenes			
+	2607556080	menu	scenes			
 	0	None	pause			
 	1160234136	normal	pause			
 	3092587493	pause	pause			
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	463565953	sfx_lvl			\Default Work Unit\sfx_lvl	
+	1194683405	mus_lvl			\Default Work Unit\mus_lvl	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	133642231	general			\Default Work Unit\Master Audio Bus\pre-master\sfx\general	
+	393239870	sfx			\Default Work Unit\Master Audio Bus\pre-master\sfx	
+	1551306167	UI			\Default Work Unit\Master Audio Bus\pre-master\sfx\UI	
+	1744952391	pre-master			\Default Work Unit\Master Audio Bus\pre-master	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	music			\Default Work Unit\Master Audio Bus\pre-master\music	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	3420137967	menu_reverb			\Default Work Unit\Master Audio Bus\pre-master\sfx\UI\menu_reverb	
+
+Effect plug-ins	ID	Name	Type				Notes
+	701863527	Inside_My_Head	Wwise RoomVerb			
+	1459522457	Brick_Wall_Minus_1dB_Peak_Fast_Release	Wwise Peak Limiter			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

@@ -31,36 +31,57 @@ Event	ID	Name			Wwise Object Path	Notes
 	4075572744	pl_powerup			\Default Work Unit\Player\pl_powerup	
 	4092758663	ui_tutorial_startgame			\Default Work Unit\UI\ui_tutorial_startgame	
 
+State Group	ID	Name			Wwise Object Path	Notes
+	1544306542	scenes			\Default Work Unit\scenes	
+
+State	ID	Name	State Group			Notes
+	0	None	scenes			
+	331684510	combat_rony	scenes			
+	2607556080	menu	scenes			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	12576185	walk 1	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 1		21912
-	159834921	estalagtitas 4	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\estalactitas\estalagtitas 4		219168
-	173635762	walk 6	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 6		41940
-	256565412	die	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\die_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\die		123868
-	261821670	estalagtitas 6	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\estalactitas\estalagtitas 6		199012
-	263339427	powerup	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\powerup_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\powerup		166956
-	273199589	dash 2	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\dash 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\dash\dash 2		57988
-	278622275	lost	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\lost_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\lost		508780
-	323615622	bat	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\bat_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\bat		598180
-	406498596	walk 4	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 4		35264
-	449587389	Dash 1	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\Dash 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\dash\Dash 1		67114
-	498587190	walk 5	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 5		32228
-	544287839	lava	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\lava_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\lava		699352
-	555204854	in	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\in_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\in		38464
-	563415613	estalagtitas 1	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\estalactitas\estalagtitas 1		99540
-	649773898	respawn	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\respawn_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\respawn		18626
-	681045325	walk 3	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 3		27374
-	699352988	jump	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\jump_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\jump\jump		30784
-	736198060	frozen	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\frozen_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\frozen		886540
-	758795241	estalagtitas 3	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\estalactitas\estalagtitas 3		153684
-	768365828	Attack 2	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\Attack 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\attack\Attack 2		42878
-	807365543	deathByBat	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\deathByBat_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\deathByBat		969648
-	830428137	warning	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\warning_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\warning		746552
-	839944065	Attack 1	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\Attack 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\attack\Attack 1		55468
-	852256812	walk 2	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 2		25552
-	856586928	jump 2	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\jump 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\jump\jump 2		34624
-	902745752	scene	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\scene_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\scene		157504
-	912002119	estalagtitas 5	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\estalactitas\estalagtitas 5		105836
-	954441081	victoria	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\victoria_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\victoria		704048
-	1036441114	estalagtitas 2	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\estalactitas\estalagtitas 2		100800
-	1063096924	move	C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\move_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\move		19264
+	4077695	anim_mecha	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\anim_mecha_D89115E7.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\anim_mecha		686704
+	12576185	walk 1	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 1_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 1		21912
+	126179677	anim_explosion	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\anim_explosion_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\anim_explosion		343384
+	159834921	estalagtitas 4	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 4_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\estalactitas\estalagtitas 4		164392
+	173635762	walk 6	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 6_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 6		41940
+	256565412	die	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\die_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\die		123868
+	261821670	estalagtitas 6	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 6_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\estalactitas\estalagtitas 6		199012
+	263339427	powerup	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\powerup_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\powerup		111324
+	271580947	menu_select	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\3-Audio 2 [2019-11-26 110055]_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\UI\menu_select		64064
+	273199589	dash 2	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\dash 2_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\dash\dash 2		43506
+	278622275	lost	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\lost_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\lost		254420
+	288802770	menu_move	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\3-Audio 2 [2019-11-26 110053]_AE5331AE.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\UI\menu_move		64064
+	317092753	mus_mainmenu_body	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\mus_mainmenu_body_B587EF35.wem		\Interactive Music Hierarchy\Default Work Unit\musica\menu\mus_mainmenu_body\mus_mainmenu_body		989901
+	317553690	amb_lava_waterdrop	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\amb_lava_waterdrop_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\lava_ambient\waterdrop\amb_lava_waterdrop		186272
+	323615622	bat	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\bat_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\bat		398808
+	406498596	walk 4	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 4_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 4		35264
+	449587389	Dash 1	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\Dash 1_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\dash\Dash 1		44764
+	498587190	walk 5	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 5_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 5		32228
+	529174181	percu 2	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\percu 2_B587EF35.wem		\Interactive Music Hierarchy\Default Work Unit\musica\combat\lava (rony)\percu 2\percu 2		111089
+	544287839	lava_falling	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\lava_D89115E7.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\lava_falling	La columna de lava	116612
+	555204854	in	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\in_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\UI\in		38464
+	559072331	mus_mainmenu_intro	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\mus_mainmenu_intro_B587EF35.wem		\Interactive Music Hierarchy\Default Work Unit\musica\menu\mus_mainmenu_intro\mus_mainmenu_intro		146309
+	563415613	estalagtitas 1	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 1_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\estalactitas\estalagtitas 1		99540
+	583233212	amb_lava_bubble_1	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\amb_lava_bubble_1_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\lava_ambient\bubbles\amb_lava_bubble_1		43704
+	625784573	amb_lava_loop	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\amb_lava_loop_B587EF35.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\lava_ambient\amb_lava_loop		312478
+	649773898	respawn	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\respawn_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\respawn		18626
+	669740673	amb_lava_bubble_2	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\amb_lava_bubble_2_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\lava_ambient\bubbles\amb_lava_bubble_2		43704
+	681045325	walk 3	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 3_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 3		27374
+	699352988	jump	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\jump_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\jump\jump		15424
+	736198060	frozen	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\frozen_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\frozen		591048
+	758795241	estalagtitas 3	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 3_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\estalactitas\estalagtitas 3		153684
+	768365828	Attack 2	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\Attack 2_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\attack\Attack 2		28606
+	807365543	deathByBat	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\deathByBat_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\deathByBat		646452
+	830428137	warning	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\warning_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\warning		186684
+	836615114	amb_lava_bubble_5	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\amb_lava_bubble_5_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\lava_ambient\bubbles\amb_lava_bubble_5		43704
+	839944065	Attack 1	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\Attack 1_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\attack\Attack 1		55468
+	852256812	walk 2	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\walk 2_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\walk\walk 2		25552
+	856586928	jump 2	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\jump 2_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\jump\jump 2		17344
+	902745752	scene	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\scene_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\scene		157504
+	912002119	estalagtitas 5	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 5_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\estalactitas\estalagtitas 5		105836
+	954441081	victoria	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\victoria_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\victoria		469384
+	1005872246	amb_lava_bubble_3	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\amb_lava_bubble_3_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\lava_ambient\bubbles\amb_lava_bubble_3		58252
+	1036441114	estalagtitas 2	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\estalagtitas 2_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\estalactitas\estalagtitas 2		100800
+	1055205583	amb_lava_bubble_4	C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\SFX\amb_lava_bubble_4_1DDA1C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx\combat levels\lava (rony)\lava_ambient\bubbles\amb_lava_bubble_4		43704
 

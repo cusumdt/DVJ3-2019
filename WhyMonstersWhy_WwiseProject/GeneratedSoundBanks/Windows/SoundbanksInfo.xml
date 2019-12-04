@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\ProTools\Documents\whymonterswhy\WhyMonstersWhy_WwiseProject (con eventos)\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Crampantes\Desktop\WhyMonsters\WhyMonstersWhy_WwiseProject (con eventos)\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -21,162 +21,214 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1406566429" Name="amb_lava_begins" ObjectPath="\Events\Default Work Unit\Ambient\amb_lava_begins"/>
-				<Event Id="3208440745" Name="amb_lava_ends" ObjectPath="\Events\Default Work Unit\Ambient\amb_lava_ends"/>
-				<Event Id="1839761221" Name="amb_lava_warning" ObjectPath="\Events\Default Work Unit\Ambient\amb_lava_warning"/>
-				<Event Id="2062236611" Name="amb_stalactite_breaks" ObjectPath="\Events\Default Work Unit\Ambient\amb_stalactite_breaks"/>
-				<Event Id="3841011808" Name="pl_attack" ObjectPath="\Events\Default Work Unit\Player\pl_attack"/>
-				<Event Id="2719840045" Name="pl_bat" ObjectPath="\Events\Default Work Unit\Player\pl_bat"/>
-				<Event Id="3237620440" Name="pl_dash" ObjectPath="\Events\Default Work Unit\Player\pl_dash"/>
-				<Event Id="477371494" Name="pl_deathbybat" ObjectPath="\Events\Default Work Unit\Player\pl_deathbybat"/>
-				<Event Id="3322848542" Name="pl_die" ObjectPath="\Events\Default Work Unit\Player\pl_die"/>
-				<Event Id="2264357082" Name="pl_frozen" ObjectPath="\Events\Default Work Unit\Player\pl_frozen"/>
-				<Event Id="3480935424" Name="pl_jump" ObjectPath="\Events\Default Work Unit\Player\pl_jump"/>
-				<Event Id="797745526" Name="pl_lost" ObjectPath="\Events\Default Work Unit\Player\pl_lost"/>
-				<Event Id="4075572744" Name="pl_powerup" ObjectPath="\Events\Default Work Unit\Player\pl_powerup"/>
-				<Event Id="1912879160" Name="pl_respawn" ObjectPath="\Events\Default Work Unit\Player\pl_respawn"/>
-				<Event Id="3009675150" Name="pl_victory" ObjectPath="\Events\Default Work Unit\Player\pl_victory"/>
-				<Event Id="842924071" Name="pl_walk" ObjectPath="\Events\Default Work Unit\Player\pl_walk"/>
-				<Event Id="1665851904" Name="scene_tutorial" ObjectPath="\Events\Default Work Unit\Scenes\scene_tutorial"/>
-				<Event Id="2835950611" Name="scenes_comb_rony" ObjectPath="\Events\Default Work Unit\Scenes\scenes_comb_rony"/>
-				<Event Id="720681037" Name="scenes_combat" ObjectPath="\Events\Default Work Unit\Scenes\scenes_combat"/>
-				<Event Id="272266195" Name="scenes_firstscene" ObjectPath="\Events\Default Work Unit\Scenes\scenes_firstscene"/>
-				<Event Id="2482983275" Name="scenes_mainmenu" ObjectPath="\Events\Default Work Unit\Scenes\scenes_mainmenu"/>
-				<Event Id="2712402429" Name="scenes_title" ObjectPath="\Events\Default Work Unit\Scenes\scenes_title"/>
-				<Event Id="1581714431" Name="title_anim" ObjectPath="\Events\Default Work Unit\title_anim"/>
-				<Event Id="3173259453" Name="ui_menu_move" ObjectPath="\Events\Default Work Unit\UI\ui_menu_move"/>
-				<Event Id="3944973105" Name="ui_menu_play_start" ObjectPath="\Events\Default Work Unit\UI\ui_menu_play_start"/>
-				<Event Id="376099243" Name="ui_menu_play_stop" ObjectPath="\Events\Default Work Unit\UI\ui_menu_play_stop"/>
-				<Event Id="3474566310" Name="ui_menu_select" ObjectPath="\Events\Default Work Unit\UI\ui_menu_select"/>
-				<Event Id="952138190" Name="ui_pause_off" ObjectPath="\Events\Default Work Unit\UI\ui_pause_off"/>
-				<Event Id="1731872944" Name="ui_pause_on" ObjectPath="\Events\Default Work Unit\UI\ui_pause_on"/>
-				<Event Id="1275912799" Name="ui_tutorial_loading_full" ObjectPath="\Events\Default Work Unit\UI\ui_tutorial_loading_full"/>
-				<Event Id="4092758663" Name="ui_tutorial_startgame" ObjectPath="\Events\Default Work Unit\UI\ui_tutorial_startgame"/>
+				<Event Id="1406566429" Name="amb_lava_begins" ObjectPath="\Events\Default Work Unit\Ambient\amb_lava_begins" DurationType="Infinite"/>
+				<Event Id="3208440745" Name="amb_lava_ends" ObjectPath="\Events\Default Work Unit\Ambient\amb_lava_ends" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1839761221" Name="amb_lava_warning" ObjectPath="\Events\Default Work Unit\Ambient\amb_lava_warning" DurationType="OneShot" DurationMin="3.887958" DurationMax="3.887958"/>
+				<Event Id="2062236611" Name="amb_stalactite_breaks" ObjectPath="\Events\Default Work Unit\Ambient\amb_stalactite_breaks" DurationType="OneShot" DurationMin="0.518104" DurationMax="1.141167"/>
+				<Event Id="3841011808" Name="pl_attack" ObjectPath="\Events\Default Work Unit\Player\pl_attack" DurationType="OneShot" DurationMin="0.263653" DurationMax="0.307492"/>
+				<Event Id="2719840045" Name="pl_bat" ObjectPath="\Events\Default Work Unit\Player\pl_bat" DurationType="OneShot" DurationMin="3.115187" DurationMax="3.115187"/>
+				<Event Id="3237620440" Name="pl_dash" ObjectPath="\Events\Default Work Unit\Player\pl_dash" DurationType="OneShot" DurationMin="0.308739" DurationMax="0.367853"/>
+				<Event Id="477371494" Name="pl_deathbybat" ObjectPath="\Events\Default Work Unit\Player\pl_deathbybat" DurationType="OneShot" DurationMin="5.049917" DurationMax="5.049917"/>
+				<Event Id="3322848542" Name="pl_die" ObjectPath="\Events\Default Work Unit\Player\pl_die" DurationType="OneShot" DurationMin="1.289625" DurationMax="1.289625"/>
+				<Event Id="2264357082" Name="pl_frozen" ObjectPath="\Events\Default Work Unit\Player\pl_frozen" DurationType="OneShot" DurationMin="4.617063" DurationMax="4.617063"/>
+				<Event Id="3480935424" Name="pl_jump" ObjectPath="\Events\Default Work Unit\Player\pl_jump" DurationType="OneShot" DurationMin="0.320000" DurationMax="0.360000"/>
+				<Event Id="797745526" Name="pl_lost" ObjectPath="\Events\Default Work Unit\Player\pl_lost" DurationType="OneShot" DurationMin="2.649563" DurationMax="2.649563"/>
+				<Event Id="4075572744" Name="pl_powerup" ObjectPath="\Events\Default Work Unit\Player\pl_powerup" DurationType="OneShot" DurationMin="1.738458" DurationMax="1.738458"/>
+				<Event Id="1912879160" Name="pl_respawn" ObjectPath="\Events\Default Work Unit\Player\pl_respawn" DurationType="OneShot" DurationMin="0.193354" DurationMax="0.193354"/>
+				<Event Id="3009675150" Name="pl_victory" ObjectPath="\Events\Default Work Unit\Player\pl_victory" DurationType="OneShot" DurationMin="3.666583" DurationMax="3.666583"/>
+				<Event Id="842924071" Name="pl_walk" ObjectPath="\Events\Default Work Unit\Player\pl_walk" DurationType="OneShot" DurationMin="0.227583" DurationMax="0.436208"/>
+				<Event Id="1665851904" Name="scene_tutorial" ObjectPath="\Events\Default Work Unit\Scenes\scene_tutorial" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2835950611" Name="scenes_comb_rony" ObjectPath="\Events\Default Work Unit\Scenes\scenes_comb_rony" DurationType="Infinite"/>
+				<Event Id="720681037" Name="scenes_combat" ObjectPath="\Events\Default Work Unit\Scenes\scenes_combat" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="272266195" Name="scenes_firstscene" ObjectPath="\Events\Default Work Unit\Scenes\scenes_firstscene" DurationType="Infinite"/>
+				<Event Id="2482983275" Name="scenes_mainmenu" ObjectPath="\Events\Default Work Unit\Scenes\scenes_mainmenu" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2712402429" Name="scenes_title" ObjectPath="\Events\Default Work Unit\Scenes\scenes_title" DurationType="Infinite"/>
+				<Event Id="1581714431" Name="title_anim" ObjectPath="\Events\Default Work Unit\title_anim" DurationType="OneShot" DurationMin="1.122096" DurationMax="2.293995"/>
+				<Event Id="3173259453" Name="ui_menu_move" ObjectPath="\Events\Default Work Unit\UI\ui_menu_move" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
+				<Event Id="3944973105" Name="ui_menu_play_start" ObjectPath="\Events\Default Work Unit\UI\ui_menu_play_start" DurationType="Infinite"/>
+				<Event Id="376099243" Name="ui_menu_play_stop" ObjectPath="\Events\Default Work Unit\UI\ui_menu_play_stop" DurationType="OneShot" DurationMin="1.946259" DurationMax="1.946259"/>
+				<Event Id="3474566310" Name="ui_menu_select" ObjectPath="\Events\Default Work Unit\UI\ui_menu_select" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
+				<Event Id="952138190" Name="ui_pause_off" ObjectPath="\Events\Default Work Unit\UI\ui_pause_off" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
+				<Event Id="1731872944" Name="ui_pause_on" ObjectPath="\Events\Default Work Unit\UI\ui_pause_on" DurationType="OneShot" DurationMin="0.400000" DurationMax="0.400000"/>
+				<Event Id="1275912799" Name="ui_tutorial_loading_full" ObjectPath="\Events\Default Work Unit\UI\ui_tutorial_loading_full" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="4092758663" Name="ui_tutorial_startgame" ObjectPath="\Events\Default Work Unit\UI\ui_tutorial_startgame" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="4077695" Language="SFX">
+					<ShortName>anim_mecha.wav</ShortName>
+					<Path>SFX\anim_mecha_D89115E7.wem</Path>
+				</File>
 				<File Id="12576185" Language="SFX">
 					<ShortName>walk 1.wav</ShortName>
-					<Path>SFX\walk 1_10C4C929.wem</Path>
+					<Path>SFX\walk 1_1DDA1C19.wem</Path>
+				</File>
+				<File Id="126179677" Language="SFX">
+					<ShortName>anim_explosion.wav</ShortName>
+					<Path>SFX\anim_explosion_1DDA1C19.wem</Path>
 				</File>
 				<File Id="159834921" Language="SFX">
 					<ShortName>estalagtitas 4.wav</ShortName>
-					<Path>SFX\estalagtitas 4_10C4C929.wem</Path>
+					<Path>SFX\estalagtitas 4_1DDA1C19.wem</Path>
 				</File>
 				<File Id="173635762" Language="SFX">
 					<ShortName>walk 6.wav</ShortName>
-					<Path>SFX\walk 6_10C4C929.wem</Path>
+					<Path>SFX\walk 6_1DDA1C19.wem</Path>
 				</File>
 				<File Id="256565412" Language="SFX">
 					<ShortName>die.wav</ShortName>
-					<Path>SFX\die_10C4C929.wem</Path>
+					<Path>SFX\die_1DDA1C19.wem</Path>
 				</File>
 				<File Id="261821670" Language="SFX">
 					<ShortName>estalagtitas 6.wav</ShortName>
-					<Path>SFX\estalagtitas 6_10C4C929.wem</Path>
+					<Path>SFX\estalagtitas 6_1DDA1C19.wem</Path>
 				</File>
 				<File Id="263339427" Language="SFX">
 					<ShortName>powerup.wav</ShortName>
-					<Path>SFX\powerup_10C4C929.wem</Path>
+					<Path>SFX\powerup_1DDA1C19.wem</Path>
+				</File>
+				<File Id="271580947" Language="SFX">
+					<ShortName>3-Audio 2 [2019-11-26 110055].wav</ShortName>
+					<Path>SFX\3-Audio 2 [2019-11-26 110055]_1DDA1C19.wem</Path>
 				</File>
 				<File Id="273199589" Language="SFX">
 					<ShortName>dash 2.wav</ShortName>
-					<Path>SFX\dash 2_10C4C929.wem</Path>
+					<Path>SFX\dash 2_1DDA1C19.wem</Path>
 				</File>
 				<File Id="278622275" Language="SFX">
 					<ShortName>lost.wav</ShortName>
-					<Path>SFX\lost_10C4C929.wem</Path>
+					<Path>SFX\lost_1DDA1C19.wem</Path>
+				</File>
+				<File Id="288802770" Language="SFX">
+					<ShortName>3-Audio 2 [2019-11-26 110053].wav</ShortName>
+					<Path>SFX\3-Audio 2 [2019-11-26 110053]_AE5331AE.wem</Path>
+				</File>
+				<File Id="317092753" Language="SFX">
+					<ShortName>mus_mainmenu_body.wav</ShortName>
+					<Path>SFX\mus_mainmenu_body_B587EF35.wem</Path>
+				</File>
+				<File Id="317553690" Language="SFX">
+					<ShortName>amb_lava_waterdrop.wav</ShortName>
+					<Path>SFX\amb_lava_waterdrop_1DDA1C19.wem</Path>
 				</File>
 				<File Id="323615622" Language="SFX">
 					<ShortName>bat.wav</ShortName>
-					<Path>SFX\bat_10C4C929.wem</Path>
+					<Path>SFX\bat_1DDA1C19.wem</Path>
 				</File>
 				<File Id="406498596" Language="SFX">
 					<ShortName>walk 4.wav</ShortName>
-					<Path>SFX\walk 4_10C4C929.wem</Path>
+					<Path>SFX\walk 4_1DDA1C19.wem</Path>
 				</File>
 				<File Id="449587389" Language="SFX">
 					<ShortName>Dash 1.wav</ShortName>
-					<Path>SFX\Dash 1_10C4C929.wem</Path>
+					<Path>SFX\Dash 1_1DDA1C19.wem</Path>
 				</File>
 				<File Id="498587190" Language="SFX">
 					<ShortName>walk 5.wav</ShortName>
-					<Path>SFX\walk 5_10C4C929.wem</Path>
+					<Path>SFX\walk 5_1DDA1C19.wem</Path>
+				</File>
+				<File Id="529174181" Language="SFX">
+					<ShortName>percu 2.wav</ShortName>
+					<Path>SFX\percu 2_B587EF35.wem</Path>
 				</File>
 				<File Id="544287839" Language="SFX">
 					<ShortName>lava.wav</ShortName>
-					<Path>SFX\lava_D79FB2B7.wem</Path>
+					<Path>SFX\lava_D89115E7.wem</Path>
 				</File>
 				<File Id="555204854" Language="SFX">
 					<ShortName>in.wav</ShortName>
-					<Path>SFX\in_10C4C929.wem</Path>
+					<Path>SFX\in_1DDA1C19.wem</Path>
+				</File>
+				<File Id="559072331" Language="SFX">
+					<ShortName>mus_mainmenu_intro.wav</ShortName>
+					<Path>SFX\mus_mainmenu_intro_B587EF35.wem</Path>
 				</File>
 				<File Id="563415613" Language="SFX">
 					<ShortName>estalagtitas 1.wav</ShortName>
-					<Path>SFX\estalagtitas 1_10C4C929.wem</Path>
+					<Path>SFX\estalagtitas 1_1DDA1C19.wem</Path>
+				</File>
+				<File Id="583233212" Language="SFX">
+					<ShortName>amb_lava_bubble_1.wav</ShortName>
+					<Path>SFX\amb_lava_bubble_1_1DDA1C19.wem</Path>
+				</File>
+				<File Id="625784573" Language="SFX">
+					<ShortName>amb_lava_loop.wav</ShortName>
+					<Path>SFX\amb_lava_loop_B587EF35.wem</Path>
 				</File>
 				<File Id="649773898" Language="SFX">
 					<ShortName>respawn.wav</ShortName>
-					<Path>SFX\respawn_10C4C929.wem</Path>
+					<Path>SFX\respawn_1DDA1C19.wem</Path>
+				</File>
+				<File Id="669740673" Language="SFX">
+					<ShortName>amb_lava_bubble_2.wav</ShortName>
+					<Path>SFX\amb_lava_bubble_2_1DDA1C19.wem</Path>
 				</File>
 				<File Id="681045325" Language="SFX">
 					<ShortName>walk 3.wav</ShortName>
-					<Path>SFX\walk 3_10C4C929.wem</Path>
+					<Path>SFX\walk 3_1DDA1C19.wem</Path>
 				</File>
 				<File Id="699352988" Language="SFX">
 					<ShortName>jump.wav</ShortName>
-					<Path>SFX\jump_10C4C929.wem</Path>
+					<Path>SFX\jump_1DDA1C19.wem</Path>
 				</File>
 				<File Id="736198060" Language="SFX">
 					<ShortName>frozen.wav</ShortName>
-					<Path>SFX\frozen_10C4C929.wem</Path>
+					<Path>SFX\frozen_1DDA1C19.wem</Path>
 				</File>
 				<File Id="758795241" Language="SFX">
 					<ShortName>estalagtitas 3.wav</ShortName>
-					<Path>SFX\estalagtitas 3_10C4C929.wem</Path>
+					<Path>SFX\estalagtitas 3_1DDA1C19.wem</Path>
 				</File>
 				<File Id="768365828" Language="SFX">
 					<ShortName>Attack 2.wav</ShortName>
-					<Path>SFX\Attack 2_10C4C929.wem</Path>
+					<Path>SFX\Attack 2_1DDA1C19.wem</Path>
 				</File>
 				<File Id="807365543" Language="SFX">
 					<ShortName>deathByBat.wav</ShortName>
-					<Path>SFX\deathByBat_10C4C929.wem</Path>
+					<Path>SFX\deathByBat_1DDA1C19.wem</Path>
 				</File>
 				<File Id="830428137" Language="SFX">
 					<ShortName>warning.wav</ShortName>
-					<Path>SFX\warning_10C4C929.wem</Path>
+					<Path>SFX\warning_1DDA1C19.wem</Path>
+				</File>
+				<File Id="836615114" Language="SFX">
+					<ShortName>amb_lava_bubble_5.wav</ShortName>
+					<Path>SFX\amb_lava_bubble_5_1DDA1C19.wem</Path>
 				</File>
 				<File Id="839944065" Language="SFX">
 					<ShortName>Attack 1.wav</ShortName>
-					<Path>SFX\Attack 1_10C4C929.wem</Path>
+					<Path>SFX\Attack 1_1DDA1C19.wem</Path>
 				</File>
 				<File Id="852256812" Language="SFX">
 					<ShortName>walk 2.wav</ShortName>
-					<Path>SFX\walk 2_10C4C929.wem</Path>
+					<Path>SFX\walk 2_1DDA1C19.wem</Path>
 				</File>
 				<File Id="856586928" Language="SFX">
 					<ShortName>jump 2.wav</ShortName>
-					<Path>SFX\jump 2_10C4C929.wem</Path>
+					<Path>SFX\jump 2_1DDA1C19.wem</Path>
 				</File>
 				<File Id="902745752" Language="SFX">
 					<ShortName>scene.wav</ShortName>
-					<Path>SFX\scene_10C4C929.wem</Path>
+					<Path>SFX\scene_1DDA1C19.wem</Path>
 				</File>
 				<File Id="912002119" Language="SFX">
 					<ShortName>estalagtitas 5.wav</ShortName>
-					<Path>SFX\estalagtitas 5_10C4C929.wem</Path>
+					<Path>SFX\estalagtitas 5_1DDA1C19.wem</Path>
 				</File>
 				<File Id="954441081" Language="SFX">
 					<ShortName>victoria.wav</ShortName>
-					<Path>SFX\victoria_10C4C929.wem</Path>
+					<Path>SFX\victoria_1DDA1C19.wem</Path>
+				</File>
+				<File Id="1005872246" Language="SFX">
+					<ShortName>amb_lava_bubble_3.wav</ShortName>
+					<Path>SFX\amb_lava_bubble_3_1DDA1C19.wem</Path>
 				</File>
 				<File Id="1036441114" Language="SFX">
 					<ShortName>estalagtitas 2.wav</ShortName>
-					<Path>SFX\estalagtitas 2_10C4C929.wem</Path>
+					<Path>SFX\estalagtitas 2_1DDA1C19.wem</Path>
 				</File>
-				<File Id="1063096924" Language="SFX">
-					<ShortName>move.wav</ShortName>
-					<Path>SFX\move_10C4C929.wem</Path>
+				<File Id="1055205583" Language="SFX">
+					<ShortName>amb_lava_bubble_4.wav</ShortName>
+					<Path>SFX\amb_lava_bubble_4_1DDA1C19.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

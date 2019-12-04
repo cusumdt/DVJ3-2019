@@ -291,7 +291,8 @@ public class Player : MonoBehaviour
         if (timeWalkSound >= LimitTimeWalfSound)
         {
             timeWalkSound = 0;
-            AkSoundEngine.PostEvent("pl_walk", gameObject);
+            if(InFloor)
+                AkSoundEngine.PostEvent("pl_walk", gameObject);
         }
         m_Animator.SetBool("Caminata", true);
         if (transform.rotation.y != rotation)
@@ -308,6 +309,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Floor") || collision.CompareTag("Player"))
         {
             InFloor = true;
+            m_Animator.SetBool("Jump", false);
         }
         else
         {
@@ -427,6 +429,7 @@ public class Player : MonoBehaviour
         {
             if (jump == true && InFloor)
             {
+                m_Animator.SetBool("Jump", true);
                 AkSoundEngine.PostEvent("pl_jump", gameObject);
                 StartCoroutine(Impulse());
             }

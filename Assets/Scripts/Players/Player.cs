@@ -190,6 +190,7 @@ public class Player : MonoBehaviour
         sprite.color = new Vector4(255, 255, 255, 0);
         playerState = PlayerState.OnSkill;
         circleCollider.isTrigger = false;
+          m_Animator.SetBool("Damage",false);
         if (Life > 0)
         {
             Instantiate(Flecha, new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z), Quaternion.identity);
@@ -216,10 +217,12 @@ public class Player : MonoBehaviour
     {
         if (!effect)
         {
+             m_Animator.SetBool("Damage",true);
             effect = true;
             Instantiate(IceEffectState, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
         }
         yield return new WaitForSeconds(2.0f);
+         m_Animator.SetBool("Damage",false);
         effect = false;
         playerState = PlayerState.Normal;
     }
@@ -518,6 +521,7 @@ public class Player : MonoBehaviour
     {
         float direction = rotationEnemy.y == LookToTheLeft ? -1 : 1;
         ImpulseDamage(new Vector2(direction, ImpulseDirectionY));
+        m_Animator.SetBool("Damage",true);
     }
     #endregion
 }

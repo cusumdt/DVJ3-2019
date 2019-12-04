@@ -9,6 +9,8 @@ public class UIMainMenu : MonoBehaviour {
     [SerializeField]
     private Button quit;
     Animator m_Animator;
+
+    
     void Awake () {
         if (button == null) {
             button = GetComponent<Button> ();

@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class TimeManager : MonoBehaviour {
+public class TimeManager : Singleton<TimeManager> {
 
-    static public float Clock;
+    public float Clock;
     public float actualClock;
-    static public bool lavaOn;
+    public bool lavaOn;
     [SerializeField]
     private float TimeMax;
     public Image ClockImage;

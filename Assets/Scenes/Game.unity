@@ -586,7 +586,7 @@ PrefabInstance:
     - target: {fileID: 457097154372221028, guid: a86149c2e7b5d914daf259b32c34ad83,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8868710352186151440, guid: a86149c2e7b5d914daf259b32c34ad83,
         type: 3}
@@ -2119,7 +2119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737af854a6ea1f547aab30bae876d637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
   pjs:
   - {fileID: 5074066211765735979, guid: 7fc530448fbfb154c8d2451f1e74421f, type: 3}
   - {fileID: 3702663527405832662, guid: 86f677a265ea6fe4baba22aee4c75c71, type: 3}
@@ -10093,7 +10092,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a034d4f217ec09408c5ba413f9374de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Clock: 0
   actualClock: 0
+  lavaOn: 0
   TimeMax: 30
   ClockImage: {fileID: 44509098}
   Arrow: {fileID: 1455868156}

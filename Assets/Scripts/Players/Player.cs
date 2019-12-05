@@ -117,6 +117,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     Sprite nothing;
     #endregion
+    public delegate void Defeat (float enrageVal, string player);
+    public static event Defeat WhoDefeat;
 
     void Start()
     {
@@ -165,7 +167,8 @@ public class Player : MonoBehaviour
                 {
                     MultipleTargetCamera.SetTargets(transform, 1);
                     AkSoundEngine.PostEvent("pl_lost", gameObject);
-                    GameManager.Get().SetPlayers(prefab);
+                    //GameManager.Get().SetPlayers(prefab);
+                    DefeatPlayer(transform.name == "player"? "player" : "player2");
                     defeat = true;
                 }
             }
@@ -524,4 +527,10 @@ public class Player : MonoBehaviour
         m_Animator.SetBool("Damage",true);
     }
     #endregion
+        void DefeatPlayer (string player) {
+        if (WhoDefeat != null) {
+            float amount = 1;
+            WhoDefeat (amount, player);
+        }
+        }
 }

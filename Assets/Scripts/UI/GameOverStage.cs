@@ -13,6 +13,7 @@ public class GameOverStage : MonoBehaviour {
     void Start () {
         GameObject Loser = GameManager.Get().GetLose();
         GameObject Winner = GameManager.Get().GetWinner();
+        GameManager.Get().RestartPlayer();
         thisLose = Loser.GetComponent<SpriteRenderer>();
         thisWinner = Winner.GetComponent<SpriteRenderer>();
         WinnerAnim.SetInteger("Player", Winner.name == "player" ? 1 : 2);

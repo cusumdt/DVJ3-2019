@@ -9,7 +9,6 @@ public class GameManager : Singleton<GameManager> {
     #endregion
 
     #region List
-    public List<GameObject> players;
     public List<GameObject> pjs;
     #endregion
 
@@ -18,6 +17,7 @@ public class GameManager : Singleton<GameManager> {
     float Load;
     #endregion
 
+    string playerLoser = null;
     public string scene;
     public override void Awake () {
 
@@ -29,10 +29,11 @@ public class GameManager : Singleton<GameManager> {
     void Start () {
         PauseManager.Scene += ActualScene;
         Loading.Scene += ActualScene;
+        Player.WhoDefeat += PlayerLose;
     }
 
     void Update () {
-        if (players.Count == 1 && scene == "Game") {
+        if (playerLoser != null) {
             Time.timeScale = 0.5f;
             if (Load >= 100) {
                 Load = 0;
@@ -43,34 +44,41 @@ public class GameManager : Singleton<GameManager> {
             } else {
                 Load = Load + (Time.deltaTime * velLoad);
             }
-
         }
     }
 
-    public void SetPlayers (GameObject player) {
-        players.Add (player);
-    }
     public GameObject GetWinner () {
-        for (int j = 0; j < 1; j++) {
-            for (int i = 0; i < 2; i++) {
-                if (pjs[i].name != players[j].name) {
-                    return pjs[i];
-                }
+        for (int i = 0; i < 2; i++) {
+            if (pjs[i].name != playerLoser) {
+                return pjs[i];
             }
         }
-        return new GameObject ();
+        return null;
     }
     public GameObject GetLose () {
-        return players[0];
+        for (int i = 0; i < 2; i++) {
+            if (pjs[i].name == playerLoser) {
+                return pjs[i];
+            }
+        }
+        return null;
     }
     public void RemovePlayers () {
-        players.Clear ();
+        playerLoser=null;
     }
     void RestartPause () {
         if (OnPause != null) {
             float amount = 1;
             OnPause (amount);
         }
+    }
+    public void RestartPlayer()
+    {
+        playerLoser = null;
+    }
+    void PlayerLose (float amount, string player) {
+        if(playerLoser == null)
+            playerLoser = player;
     }
     void ActualScene (float v, string _scene) {
 

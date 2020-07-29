@@ -9,15 +9,30 @@ public class GameOverStage : MonoBehaviour {
     public SpriteRenderer thisLose;
     public Animator WinnerAnim;
     public Animator LooserAnim;
+    public Text winnerText;
+    public Text seccondText;
 
     void Start () {
-        GameObject Loser = GameManager.Get().GetLose();
-        GameObject Winner = GameManager.Get().GetWinner();
+        string Loser = GameManager.Get().GetLose();
+        string Winner = GameManager.Get().GetWinner();
         GameManager.Get().RestartPlayer();
-        thisLose = Loser.GetComponent<SpriteRenderer>();
-        thisWinner = Winner.GetComponent<SpriteRenderer>();
-        WinnerAnim.SetInteger("Player", Winner.name == "player" ? 1 : 2);
-        LooserAnim.SetInteger("Player", Loser.name =="player" ? 1 : 2);
+        
+        if(Winner == "player2_rony"|| Winner == "player_rony")
+            WinnerAnim.SetInteger("Player", 1);
+        else
+            WinnerAnim.SetInteger("Player", 2);
+        if (Loser == "player2_rony" || Loser == "player_rony")
+            LooserAnim.SetInteger("Player", 1);
+        else
+            LooserAnim.SetInteger("Player", 2);
+        if (Winner == "player_rony" || Winner == "player_wambo") {
+            winnerText.text = "Player1"; ;
+            seccondText.text = "Player2";
+        }
+        else {
+            winnerText.text = "Player2"; ;
+            seccondText.text = "Player1";
+        }
         seccond.sprite = thisLose.sprite;
         winner.sprite = thisWinner.sprite;
     }

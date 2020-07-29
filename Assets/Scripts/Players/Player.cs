@@ -110,9 +110,11 @@ public class Player : MonoBehaviour {
     [SerializeField]
     Sprite nothing;
     #endregion
-    public delegate void Defeat (float enrageVal, string player);
-    public static event Defeat WhoDefeat;
 
+
+    public delegate void Defeat (float enrageVal, string player, string winner);
+    public static event Defeat WhoDefeat;
+    public string name;
     void Start () {
         Life = MaxLife;
         stamina = MaxStamina;
@@ -120,6 +122,13 @@ public class Player : MonoBehaviour {
         defeat = false;
         ActiveSkill = Skill.none;
         playerState = PlayerState.Normal;
+        int p1 = CharacterManager.Get().p1;
+        int p2 = CharacterManager.Get().p2;
+        if (name == "player_wambo" || name == "player_rony")
+            Enemy = CharacterManager.Get().characterP2[p2];
+        else
+            Enemy = CharacterManager.Get().characterP1[p1];
+
         #region GetComponent
         m_Animator = GetComponent<Animator> ();
         sprite = GetComponent<SpriteRenderer> ();
@@ -128,6 +137,7 @@ public class Player : MonoBehaviour {
         #region SetEvents
         GameManager.OnPause += PauseInFalse;
         PauseManager.OnPause += SetPause;
+
         #endregion
     }
 
@@ -153,7 +163,7 @@ public class Player : MonoBehaviour {
                     MultipleTargetCamera.SetTargets (transform, 1);
                     AkSoundEngine.PostEvent ("pl_lost", gameObject);
                     //GameManager.Get().SetPlayers(prefab);
-                    DefeatPlayer (transform.name == "player" ? "player" : "player2");
+                    DefeatPlayer (name, Enemy.name);
                     defeat = true;
                 }
             }
@@ -204,6 +214,7 @@ public class Player : MonoBehaviour {
     #endregion
 
     #region Functions
+  
     void IceOn () {
         InstantiateSkill (IceSkill, false);
     }
@@ -423,10 +434,10 @@ public class Player : MonoBehaviour {
         ImpulseDamage (new Vector2 (direction, ImpulseDirectionY));
         m_Animator.SetBool ("Damage", true);
     }
-    void DefeatPlayer (string player) {
+    void DefeatPlayer (string player, string winner) {
         if (WhoDefeat != null) {
             float amount = 1;
-            WhoDefeat (amount, player);
+            WhoDefeat (amount, player, winner);
         }
     }
     #endregion

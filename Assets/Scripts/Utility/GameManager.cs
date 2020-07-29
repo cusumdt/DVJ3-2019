@@ -6,10 +6,14 @@ public class GameManager : Singleton<GameManager> {
     #region Events
     public delegate void PlayerState (float enrageVal);
     public static event PlayerState OnPause;
+
     #endregion
 
     #region List
     public List<GameObject> pjs;
+
+    public int characterP1;
+    public int characterP2;
     #endregion
 
     #region Floats
@@ -18,6 +22,7 @@ public class GameManager : Singleton<GameManager> {
     #endregion
 
     string playerLoser = null;
+    string playerWinner = null;
     public string scene;
     public override void Awake () {
 
@@ -30,6 +35,7 @@ public class GameManager : Singleton<GameManager> {
         PauseManager.Scene += ActualScene;
         Loading.Scene += ActualScene;
         Player.WhoDefeat += PlayerLose;
+        CharacterSelect.PlayerSelection += PlayerSelected;
     }
 
     void Update () {
@@ -47,21 +53,11 @@ public class GameManager : Singleton<GameManager> {
         }
     }
 
-    public GameObject GetWinner () {
-        for (int i = 0; i < 2; i++) {
-            if (pjs[i].name != playerLoser) {
-                return pjs[i];
-            }
-        }
-        return null;
+    public string GetWinner () {
+         return playerWinner;
     }
-    public GameObject GetLose () {
-        for (int i = 0; i < 2; i++) {
-            if (pjs[i].name == playerLoser) {
-                return pjs[i];
-            }
-        }
-        return null;
+    public string GetLose () {
+         return playerLoser;
     }
     public void RemovePlayers () {
         playerLoser=null;
@@ -75,11 +71,22 @@ public class GameManager : Singleton<GameManager> {
     public void RestartPlayer()
     {
         playerLoser = null;
+        playerWinner = null;
     }
-    void PlayerLose (float amount, string player) {
+    void PlayerLose (float amount, string player, string winner) {
         if(playerLoser == null)
             playerLoser = player;
+        if (playerWinner == null)
+            playerWinner = winner;
     }
+
+    void PlayerSelected(float amount, int _p1, int _p2)
+    {
+        characterP1 = _p1;
+        characterP2 = _p2;
+    }
+
+
     void ActualScene (float v, string _scene) {
 
         scene = _scene;

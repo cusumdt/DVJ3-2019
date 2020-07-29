@@ -4,6 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Estalactita : MonoBehaviour {
     void PlayGame () {
-        SceneManager.LoadScene ("Loading");
+        SceneManager.LoadScene ("CharacterSelect");
     }
 }

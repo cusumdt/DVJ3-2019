@@ -16361,5 +16361,100 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8369192174848417667, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271491322655307337, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 2953961467714452635, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 2953961467714452635, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: parallaxEffect
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2664535177477424159, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 2664535177477424159, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: parallaxEffect
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494123212053231445, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494123212053231445, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494123212053231445, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494123212053231445, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494123212053231445, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494123212053231445, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494123212053231445, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082629712599635543, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 4082629712599635543, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: parallaxEffect
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 829975938543167205, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 829975938543167205, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: parallaxEffect
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105642485696401708, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 8069441299599858537, guid: 6e052b6048b64324f9e917062adf86e5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e052b6048b64324f9e917062adf86e5, type: 3}

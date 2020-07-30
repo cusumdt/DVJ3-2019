@@ -16,7 +16,8 @@ public class CharacterSelect : MonoBehaviour
     {
         Wambo,
         Rony,
-        Googli
+        Googli,
+        Mubble
     }
     // Start is called before the first frame update
     public Characters actualP1;
@@ -24,8 +25,6 @@ public class CharacterSelect : MonoBehaviour
     public GameObject[] p1;
     public GameObject[] p2;
 
-    public Animator[] animCharacter;
-    public SpriteRenderer[] spriteCharacter;
     // Update is called once per frame
     void Update()
     {
@@ -39,12 +38,12 @@ public class CharacterSelect : MonoBehaviour
         {
             case Player.P1:
                 actualP1++;
-                if (actualP1 > Characters.Googli)
+                if (actualP1 > Characters.Mubble)
                     actualP1 = Characters.Wambo;
                 break;
             case Player.P2:
                 actualP2++;
-                if (actualP2 > Characters.Googli)
+                if (actualP2 > Characters.Mubble)
                     actualP2 = Characters.Wambo;
                 break;
         }
@@ -58,12 +57,12 @@ public class CharacterSelect : MonoBehaviour
             case Player.P1:
                 actualP1--;
                 if (actualP1 < Characters.Wambo)
-                    actualP1 = Characters.Googli;
+                    actualP1 = Characters.Mubble;
                 break;
             case Player.P2:
                 actualP2--;
                 if (actualP2 < Characters.Wambo)
-                    actualP2 = Characters.Googli;
+                    actualP2 = Characters.Mubble;
                 break;
         }
     }
@@ -75,16 +74,25 @@ public class CharacterSelect : MonoBehaviour
                 p[(int)Characters.Wambo].SetActive(true);
                 p[(int)Characters.Rony].SetActive(false);
                 p[(int)Characters.Googli].SetActive(false);
+                p[(int)Characters.Mubble].SetActive(false);
                 break;
             case Characters.Rony:
                 p[(int)Characters.Wambo].SetActive(false);
                 p[(int)Characters.Rony].SetActive(true);
                 p[(int)Characters.Googli].SetActive(false);
+                p[(int)Characters.Mubble].SetActive(false);
                 break;
             case Characters.Googli:
                 p[(int)Characters.Wambo].SetActive(false);
                 p[(int)Characters.Rony].SetActive(false);
                 p[(int)Characters.Googli].SetActive(true);
+                p[(int)Characters.Mubble].SetActive(false);
+                break;
+            case Characters.Mubble:
+                p[(int)Characters.Wambo].SetActive(false);
+                p[(int)Characters.Rony].SetActive(false);
+                p[(int)Characters.Googli].SetActive(false);
+                p[(int)Characters.Mubble].SetActive(true);
                 break;
             default:
                 break;

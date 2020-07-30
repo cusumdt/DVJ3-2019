@@ -17,6 +17,8 @@ TagManager:
   - EnemyCollector
   - PoisonPowerUp
   - Poison
+  - Botiquin
+  - Heal
   layers:
   - Default
   - TransparentFX

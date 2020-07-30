@@ -83,6 +83,8 @@ public class Player : MonoBehaviour {
     [SerializeField]
     GameObject Respawn;
     [SerializeField]
+    GameObject Heal;
+    [SerializeField]
     GameObject Flecha;
     [SerializeField]
     GameObject Enemy;
@@ -297,7 +299,7 @@ public class Player : MonoBehaviour {
         collision = coll.transform;
         if (collision.CompareTag ("Floor") || collision.CompareTag ("Player")) {
             InFloor = true;
-            m_Animator.SetBool ("Jump", false);
+            m_Animator.SetBool ("Jump", false); 
         } else {
             InFloor = false;
         }
@@ -316,6 +318,8 @@ public class Player : MonoBehaviour {
                 AkSoundEngine.PostEvent("pl_frozen", gameObject);
                 playerState = PlayerState.OnPosion;
             }
+
+           
             if (collision.CompareTag ("Mele")) {
                 AkSoundEngine.PostEvent ("pl_deathbybat", gameObject);
                 TraumaInducer.Shake ();
@@ -354,6 +358,14 @@ public class Player : MonoBehaviour {
                 AkSoundEngine.PostEvent ("pl_bat", gameObject);
                 PowerUpUI.sprite = PowerUpPush;
                 ActiveSkill = Skill.mele;
+            }
+            if (collision.CompareTag("Heal")){
+               AkSoundEngine.PostEvent("pl_powerup", gameObject);
+                if (Life < MaxLife){
+                    Instantiate(Heal, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
+                    lifeImage[Life].SetActive(true);
+                    Life++;
+                }
             }
         }
     }

@@ -112,6 +112,8 @@ public class Player : MonoBehaviour {
     [SerializeField]
     Sprite PowerUpPush;
     [SerializeField]
+    Sprite PowerUpPoison;
+    [SerializeField]
     Sprite nothing;
     #endregion
 
@@ -225,9 +227,10 @@ public class Player : MonoBehaviour {
         {
             
             effect = true;
-       
+            sprite.color = new Vector4(0, 255, 0, 255);
         }
         yield return new WaitForSeconds(2.0f);
+        sprite.color = new Vector4(255, 255, 255, 255);
         effect = false;
         playerState = PlayerState.Normal;
     }
@@ -308,6 +311,11 @@ public class Player : MonoBehaviour {
                 AkSoundEngine.PostEvent ("pl_frozen", gameObject);
                 playerState = PlayerState.OnIce;
             }
+            if (collision.CompareTag("Poison"))
+            {
+                AkSoundEngine.PostEvent("pl_frozen", gameObject);
+                playerState = PlayerState.OnPosion;
+            }
             if (collision.CompareTag ("Mele")) {
                 AkSoundEngine.PostEvent ("pl_deathbybat", gameObject);
                 TraumaInducer.Shake ();
@@ -335,6 +343,12 @@ public class Player : MonoBehaviour {
                 AkSoundEngine.PostEvent ("pl_powerup", gameObject);
                 PowerUpUI.sprite = PowerUpIce;
                 ActiveSkill = Skill.ice;
+            }
+            if (collision.CompareTag("PoisonPowerUp"))
+            {
+                AkSoundEngine.PostEvent("pl_powerup", gameObject);
+                PowerUpUI.sprite = PowerUpPoison;
+                ActiveSkill = Skill.poison;
             }
             if (collision.CompareTag ("EmpujePowerUp")) {
                 AkSoundEngine.PostEvent ("pl_bat", gameObject);

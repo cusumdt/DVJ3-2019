@@ -565,6 +565,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2020779268368178095, guid: 58813d987b6815242bbbf73eb5fd0fc9,
         type: 3}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: PowerUpPoison
+      value: 
+      objectReference: {fileID: 21300000, guid: 740766ee2a4c0324c9e12571b44067c9,
+        type: 3}
     - target: {fileID: 5074066211765735977, guid: 7fc530448fbfb154c8d2451f1e74421f,
         type: 3}
       propertyPath: m_Offset.y
@@ -1832,6 +1838,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2020779268368178095, guid: 58813d987b6815242bbbf73eb5fd0fc9,
         type: 3}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: PowerUpPoison
+      value: 
+      objectReference: {fileID: 21300000, guid: 740766ee2a4c0324c9e12571b44067c9,
+        type: 3}
     - target: {fileID: 3702663527405832669, guid: 86f677a265ea6fe4baba22aee4c75c71,
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -2661,6 +2673,12 @@ PrefabInstance:
       propertyPath: PoisonSkill
       value: 
       objectReference: {fileID: 2020779268368178095, guid: 58813d987b6815242bbbf73eb5fd0fc9,
+        type: 3}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: PowerUpPoison
+      value: 
+      objectReference: {fileID: 21300000, guid: 740766ee2a4c0324c9e12571b44067c9,
         type: 3}
     - target: {fileID: 3702663527405832669, guid: 86f677a265ea6fe4baba22aee4c75c71,
         type: 3}
@@ -4637,9 +4655,9 @@ MonoBehaviour:
   - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
   - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
   - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
-  - {fileID: 4391098857592613425, guid: 000691409e2fa224ca5ecaa5fe8f7fe6, type: 3}
+  - {fileID: 4391098857592613425, guid: c43f361903f31c44a956cf8f0926742c, type: 3}
+  - {fileID: 4391098857592613425, guid: c43f361903f31c44a956cf8f0926742c, type: 3}
+  - {fileID: 4391098857592613425, guid: c43f361903f31c44a956cf8f0926742c, type: 3}
   BadDrop:
   - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
   - {fileID: 8976152171075210131, guid: 5cb92aae42cec1f40954e911b3a1afde, type: 3}
@@ -10554,6 +10572,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2020779268368178095, guid: 58813d987b6815242bbbf73eb5fd0fc9,
         type: 3}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: PowerUpPoison
+      value: 
+      objectReference: {fileID: 21300000, guid: 740766ee2a4c0324c9e12571b44067c9,
+        type: 3}
     - target: {fileID: 3702663527405832669, guid: 86f677a265ea6fe4baba22aee4c75c71,
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -11984,6 +12008,12 @@ PrefabInstance:
       propertyPath: PoisonSkill
       value: 
       objectReference: {fileID: 2020779268368178095, guid: 58813d987b6815242bbbf73eb5fd0fc9,
+        type: 3}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: PowerUpPoison
+      value: 
+      objectReference: {fileID: 21300000, guid: 740766ee2a4c0324c9e12571b44067c9,
         type: 3}
     - target: {fileID: 5074066211765735977, guid: 7fc530448fbfb154c8d2451f1e74421f,
         type: 3}
@@ -13439,6 +13469,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2020779268368178095, guid: 58813d987b6815242bbbf73eb5fd0fc9,
         type: 3}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: PowerUpPoison
+      value: 
+      objectReference: {fileID: 21300000, guid: 740766ee2a4c0324c9e12571b44067c9,
+        type: 3}
     - target: {fileID: 5074066211765735977, guid: 7fc530448fbfb154c8d2451f1e74421f,
         type: 3}
       propertyPath: m_Offset.y
@@ -14739,6 +14775,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2020779268368178095, guid: 58813d987b6815242bbbf73eb5fd0fc9,
         type: 3}
+    - target: {fileID: 9169611246464440016, guid: 86f677a265ea6fe4baba22aee4c75c71,
+        type: 3}
+      propertyPath: PowerUpPoison
+      value: 
+      objectReference: {fileID: 21300000, guid: 740766ee2a4c0324c9e12571b44067c9,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 3702663527405832663, guid: 86f677a265ea6fe4baba22aee4c75c71, type: 3}
     - {fileID: 3702663527405832657, guid: 86f677a265ea6fe4baba22aee4c75c71, type: 3}
@@ -15198,6 +15240,12 @@ PrefabInstance:
       propertyPath: PoisonSkill
       value: 
       objectReference: {fileID: 2020779268368178095, guid: 58813d987b6815242bbbf73eb5fd0fc9,
+        type: 3}
+    - target: {fileID: 2557377362288075864, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: PowerUpPoison
+      value: 
+      objectReference: {fileID: 21300000, guid: 740766ee2a4c0324c9e12571b44067c9,
         type: 3}
     - target: {fileID: 5074066211765735977, guid: 7fc530448fbfb154c8d2451f1e74421f,
         type: 3}

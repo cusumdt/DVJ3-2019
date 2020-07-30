@@ -4106,7 +4106,7 @@ MonoBehaviour:
   - {fileID: 5074066211765735979, guid: 7fc530448fbfb154c8d2451f1e74421f, type: 3}
   - {fileID: 3702663527405832662, guid: 86f677a265ea6fe4baba22aee4c75c71, type: 3}
   characterP1: 0
-  characterP2: 0
+  characterP2: 3
   velLoad: 100
   scene: 
 --- !u!4 &740024233

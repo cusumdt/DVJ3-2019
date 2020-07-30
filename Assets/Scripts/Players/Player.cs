@@ -10,14 +10,16 @@ public class Player : MonoBehaviour {
     public enum Skill {
         none,
         ice,
-        mele
+        mele,
+        poison
     }
     enum PlayerState {
         OnIce,
         OnSkill,
         OnImpulse,
         OnDash,
-        Normal
+        Normal,
+        OnPosion
     }
     #endregion
     #region Control
@@ -66,6 +68,8 @@ public class Player : MonoBehaviour {
     #region GameObjects
     [SerializeField]
     GameObject IceSkill;
+    [SerializeField]
+    GameObject PoisonSkill;
     [SerializeField]
     GameObject MeleSkill;
     [SerializeField]
@@ -157,6 +161,10 @@ public class Player : MonoBehaviour {
                     case PlayerState.Normal:
                         NormalState ();
                         break;
+                    case PlayerState.OnPosion:
+                        StartCoroutine(PosionEffect());
+                        PoisonState();
+                        break;
                 }
             } else {
                 if (!defeat) {
@@ -211,14 +219,29 @@ public class Player : MonoBehaviour {
         playerState = PlayerState.Normal;
     }
 
+    IEnumerator PosionEffect()
+    {
+        if (!effect)
+        {
+            
+            effect = true;
+       
+        }
+        yield return new WaitForSeconds(2.0f);
+        effect = false;
+        playerState = PlayerState.Normal;
+    }
     #endregion
 
     #region Functions
-  
+
     void IceOn () {
         InstantiateSkill (IceSkill, false);
     }
-
+    void PoisonOn()
+    {
+        InstantiateSkill(PoisonSkill, false);
+    }
     void MeleOn () {
         InstantiateSkill (MeleSkill, true);
     }
@@ -400,6 +423,12 @@ public class Player : MonoBehaviour {
                     ActiveSkill = Skill.none;
                     PowerUpUI.sprite = nothing;
                     break;
+                case Skill.poison:
+                    m_Animator.SetTrigger("PoisonSkill");
+                    playerState = PlayerState.OnSkill;
+                    ActiveSkill = Skill.none;
+                    PowerUpUI.sprite = nothing;
+                    break;
                 default:
 
                     break;
@@ -422,7 +451,87 @@ public class Player : MonoBehaviour {
         }
         StaminaObj.size = stamina / MaxStamina;
     }
+    void PoisonState()
+    {
+        pos = new Vector2(transform.position.x, transform.position.y);
+        if (control.Jump())
+        {
+            if (InFloor)
+            {
+                m_Animator.SetBool("Jump", true);
+                AkSoundEngine.PostEvent("pl_jump", gameObject);
+                StartCoroutine(Impulse());
+            }
+        }
+        if (control.Left())
+        {
+            Walk(Movement, RotationRight);
+        }
+        else if (control.Right())
+        {
+            Walk(-Movement, RotationLeft);
+        }
+        else
+        {
+            timeWalkSound = LimitTimeWalfSound;
+            m_Animator.SetBool("Caminata", false);
+        }
+        velocity = rig.velocity;
+        if (rig.velocity.x >= MaxVelocity)
+        {
+            rig.velocity = new Vector2(MaxVelocity, rig.velocity.y);
+        }
+        if (rig.velocity.x <= MinVelocity)
+        {
+            rig.velocity = new Vector2(MinVelocity, rig.velocity.y);
+        }
+        if (control.Skill())
+        {
+            switch (ActiveSkill)
+            {
+                case Skill.ice:
+                    m_Animator.SetTrigger("IceSkill");
+                    playerState = PlayerState.OnSkill;
+                    ActiveSkill = Skill.none;
+                    PowerUpUI.sprite = nothing;
+                    break;
+                case Skill.mele:
+                    m_Animator.SetTrigger("MeleSkill");
+                    ActiveSkill = Skill.none;
+                    PowerUpUI.sprite = nothing;
+                    break;
+                case Skill.poison:
+                    m_Animator.SetTrigger("PoisonSkill");
+                    playerState = PlayerState.OnSkill;
+                    ActiveSkill = Skill.none;
+                    PowerUpUI.sprite = nothing;
+                    break;
+                default:
 
+                    break;
+            }
+        }
+        if (stamina > 0 && stamina >= DashCost)
+        {
+            if (control.Dash())
+            {
+                AkSoundEngine.PostEvent("pl_dash", gameObject);
+                myRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
+                m_Animator.SetTrigger("Dash");
+                stamina -= DashCost;
+                playerState = PlayerState.OnDash;
+            }
+        }
+        if (stamina > MaxStamina)
+        {
+            stamina = MaxStamina;
+        }
+        if (stamina < MaxStamina)
+        {
+            stamina += RegenStamina * Time.deltaTime;
+        }
+        StaminaObj.size = stamina / MaxStamina;
+    }
     void DashState () {
         myRotation = new Quaternion (transform.rotation.x, transform.rotation.y, transform.rotation.z, 1.0f);
         Vector2 direction = myRotation.y == 0 ? Vector2.right : Vector2.left;

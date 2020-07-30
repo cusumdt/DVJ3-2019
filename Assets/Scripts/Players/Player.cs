@@ -124,7 +124,7 @@ public class Player : MonoBehaviour {
         playerState = PlayerState.Normal;
         int p1 = CharacterManager.Get().p1;
         int p2 = CharacterManager.Get().p2;
-        if (name == "player_wambo" || name == "player_rony")
+        if (name == "player_wambo" || name == "player_rony" || name == "player_googli")
             Enemy = CharacterManager.Get().characterP2[p2];
         else
             Enemy = CharacterManager.Get().characterP1[p1];

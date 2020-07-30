@@ -16,16 +16,21 @@ public class GameOverStage : MonoBehaviour {
         string Loser = GameManager.Get().GetLose();
         string Winner = GameManager.Get().GetWinner();
         GameManager.Get().RestartPlayer();
-        
-        if(Winner == "player2_rony"|| Winner == "player_rony")
+
+        if (Winner == "player2_rony" || Winner == "player_rony")
             WinnerAnim.SetInteger("Player", 1);
-        else
+        else if (Winner == "player2_wambo" || Winner == "player_wambo")
             WinnerAnim.SetInteger("Player", 2);
+        else
+            WinnerAnim.SetInteger("Player", 3);
         if (Loser == "player2_rony" || Loser == "player_rony")
             LooserAnim.SetInteger("Player", 1);
-        else
+        else if (Loser == "player2_wambo" || Loser == "player_wambo")
             LooserAnim.SetInteger("Player", 2);
-        if (Winner == "player_rony" || Winner == "player_wambo") {
+        else
+            LooserAnim.SetInteger("Player", 3);
+
+        if (Winner == "player_rony" || Winner == "player_wambo" || Winner == "player_googli") {
             winnerText.text = "Player1"; ;
             seccondText.text = "Player2";
         }

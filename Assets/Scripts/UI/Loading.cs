@@ -34,7 +34,7 @@ public class Loading : MonoBehaviour {
                 ActualScene ("Game");
                 SceneManager.LoadScene ("Game");
             }
-            text.text = "To start";
+            text.text = "Iniciar";
             image.SetActive (true);
         } else {
             Load = Load + (Time.deltaTime * velLoad);

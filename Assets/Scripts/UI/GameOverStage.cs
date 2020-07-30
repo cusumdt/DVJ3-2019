@@ -21,15 +21,19 @@ public class GameOverStage : MonoBehaviour {
             WinnerAnim.SetInteger("Player", 1);
         else if (Winner == "player2_wambo" || Winner == "player_wambo")
             WinnerAnim.SetInteger("Player", 2);
-        else
+        else if(Winner == "player2_googli" || Winner == "player_googli")
             WinnerAnim.SetInteger("Player", 3);
+        else
+            WinnerAnim.SetInteger("Player", 4);
+
         if (Loser == "player2_rony" || Loser == "player_rony")
             LooserAnim.SetInteger("Player", 1);
         else if (Loser == "player2_wambo" || Loser == "player_wambo")
             LooserAnim.SetInteger("Player", 2);
-        else
+        else if (Loser == "player2_googli" || Loser == "player_googli")
             LooserAnim.SetInteger("Player", 3);
-
+        else
+            LooserAnim.SetInteger("Player", 4);
         if (Winner == "player_rony" || Winner == "player_wambo" || Winner == "player_googli") {
             winnerText.text = "Player1"; ;
             seccondText.text = "Player2";

@@ -15934,7 +15934,7 @@ PrefabInstance:
     - target: {fileID: 5074066211765735979, guid: 7fc530448fbfb154c8d2451f1e74421f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074066211765735991, guid: 7fc530448fbfb154c8d2451f1e74421f,
         type: 3}
@@ -16387,6 +16387,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 9c6bfd2d1f32d0b4f84f2d1a56e8be3a,
         type: 3}
+    - target: {fileID: 5074066211765735976, guid: 7fc530448fbfb154c8d2451f1e74421f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5074066211765735977, guid: 7fc530448fbfb154c8d2451f1e74421f,
         type: 3}
       propertyPath: m_Offset.y

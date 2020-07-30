@@ -15,7 +15,8 @@ public class CharacterSelect : MonoBehaviour
     public enum Characters
     {
         Wambo,
-        Rony
+        Rony,
+        Googli
     }
     // Start is called before the first frame update
     public Characters actualP1;
@@ -38,12 +39,12 @@ public class CharacterSelect : MonoBehaviour
         {
             case Player.P1:
                 actualP1++;
-                if (actualP1 > Characters.Rony)
+                if (actualP1 > Characters.Googli)
                     actualP1 = Characters.Wambo;
                 break;
             case Player.P2:
                 actualP2++;
-                if (actualP2 > Characters.Rony)
+                if (actualP2 > Characters.Googli)
                     actualP2 = Characters.Wambo;
                 break;
         }
@@ -57,12 +58,12 @@ public class CharacterSelect : MonoBehaviour
             case Player.P1:
                 actualP1--;
                 if (actualP1 < Characters.Wambo)
-                    actualP1 = Characters.Rony;
+                    actualP1 = Characters.Googli;
                 break;
             case Player.P2:
                 actualP2--;
                 if (actualP2 < Characters.Wambo)
-                    actualP2 = Characters.Rony;
+                    actualP2 = Characters.Googli;
                 break;
         }
     }
@@ -73,10 +74,17 @@ public class CharacterSelect : MonoBehaviour
             case Characters.Wambo:
                 p[(int)Characters.Wambo].SetActive(true);
                 p[(int)Characters.Rony].SetActive(false);
+                p[(int)Characters.Googli].SetActive(false);
                 break;
             case Characters.Rony:
                 p[(int)Characters.Wambo].SetActive(false);
                 p[(int)Characters.Rony].SetActive(true);
+                p[(int)Characters.Googli].SetActive(false);
+                break;
+            case Characters.Googli:
+                p[(int)Characters.Wambo].SetActive(false);
+                p[(int)Characters.Rony].SetActive(false);
+                p[(int)Characters.Googli].SetActive(true);
                 break;
             default:
                 break;

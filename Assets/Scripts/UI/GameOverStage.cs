@@ -21,10 +21,12 @@ public class GameOverStage : MonoBehaviour {
             WinnerAnim.SetInteger("Player", 1);
         else if (Winner == "player2_wambo" || Winner == "player_wambo")
             WinnerAnim.SetInteger("Player", 2);
-        else if(Winner == "player2_googli" || Winner == "player_googli")
+        else if (Winner == "player2_googli" || Winner == "player_googli")
             WinnerAnim.SetInteger("Player", 3);
-        else
+        else if (Winner == "player2_mubble" || Winner == "player_mubble")
             WinnerAnim.SetInteger("Player", 4);
+        else
+            WinnerAnim.SetInteger("Player", 5);
 
         if (Loser == "player2_rony" || Loser == "player_rony")
             LooserAnim.SetInteger("Player", 1);
@@ -32,9 +34,12 @@ public class GameOverStage : MonoBehaviour {
             LooserAnim.SetInteger("Player", 2);
         else if (Loser == "player2_googli" || Loser == "player_googli")
             LooserAnim.SetInteger("Player", 3);
-        else
+        else if (Loser == "player2_mubble" || Loser == "player_mubble")
             LooserAnim.SetInteger("Player", 4);
-        if (Winner == "player_rony" || Winner == "player_wambo" || Winner == "player_googli") {
+        else
+            LooserAnim.SetInteger("Player", 5);
+
+        if (Winner == "player_rony" || Winner == "player_wambo" || Winner == "player_googli" || Winner == "player_mubble" || Winner == "player_chunky") {
             winnerText.text = "Player1"; ;
             seccondText.text = "Player2";
         }
